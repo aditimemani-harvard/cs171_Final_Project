@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="css/map-state.css">
+    <link rel="stylesheet" href="css/dendo.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+<!--    <script defer src="https://d3js.org/d3.v7.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <title>Choropleth Map</title>
+</head>
+<body>
+    <h2 id='title'>US Energy Crisis</h2>
+    <div class="container-fluid no-gutters">
+        <h1>energy</h1>
+        <h1>crisis</h1>
+        <br>
+        <h5>Earth’s temperature has risen by 0.14° Fahrenheit (0.08° Celsius) per decade since 1880.</h5>
+        <h5>This is accountable to the rise in energy consumption levels to almost 149% from the pre-industrial level.</h5>
+        <br>
+        <!--Viz 2 zone-->
+        <div class="row placeholder" style="height: 50vh">
+        </div>
+
+        <br><br><br>
+
+        <h5>The Building Industry contributes to 40% of the global energy consumption, and residential buildings have a high demand </h5>
+        <br>
+        <img src="img/emission_flows.png" style="width: 50%">
+
+        <br><br><br>
+        <h5>Therefore, to understand the emissions, we analyzed a dataset of: </h5>
+        <h1 class ='highlighted-text'>550,000</h1>
+        <h5 class ='small-text'>residential buildings</h5>
+
+        <br><br><br>
+        <h5> Let's try to understand the residences we live in! </h5>
+    </div>
+    <br><br><br>
+    <div class="container-fluid no-gutters">
+        <br>
+        <h5>How does energy consumption vary across the US?</h5>
+        <br>
+
+        <div class="container-fluid no-gutters">
+            <div class="row no-gutters" >
+                <div class="col no-gutters">
+                    <h6>Filler Text: The United States uses and produces many different types and sources of energy,
+                        which can be grouped into general categories such as primary and secondary,
+                        renewable and nonrenewable, and fossil fuels.
+                        Primary energy sources include fossil fuels (petroleum, natural gas, and coal),
+                        nuclear energy, and renewable sources of energy.
+                        Electricity is a secondary energy source that is generated (produced)
+                        from primary energy sources.</h6>
+                </div>
+                <div class="col no-gutters">
+                    <h6>Filler Text: Energy sources are measured in different physical units:
+                        liquid fuels in barrels or gallons, natural gas in cubic feet,
+                        coal in short tons, and electricity in kilowatts and kilowatthours.
+                        In the United States, British thermal units (Btu), a measure of heat energy,
+                        is commonly used for comparing different types of energy to each other.
+                        In 2021, total U.S. primary energy consumption was equal to about
+                        97,331,601,000,000,000 Btu, or about 97 quadrillion Btu.</h6>
+                </div>
+            </div>
+        </div>
+
+    <div id="description"> Average Energy Consumption in kwH by State</div>
+
+
+
+    <!--need to fix veiwing issue -- currently hard coding the viewing-->
+        <!-- fixed it but adjusting the css name of canvas -- all names of svg objects need to match the id names in html-->
+        <svg id='canvas-map'></svg>
+<!--        <div id='rightSide'>-->
+        <!-- need to add tooltip to html before adding a tooltip to the js file-->
+            <div id="tooltip"></div>
+        <!--need to make sure that the object is svg otherwise fill for svg region will not work-->
+<!--            <svg id="legend"> &lt;!&ndash; just adding the fill colors by adding rectangles that match those colors as a legend &ndash;&gt;-->
+<!--                <g>-->
+<!--                    <rect x="10" y="0" width="40" height="40" fill="#fbe2e5"></rect>-->
+<!--                    <text x="60" y="20" fill="white">First Quartile</text>-->
+<!--                </g>-->
+<!--                <g>-->
+<!--                    <rect x="10" y="40" width="40" height="40" fill="#f29ca7"></rect>-->
+<!--                    <text x="60" y="60" fill="white">Second Quartile</text>-->
+<!--                </g>-->
+<!--                <g>-->
+<!--                    <rect x="10" y="80" width="40" height="40" fill="#eb6979"></rect>-->
+<!--                    <text x="60" y="100" fill="white">Third Quartile</text>-->
+<!--                </g>-->
+<!--                <g>-->
+<!--                    <rect x="10" y="120" width="40" height="40" fill="#b2182b"></rect>-->
+<!--                    <text x="60" y="140" fill="white">Fourth Quartile</text>-->
+<!--                </g>-->
+<!--            </svg>-->
+
+<!--        </div>-->
+
+        <div class="container-fluid no-gutters">
+            <br>
+            <h5>How does energy consumption vary by climate zone?</h5>
+            <br>
+
+            <div class="container-fluid no-gutters">
+                <div class="row no-gutters" >
+                    <div class="col no-gutters">
+                        <h6>Filler Text: The United States uses and produces many different types and sources of energy,
+                            which can be grouped into general categories such as primary and secondary,
+                            renewable and nonrenewable, and fossil fuels.
+                            Primary energy sources include fossil fuels (petroleum, natural gas, and coal),
+                            nuclear energy, and renewable sources of energy.
+                            Electricity is a secondary energy source that is generated (produced)
+                            from primary energy sources.</h6>
+                    </div>
+                    <div class="col no-gutters">
+                        <h6>Filler Text: Energy sources are measured in different physical units:
+                            liquid fuels in barrels or gallons, natural gas in cubic feet,
+                            coal in short tons, and electricity in kilowatts and kilowatthours.
+                            In the United States, British thermal units (Btu), a measure of heat energy,
+                            is commonly used for comparing different types of energy to each other.
+                            In 2021, total U.S. primary energy consumption was equal to about
+                            97,331,601,000,000,000 Btu, or about 97 quadrillion Btu.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">
+                <h3> Energy consumption change throughout...</h3>
+            </div>
+
+            <div class="container" data-toggle="buttons" onchange="displayRadioValue()">
+                <label><input class="option-input radio" type="radio" name="energy_type" value="energy_total" checked>All</label>
+                <label><input class="option-input radio" type="radio" name="energy_type" value="electricity_total">Electricity</label>
+                <label><input class="option-input radio" type="radio" name="energy_type" value="fuelOil_total">Fuel Oil</label>
+                <label><input class="option-input radio" type="radio" name="energy_type" value="naturalGas_total">Natural Gas</label>
+                <label><input class="option-input radio" type="radio" name="energy_type" value="propane_total">Propane</label>
+            </div>
+
+
+
+            <div class="areaChart" id="areaChart-tooltip" style="height:100vh">
+                <div class="row no-gutters" style="height: 4vh">
+                    <div style="height: 100%; width:100%;"></div>
+                    <div style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-0" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-1" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-2" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-3" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-4" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-5" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-6" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-7" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-8" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-9" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-10" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-11" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-12" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-13" style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-14" style="height: 100%; width:100%;"></div>
+                    <div style="height: 100%; width:100%;"></div>
+                    <div id="areaChart-legend" style="height: 100%; width:100%;"></div>
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <div class="row" style="height: 6vh">
+                <div class="col" id="areaChartMonth-0">col</div>
+                <div class="col" id="areaChartMonth-1">col</div>
+                <div class="col" id="areaChartMonth-2">col</div>
+                <div class="col" id="areaChartMonth-3">col</div>
+                <div class="col" id="areaChartMonth-4">col</div>
+            </div>
+
+            <div class="container-fluid no-gutters">
+            <h5> Now, let's select the trickiest climate zones in the US and zoom in to understand the residential patterns </h5>
+            <br><br><br>
+        </div>
+
+
+                <!--need to fix veiwing issue -- currently hard coding the viewing-->
+                <!-- fixed it but adjusting the css name of canvas -- all names of svg objects need to match the id names in html-->
+
+            <svg id='county-map'></svg>
+                    <!-- need to add tooltip to html before adding a tooltip to the js file-->
+                    <div id="county-tooltip"></div>
+                    <!--need to make sure that the object is svg otherwise fill for svg region will not work-->
+
+
+            <div>
+
+            <br><br>
+            <h5>Climate Zones 4,5 and 6 consume a high amount of energy for heating and cooling. Therefore, let's dive deeper! </h5>
+            <br>
+        </div>
+
+        <button class = "button button4" onclick="updateButton(dendoFourURL)">Zone: 4</button>
+        <button class = "button button4" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
+        <button class = "button button4" onclick="updateButton(dendoSixURL)">Zone: 6</button>
+
+        <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
+        <svg id="dendo"></svg>
+            </div>
+        <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
+            <svg id="sankey"></svg>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+<script defer src='js/map-state.js'></script>
+
+<script defer src="js/dendo.js"></script>
+
+<script defer src='js/map-county.js'></script>
+<script src="js/UserInput.js"></script>
+<script src="js/AreaChartMain.js"></script>
+<script src="js/AreaChart.js"></script>
+<script src="js/AreaChartTooltip.js"></script>
+<script src="js/AreaChartLegend.js"></script>
+<script src="js/UserBubble.js"></script>
+
+</html>
