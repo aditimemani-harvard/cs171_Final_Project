@@ -27,25 +27,25 @@ svg{
     min-width: 1000px;
     min-height: 600px
 }
-#tooltip{
-    visibility: hidden; /*indicating that the default is for the tooltip to be hidden*/
-    height: auto;
-    width: auto;
-    margin-top: 2px;
-    color: white;
-    font-size: 24px;
+#map-tooltip{
+    visibility: hidden;
+    position: absolute;
     font-family: Helvetica;
-    margin-bottom: 5px;
+    background: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
 }
 #county-tooltip{
-    visibility: hidden; /*indicating that the default is for the tooltip to be hidden*/
-    height: auto;
-    width: auto;
-    margin-top: 2px;
-    color: white;
-    font-size: 24px;
+    visibility: hidden;
+    position: absolute;
     font-family: Helvetica;
-    margin-bottom: 5px;
+    background: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #legend{

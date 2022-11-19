@@ -6,7 +6,7 @@ let countyData
 let climateData
 
 
-let canvasCounty = d3.select('#county-map') // needs to match name in css file
+let canvasCounty = d3.select('#county-map').append('svg') // needs to match name in css file
 let countyTooltip = d3.select('#county-tooltip')
 
 let drawCountyMap = () => {
@@ -72,9 +72,15 @@ let drawCountyMap = () => {
                 return +county['fips'] === id
             })
             //now we're setting the text for the tooltip using just the climate data that corresponds to the id code of the topojson file
-            countyTooltip.text(countyDataItem.properties.code +
-                '\n'+' Zone: ' + countyDataItem.properties.zone)
-
+            // countyTooltip.text(countyDataItem.properties.code +
+            //     '\n'+' Zone: ' + countyDataItem.properties.zone)
+            countyTooltip
+                .html(`<span >${countyDataItem.properties.code}</span>
+                        <br>
+                        <span>Zone: ${countyDataItem.properties.zone}</span>`)
+                .attr('data-climate', countyDataItem.properties.zone)
+                .style("left", d3.event.pageX + "px")
+                .style("top", d3.event.pageY - 28 + "px");
             // countyTooltip.text(county['AreaName'] + ', ' +
             //     county['code'] + ' : ' + county['climate'])
             //now we need to add the derived value for each county to the countyTooltip by geolocation

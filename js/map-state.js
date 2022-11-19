@@ -6,8 +6,9 @@ console.log(topojson)
 let energyData
 let stateData
 
-let canvas = d3.select('#canvas-map') // needs to match name in css file
-let tooltip = d3.select('#tooltip')
+let canvas = d3.select('#canvas-map').append('svg') // needs to match name in css file
+let tooltip = d3.select('#map-tooltip')
+
 
 let drawMap = () => {
     var dataArray = [];
@@ -76,9 +77,17 @@ let drawMap = () => {
                 return state['fips'] === id
             })
             //now we're setting the text for the tooltip using just the education data that corresponds to the id code of the topojson file
-            tooltip.text(state['state'] + ': ' + state['elec_total_kwh_mean'] + ' kWh')
+            // tooltip.text(state['state'] + ': ' + state['elec_total_kwh_mean'] + ' kWh')
+            //     .style("opacity", 0.9);
+            tooltip
+                .html(`<span >${state['state']}</span>
+                        <br>
+                        <span>${state['elec_total_kwh_mean']} kWh</span>`)
+                .attr('data-energy', state['elec_total_kwh_mean'])
+                .style("left", d3.event.pageX + "px")
+                .style("top", d3.event.pageY - 28 + "px");
             //now we need to add the derived value for each state to the tooltip by geolocation
-            tooltip.attr('data-energy', state['elec_total_kwh_mean'])
+            // tooltip.attr('data-energy', state['elec_total_kwh_mean'])
 
         })
         //now adding what happens once mouse is no longer there by hiding the tooltip
