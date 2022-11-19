@@ -4,6 +4,7 @@ console.log(d3)
 console.log(topojson)
 let countyData
 let climateData
+let colors = ['#F8F9FA', '#CED4DA', '#6C757D', '#641220', '#85182A', '#A71E34', '#BD1F36', '#DA1E37'];
 
 
 let canvasCounty = d3.select('#county-map').append('svg') // needs to match name in css file
@@ -18,7 +19,7 @@ let drawCountyMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range(["#f7ebe8","#b2182b"])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#BD1F36'])
     var projection = d3.geoAlbersUsa()
     canvasCounty.selectAll('path')
         .data(countyData.features)

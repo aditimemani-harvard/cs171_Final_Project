@@ -30,7 +30,39 @@
 
         <h5>The Building Industry contributes to 40% of the global energy consumption, and residential buildings have a high demand </h5>
         <br>
-        <img src="img/emission_flows.png" style="width: 50%">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 offset-2">
+
+                    <!-- header -->
+                    <div class="row justify-content-center" id = 'header-content' >
+                        <div class="align-self-center">
+                            <h1>Residential vs Commercial</h1>
+                            <h2>Detailed breakdown of consumption </h2>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <!-- graph -->
+                    <div class="row justify-content-center" id = 'content-area-graph'>
+                        <h3 class = 'heading-text'> Residential</h3>
+                        <div class="align-self-center" id="stacked-area-chart"></div>
+                        <div id="res-stacked-tooltip"></div>
+                    </div>
+                    <br>
+                    <!-- brush -->
+                    <div class="row justify-content-center" id = 'content-timeline' style="height: 100%">
+                        <div class="align-self-center" id="timeline"></div>
+                    </div>
+                    <!--            &lt;!&ndash; graph 2 &ndash;&gt;-->
+                    <!--            <div class="row justify-content-center" id = 'content-area-graph-2'>-->
+                    <!--                <h3 class = 'heading-text'> Residential & Commercial </h3>-->
+                    <!--                <div class="align-self-center" id="stacked-area-chart-2"></div>-->
+                    <!--            </div>-->
+                </div>
+            </div>
+        </div>
 
         <br><br><br>
         <h5>Therefore, to understand the emissions, we analyzed a dataset of: </h5>
@@ -225,5 +257,10 @@
 <script src="js/AreaChartTooltip.js"></script>
 <script src="js/AreaChartLegend.js"></script>
 <script src="js/UserBubble.js"></script>
+<script src="js/res-stackedAreaChart.js"></script>
+<script src="js/res-timeline.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="js/res-main.js"></script>
 
 </html>

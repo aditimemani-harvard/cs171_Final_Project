@@ -1,0 +1,362 @@
+{
+  "consumption_total": [
+    {
+      "Year": 2021,
+      "resTotal": 20.83,
+      "commTotal": 17.27
+    },
+    {
+      "Year": 2022,
+      "resTotal": 20.64,
+      "commTotal": 17.51
+    },
+    {
+      "Year": 2023,
+      "resTotal": 20.82,
+      "commTotal": 17.49
+    },
+    {
+      "Year": 2024,
+      "resTotal": 20.75,
+      "commTotal": 17.31
+    },
+    {
+      "Year": 2025,
+      "resTotal": 20.71,
+      "commTotal": 17.19
+    },
+    {
+      "Year": 2026,
+      "resTotal": 20.71,
+      "commTotal": 17.08
+    },
+    {
+      "Year": 2027,
+      "resTotal": 20.65,
+      "commTotal": 17.03
+    },
+    {
+      "Year": 2028,
+      "resTotal": 20.58,
+      "commTotal": 16.96
+    },
+    {
+      "Year": 2029,
+      "resTotal": 20.54,
+      "commTotal": 16.92
+    },
+    {
+      "Year": 2030,
+      "resTotal": 20.52,
+      "commTotal": 16.88
+    }
+  ],
+  "residential_total": [
+    {
+      "Year": 2021,
+      "Total": 20.83
+    },
+    {
+      "Year": 2022,
+      "Total": 20.64
+    },
+    {
+      "Year": 2023,
+      "Total": 20.82
+    },
+    {
+      "Year": 2024,
+      "Total": 20.75
+    },
+    {
+      "Year": 2025,
+      "Total": 20.71
+    },
+    {
+      "Year": 2026,
+      "Total": 20.71
+    },
+    {
+      "Year": 2027,
+      "Total": 20.65
+    },
+    {
+      "Year": 2028,
+      "Total": 20.58
+    },
+    {
+      "Year": 2029,
+      "Total": 20.54
+    },
+    {
+      "Year": 2030,
+      "Total": 20.52
+    }
+  ],
+  "commercial_total": [
+    {
+      "Year": 2021,
+      "Total": 17.27
+    },
+    {
+      "Year": 2022,
+      "Total": 17.51
+    },
+    {
+      "Year": 2023,
+      "Total": 17.49
+    },
+    {
+      "Year": 2024,
+      "Total": 17.31
+    },
+    {
+      "Year": 2025,
+      "Total": 17.19
+    },
+    {
+      "Year": 2026,
+      "Total": 17.08
+    },
+    {
+      "Year": 2027,
+      "Total": 17.03
+    },
+    {
+      "Year": 2028,
+      "Total": 16.96
+    },
+    {
+      "Year": 2029,
+      "Total": 16.92
+    },
+    {
+      "Year": 2030,
+      "Total": 16.88
+    }
+  ],
+  "residential": [
+    {
+      "Year": 2021,
+      "Propane": 0.48,
+      "Distillate Fuel Oil": 0.42,
+      "Petroleum and Other Liquids Subtotal": 0.9,
+      "Natural Gas": 5.01,
+      "Renewable Energy": 0.46,
+      "Purchased Electricity": 5.09,
+      "Delivered Energy": 11.45,
+      "Electricity Related Losses": 9.38
+    },
+    {
+      "Year": 2022,
+      "Propane": 0.48,
+      "Distillate Fuel Oil": 0.44,
+      "Petroleum and Other Liquids Subtotal": 0.92,
+      "Natural Gas": 5.07,
+      "Renewable Energy": 0.48,
+      "Purchased Electricity": 4.99,
+      "Delivered Energy": 11.47,
+      "Electricity Related Losses": 9.17
+    },
+    {
+      "Year": 2023,
+      "Propane": 0.46,
+      "Distillate Fuel Oil": 0.41,
+      "Petroleum and Other Liquids Subtotal": 0.88,
+      "Natural Gas": 5.01,
+      "Renewable Energy": 0.45,
+      "Purchased Electricity": 5.13,
+      "Delivered Energy": 11.47,
+      "Electricity Related Losses": 9.35
+    },
+    {
+      "Year": 2024,
+      "Propane": 0.46,
+      "Distillate Fuel Oil": 0.4,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 5.03,
+      "Renewable Energy": 0.45,
+      "Purchased Electricity": 5.17,
+      "Delivered Energy": 11.52,
+      "Electricity Related Losses": 9.23
+    },
+    {
+      "Year": 2025,
+      "Propane": 0.46,
+      "Distillate Fuel Oil": 0.39,
+      "Petroleum and Other Liquids Subtotal": 0.85,
+      "Natural Gas": 5.05,
+      "Renewable Energy": 0.45,
+      "Purchased Electricity": 5.22,
+      "Delivered Energy": 11.56,
+      "Electricity Related Losses": 9.15
+    },
+    {
+      "Year": 2026,
+      "Propane": 0.46,
+      "Distillate Fuel Oil": 0.38,
+      "Petroleum and Other Liquids Subtotal": 0.84,
+      "Natural Gas": 5.06,
+      "Renewable Energy": 0.45,
+      "Purchased Electricity": 5.25,
+      "Delivered Energy": 11.59,
+      "Electricity Related Losses": 9.12
+    },
+    {
+      "Year": 2027,
+      "Propane": 0.45,
+      "Distillate Fuel Oil": 0.37,
+      "Petroleum and Other Liquids Subtotal": 0.83,
+      "Natural Gas": 5.06,
+      "Renewable Energy": 0.44,
+      "Purchased Electricity": 5.27,
+      "Delivered Energy": 11.6,
+      "Electricity Related Losses": 9.05
+    },
+    {
+      "Year": 2028,
+      "Propane": 0.45,
+      "Distillate Fuel Oil": 0.37,
+      "Petroleum and Other Liquids Subtotal": 0.82,
+      "Natural Gas": 5.05,
+      "Renewable Energy": 0.44,
+      "Purchased Electricity": 5.3,
+      "Delivered Energy": 11.6,
+      "Electricity Related Losses": 8.98
+    },
+    {
+      "Year": 2029,
+      "Propane": 0.45,
+      "Distillate Fuel Oil": 0.36,
+      "Petroleum and Other Liquids Subtotal": 0.81,
+      "Natural Gas": 5.04,
+      "Renewable Energy": 0.43,
+      "Purchased Electricity": 5.32,
+      "Delivered Energy": 11.6,
+      "Electricity Related Losses": 8.94
+    },
+    {
+      "Year": 2030,
+      "Propane": 0.44,
+      "Distillate Fuel Oil": 0.35,
+      "Petroleum and Other Liquids Subtotal": 0.8,
+      "Natural Gas": 5.03,
+      "Renewable Energy": 0.42,
+      "Purchased Electricity": 5.34,
+      "Delivered Energy": 11.6,
+      "Electricity Related Losses": 8.92
+    }
+  ],
+  "commercial": [
+    {
+      "Year": 2021,
+      "Propane": 0.18,
+      "Distillate Fuel Oil": 0.31,
+      "Petroleum and Other Liquids Subtotal": 0.85,
+      "Natural Gas": 3.48,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.5,
+      "Delivered Energy": 8.97,
+      "Electricity Related Losses": 8.3
+    },
+    {
+      "Year": 2022,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.87,
+      "Natural Gas": 3.62,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.54,
+      "Delivered Energy": 9.16,
+      "Electricity Related Losses": 8.35
+    },
+    {
+      "Year": 2023,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.87,
+      "Natural Gas": 3.57,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.58,
+      "Delivered Energy": 9.15,
+      "Electricity Related Losses": 8.34
+    },
+    {
+      "Year": 2024,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.58,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.57,
+      "Delivered Energy": 9.15,
+      "Electricity Related Losses": 8.16
+    },
+    {
+      "Year": 2025,
+      "Propane": 0.18,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.59,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.57,
+      "Delivered Energy": 9.16,
+      "Electricity Related Losses": 8.02
+    },
+    {
+      "Year": 2026,
+      "Propane": 0.18,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.59,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.56,
+      "Delivered Energy": 9.15,
+      "Electricity Related Losses": 7.93
+    },
+    {
+      "Year": 2027,
+      "Propane": 0.18,
+      "Distillate Fuel Oil": 0.32,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.6,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.57,
+      "Delivered Energy": 9.18,
+      "Electricity Related Losses": 7.85
+    },
+    {
+      "Year": 2028,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.31,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.61,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.58,
+      "Delivered Energy": 9.19,
+      "Electricity Related Losses": 7.77
+    },
+    {
+      "Year": 2029,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.31,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.61,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.59,
+      "Delivered Energy": 9.2,
+      "Electricity Related Losses": 7.72
+    },
+    {
+      "Year": 2030,
+      "Propane": 0.19,
+      "Distillate Fuel Oil": 0.31,
+      "Petroleum and Other Liquids Subtotal": 0.86,
+      "Natural Gas": 3.61,
+      "Renewable Energy": 0.12,
+      "Purchased Electricity": 4.6,
+      "Delivered Energy": 9.2,
+      "Electricity Related Losses": 7.68
+    }
+  ]
+}

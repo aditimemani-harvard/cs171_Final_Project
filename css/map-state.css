@@ -288,3 +288,102 @@ button{
 .option-input.radio::after {
     border-radius: 80%;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 100;
+    margin-top: 50px;
+    color: white;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    color: white;
+}
+
+.browser text {
+    text-anchor: end;
+}
+
+.area {
+    opacity: 0.7;
+    clip-path: url(#clip);
+}
+.area:hover {
+    opacity: 1;
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+.col-md-8 offset-2{
+    margin-top: 5vh;
+}
+#header-content{
+    height: 15vh;
+}
+
+#content-area-graph{
+    height: 60vh;
+}
+
+#stacked-area-chart{
+    width: 100%;
+    height: 100%;
+}
+
+#timeline{
+    width: 100%;
+    height: 100%;
+}
+
+.row justify-content-center{
+    height: 15vh;
+}
+
+/*.content-timeline{*/
+/*  height: 15vh;*/
+/*}*/
+#res-stacked-tooltip{
+    visibility: hidden
+;
+    position: absolute
+;
+}
+.tooltip-text{
+    font-size: 10px;
+    color: white;
+}
+
+.x-axis, .y-axis{
+    color:white;
+}
+
+.heading-text{
+    color: lightgrey;
+    font-size: 18px;
+    margin-bottom: -25px;
+}

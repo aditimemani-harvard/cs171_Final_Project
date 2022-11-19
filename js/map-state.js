@@ -19,14 +19,14 @@ let drawMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range(["#f7ebe8","#b2182b"])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#BD1F36'])
     canvas.selectAll('path')
         .data(stateData)
         .enter()
         .append('path')
         //d3.geoPath() converts the array of lines in the topojson file into d lines to actually draw on the map
         .attr('d', d3.geoPath())
-        .attr('stroke', '#808080')
+        .attr('stroke', 'black')
 
         //stateDataItem refers to the state level array object from the topojson file
         .attr('fill', (stateDataItem) => {
