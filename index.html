@@ -47,13 +47,13 @@
                     <!-- graph -->
                     <div class="row justify-content-center" id = 'content-area-graph'>
                         <h3 class = 'heading-text'> Residential</h3>
-                        <div class="align-self-center" id="stacked-area-chart"></div>
+                        <svg class="align-self-center" id="stacked-area-chart"></svg>
                         <div id="res-stacked-tooltip"></div>
                     </div>
                     <br>
                     <!-- brush -->
                     <div class="row justify-content-center" id = 'content-timeline' style="height: 100%">
-                        <div class="align-self-center" id="timeline"></div>
+                        <svg class="align-self-center" id="timeline"></svg>
                     </div>
                     <!--            &lt;!&ndash; graph 2 &ndash;&gt;-->
                     <!--            <div class="row justify-content-center" id = 'content-area-graph-2'>-->
@@ -227,7 +227,7 @@
             <div>
 
             <br><br>
-            <h5>Climate Zones 4,5 and 6 consume a high amount of energy for heating and cooling. Therefore, let's dive deeper! </h5>
+            <h5>Climate Zones 4,5 and 6 consume a high amount of energy for heating and cooling. Therefore, let's dive deeper by understanding the average consumption by energy type! </h5>
             <br>
         </div>
 
@@ -235,9 +235,9 @@
         <button class = "button button4" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
         <button class = "button button4" onclick="updateButton(dendoSixURL)">Zone: 6</button>
 
-        <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
-        <svg id="dendo"></svg>
-            </div>
+        <div class="row" style="height: 70vh; width:600vh; background: black; padding: 0;">
+            <svg id="dendo" xmlns="http://www.w3.org/2000/svg" style="overflow:auto"></svg>
+        </div>
         <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
             <svg id="sankey"></svg>
         </div>

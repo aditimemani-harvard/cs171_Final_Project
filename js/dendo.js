@@ -56,7 +56,7 @@ function updateButton(dataURL) {
 
             // Normalize for fixed-depth.
             nodes.forEach(function (d) {
-                d.y = d.depth * 180
+                d.y = d.depth * 170+10
             });
 
             // ****************** Nodes section ***************************
@@ -80,7 +80,7 @@ function updateButton(dataURL) {
                 .attr('class', 'node')
                 .attr('r', 1e-6)
                 .style("fill", function (d) {
-                    return d._children ? "#d6604d" : "#b2182b";
+                    return d._children ? '#CED4DA' : '#641220';
                 });
 
             // Add labels for the nodes
@@ -112,7 +112,7 @@ function updateButton(dataURL) {
             nodeUpdate.select('circle.node')
                 .attr('r', 10)
                 .style("fill", function (d) {
-                    return d._children ? "#808080" : "#b2182b";
+                    return d._children ? '#CED4DA' : '#A71E34';
                 })
                 .attr('cursor', 'pointer');
 

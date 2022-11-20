@@ -1,10 +1,13 @@
 html{
     min-height: 100%;
+    min-width: 100%;
     background-color: black;
 
 }
 body{
     background-color: black;
+    min-width: 100%;
+    min-height: 100%;
     padding-top: 50px;
     padding-left: 50px;
     padding-right: 50px;
@@ -134,8 +137,7 @@ h6{
 .tooltip_text_desc_min {
     font-family: Helvetica;
     font-weight:normal ;
-    color: white;
-    fill: rgba(255, 255, 255, 0.5);
+
     font-weight: lighter;
     font-size: 12px;
 }
@@ -143,8 +145,7 @@ h6{
 .tooltip_text_desc_max{
     font-family: Helvetica;
     font-weight:normal ;
-    color: white;
-    fill: rgba(255, 255, 255, 0.5);
+
     font-weight: lighter;
     font-size: 12px;
 }
@@ -178,21 +179,21 @@ h6{
 }
 
 button{
-    color: rgba(255, 255, 255, 0.8);
+    color:  #641220;
 }
 .button {
-    background-color: #4CAF50; /* Green */
+
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 2px 2px;
     cursor: pointer;
 }
-.button4 {background-color: #e7e7e7; color: black;} /* Gray */
+.button4 {background-color: #CED4DA; color: black;} /* Gray */
 
 .container{
     font-family: Helvetica;
@@ -247,7 +248,7 @@ button{
     transition: all 0.15s ease-out 0s;
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    color: #fff;
+    color:  #641220;
     cursor: pointer;
     display: inline-block;
     margin-right: 0.5rem;
@@ -276,7 +277,7 @@ button{
     -webkit-animation: click-wave 0.25s;
     -moz-animation: click-wave 0.25s;
     animation: click-wave 0.25s;
-    background: rgba(255, 255, 255, 0.8);
+    background: #641220;
     content: '';
     display: block;
     position: relative;

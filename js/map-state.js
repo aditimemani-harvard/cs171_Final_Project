@@ -19,7 +19,7 @@ let drawMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#BD1F36'])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220','#DA1E37'])
     canvas.selectAll('path')
         .data(stateData)
         .enter()

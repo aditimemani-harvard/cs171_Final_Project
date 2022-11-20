@@ -1,5 +1,6 @@
 .node circle {
     fill: #fff;
+    opacity: 0.5;
 }
 
 .node text {
@@ -8,7 +9,7 @@
 
 .link {
     fill: none;
-    opacity: 0.5;
-    stroke:#808080;
+    opacity: 0.3;
+    stroke:#CED4DA;
     stroke-width: 2px;
 }
