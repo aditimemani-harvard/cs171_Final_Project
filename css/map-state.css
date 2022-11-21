@@ -365,9 +365,9 @@ h2 {
     height: 5vh;
 }
 
-/*.content-timeline{*/
-/*  height: 15vh;*/
-/*}*/
+.content-timeline{
+  height: 15vh;
+}
 #res-stacked-tooltip{
     visibility: hidden
 ;
