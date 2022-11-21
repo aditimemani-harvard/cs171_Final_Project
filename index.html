@@ -5,6 +5,7 @@
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" href="css/map-state.css">
     <link rel="stylesheet" href="css/dendo.css">
+    <link rel="stylesheet" href="../test-4-diff_charts/css/networkd3.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>-->
 <!--    <script defer src="https://d3js.org/d3.v7.min.js"></script>-->
@@ -50,9 +51,9 @@
                         <svg class="align-self-center" id="stacked-area-chart"></svg>
                         <div id="res-stacked-tooltip"></div>
                     </div>
-                    <br>
+                    <br> <br><br><br>
                     <!-- brush -->
-                    <div class="row justify-content-center" id = 'content-timeline' style="height: 100%">
+                    <div class="row justify-content-center" id = 'content-timeline' style="height: 50%; padding: 1;">
                         <svg class="align-self-center" id="timeline"></svg>
                     </div>
                     <!--            &lt;!&ndash; graph 2 &ndash;&gt;-->
@@ -239,7 +240,7 @@
             <svg id="dendo" xmlns="http://www.w3.org/2000/svg" style="overflow:auto"></svg>
         </div>
         <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
-            <svg id="sankey"></svg>
+            <svg id="sankey-chart"></svg>
         </div>
     </div>
 
@@ -251,7 +252,7 @@
 <script defer src="js/dendo.js"></script>
 
 <script defer src='js/map-county.js'></script>
-<script src="js/UserInput.js"></script>
+
 <script src="js/AreaChartMain.js"></script>
 <script src="js/AreaChart.js"></script>
 <script src="js/AreaChartTooltip.js"></script>
@@ -259,6 +260,7 @@
 <script src="js/UserBubble.js"></script>
 <script src="js/res-stackedAreaChart.js"></script>
 <script src="js/res-timeline.js"></script>
+
 
 <!-- Load data, create visualizations -->
 <script src="js/res-main.js"></script>

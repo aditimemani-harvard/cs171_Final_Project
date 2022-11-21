@@ -22,7 +22,7 @@ class ResTimeline {
 		// store keyword this which refers to the object it belongs to in variable vis
 		let vis = this;
 
-		vis.margin = {top: 0, right: 40, bottom: 30, left: 40};
+		vis.margin = {top: 10, right: 40, bottom: 30, left: 40};
 
 		vis.width = document.getElementById(vis._parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
 		vis.height = document.getElementById(vis._parentElement).getBoundingClientRect().height  - vis.margin.top - vis.margin.bottom;
@@ -32,7 +32,7 @@ class ResTimeline {
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
 			.attr("height", vis.height + vis.margin.top + vis.margin.bottom)
 			.append("g")
-			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+			// .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
 		// Scales and axes
 		vis.x = d3.scaleTime()

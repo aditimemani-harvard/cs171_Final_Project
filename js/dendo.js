@@ -2,8 +2,8 @@ dendoSixURL = "data/zone6.json"
 dendoFiveURL = "data/zone5.json"
 dendoFourURL = "data/zone4.json"
 var margin = {top: 15, right: 15, bottom: 15, left: 25},
-    width = window.innerWidth,
-    height = window.innerHeight;
+    width = window.innerWidth - -margin.left - margin.right
+    height = window.innerHeight - margin.top - margin.bottom;;
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
