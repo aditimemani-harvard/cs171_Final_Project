@@ -1,15 +1,21 @@
 let stateURL = 'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json'
-let energyURL = 'data/energyData_with_fips.csv'
+let energyURL = 'data/incentive_energy_data.csv'
 console.log(d3)
 console.log(topojson)
 
 let energyData
 let stateData
 
-let canvas = d3.select('#canvas-map').append('svg') // needs to match name in css file
-let tooltip = d3.select('#map-tooltip')
+let canvas = d3.select('#state-map').append('svg') // needs to match name in css file
+let stateTooltip = d3.select('#state-tooltip')
 
+let colorState = ['#F8F9FA', '#CED4DA', '#6C757D', '#641220', '#85182A', '#A71E34', '#BD1F36', '#DA1E37'];
+let formatDecimal = d3.format(",.2f");
+let formatInteger = d3.format(",");
 
+function format(number){
+    return !(number % 1) ? formatInteger(number) : formatDecimal(number)
+}
 let drawMap = () => {
     var dataArray = [];
     for (var d = 0; d < energyData.length; d++) {
@@ -19,7 +25,7 @@ let drawMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220','#DA1E37'])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220'])
     canvas.selectAll('path')
         .data(stateData)
         .enter()
@@ -59,40 +65,56 @@ let drawMap = () => {
             let state = energyData.find((state) => {
                 return state['fips'] === id
             })
+
             //now pull data from corresponding column
-            let percentage = state['elec_total_kwh_mean']
+            let avg_energy = state['elec_total_kwh_mean']
             //and return that corresponding value
-            return percentage
+            return format(avg_energy)
+            //double check that each d object in svg section in console has these new parameters
+            //should show a bunch of d values and then 'data-fips','data-education'
+        })
+        .attr('data-incentive', (stateDataItem)=> {
+            //first pull id code from topojson arrays
+            let id = stateDataItem['id']
+            //next pull matching code from fips column in edudata
+            let state = energyData.find((state) => {
+                return state['fips'] === id
+            })
+
+            //now pull data from corresponding column
+            let incentive_count = state['incentive_count']
+            //and return that corresponding value
+            return incentive_count
             //double check that each d object in svg section in console has these new parameters
             //should show a bunch of d values and then 'data-fips','data-education'
         })
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
-        .on('mouseover', (stateDataItem)=>{
+        .on('mouseover', function(event,stateDataItem){
             //since default is hidden we're switching it to visible
-            tooltip.transition()
+            stateTooltip.transition()
                 .style('visibility', 'visible')
             //same thing as before we're pulling the id from the arrays and the matching fips code from the eudcation data
             let id = stateDataItem['id']
             let state = energyData.find((state) => {
                 return state['fips'] === id
             })
-            //now we're setting the text for the tooltip using just the education data that corresponds to the id code of the topojson file
-            // tooltip.text(state['state'] + ': ' + state['elec_total_kwh_mean'] + ' kWh')
-            //     .style("opacity", 0.9);
-            tooltip
+            stateTooltip
                 .html(`<span >${state['state']}</span>
                         <br>
-                        <span>${state['elec_total_kwh_mean']} kWh</span>`)
+                        <span>Incentives: ${state['incentive_count']}</span>
+                        <br>
+                        <span>Avg Energy Consumed: ${format(state['elec_total_kwh_mean'])} kWh</span>`)
                 .attr('data-energy', state['elec_total_kwh_mean'])
-                .style("left", d3.event.pageX -5+ "px")
-                .style("top", d3.event.pageY - 28 + "px");
+                .attr('data-incentive', state['incentive_count'])
+                .style("left", (event.pageX-15)+ "px")
+                .style("top", (event.pageY+5) + "px");
             //now we need to add the derived value for each state to the tooltip by geolocation
-            // tooltip.attr('data-energy', state['elec_total_kwh_mean'])
+
 
         })
         //now adding what happens once mouse is no longer there by hiding the tooltip
-        .on('mouseout', (stateDataItem) => {
-            tooltip.transition()
+        .on('mouseout', function(event,stateDataItem) {
+            stateTooltip.transition()
                 .style('visibility', 'hidden')
         })
 }
@@ -108,8 +130,7 @@ d3.json(stateURL).then(
             // stateData = topoData
             // need to convert topojson features into geojson so d3 can understand it
             //state data is id-ed by the FIPS code
-            // stateData = topojson.feature(topoData, topoData.objects.counties).features//only want the feature portion of the array that have the geolines
-            // need 2 arguments to do this
+             // need 2 arguments to do this
             // first argument: the name of the topojson argument when called in the promise i.e.topoData
             // second argument: the type of datat needed from the topojson data
             stateData = topojson.feature(topoData, topoData.objects.states).features

@@ -92,7 +92,21 @@ class AreaChart {
         vis.chart.datum(vis.displayData)
             .attr("class", "area")
             .attr("d", vis.area)
-            .attr('fill', 'rgba(255,255,255,0.2)')
+            .attr('fill', '#999999')
+            .on('mouseover', function(event, d) {
+                console.log("d: ", d);
+                d3.select(this)
+                    .attr('stroke-width', '2px')
+                    .attr('stroke', 'black')
+                    .style('fill', 'rgb(255,255,255,0.8)')
+            })
+            .on('mouseout', function(event, d) {
+                console.log("d: ", d);
+                d3.select(this)
+                    .attr('stroke-width', '2px')
+                    .attr('stroke', 'black')
+                    .style('fill', '#999999')
+            })
 
 
     }

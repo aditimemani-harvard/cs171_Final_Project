@@ -1,268 +1,763 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <link rel="stylesheet" href="css/map-state.css">
-    <link rel="stylesheet" href="css/dendo.css">
-    <link rel="stylesheet" href="../test-4-diff_charts/css/networkd3.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>-->
-<!--    <script defer src="https://d3js.org/d3.v7.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>-->
-<!--    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>-->
-    <title>Choropleth Map</title>
+    <meta charset="utf-8">
+    <title>map & brush</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/AreaChartStyles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+<!--    FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">-->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+
 </head>
+
+
 <body>
-    <h2 id='title'>US Energy Crisis</h2>
+<!-- NAVIGATION BAR AREA-->
+<!--<a class="nav-link" href="#home_section" class="top-btn">Back to Top &#8593;</a>-->
+<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
+<div id="Main_Title"></div>
+<nav class="navbar navbar-expand-sm" style="background-color: white;">
+    <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#home_section" style="font-weight: bolder;">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#intro_section">Introduction</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#res_vs_comm_section">Residential vs. Commercial</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#climate_zone__section">Climate Zone Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#building_type_section">Building Type Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#building_attributes_sections">Building Attributes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#state_incentives_section">State Incentives</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#team_section">Team</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" class="nav-link" href="#appendix_section">Appendix</a>
+        </li>
+    </ul>
+    </div>
+</nav>
+<p>
+    <br><br><br>
+</p>
+<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
+<!--<button type="button" class="btn btn-danger btn-floating btn-sm" id="btn-back-to-top" style="&#45;&#45;bs-btn-padding-y: .25rem; &#45;&#45;bs-btn-padding-x: .5rem; &#45;&#45;bs-btn-font-size: .75rem;">>Top-->
+<!--&lt;!&ndash;    <i class="fas fa-arrow-up"></i>&ndash;&gt;-->
+<!--</button>-->
+
+<!--    #################### HOME Section ####################-->
+<div id="'home_section">
     <div class="container-fluid no-gutters">
-        <h1>energy</h1>
-        <h1>crisis</h1>
+        <h1 class="scrollFade"> US Energy</h1>
         <br>
-        <h5>Earth’s temperature has risen by 0.14° Fahrenheit (0.08° Celsius) per decade since 1880.</h5>
-        <h5>This is accountable to the rise in energy consumption levels to almost 149% from the pre-industrial level.</h5>
+        <h1 class="scrollFade">Consumption</h1>
         <br>
-        <!--Viz 2 zone-->
-        <div class="row placeholder" style="height: 50vh">
-        </div>
-
-        <br><br><br>
-
-        <h5>The Building Industry contributes to 40% of the global energy consumption, and residential buildings have a high demand </h5>
+        <h5 class="scrollFade">How does energy consumption varies by climate zone?</h5>
         <br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 offset-2">
-
-                    <!-- header -->
-                    <div class="row justify-content-center" id = 'header-content' >
-                        <div class="align-self-center">
-                            <h1>Residential vs Commercial</h1>
-                            <h2>Detailed breakdown of consumption </h2>
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <!-- graph -->
-                    <div class="row justify-content-center" id = 'content-area-graph'>
-                        <h3 class = 'heading-text'> Residential</h3>
-                        <svg class="align-self-center" id="stacked-area-chart"></svg>
-                        <div id="res-stacked-tooltip"></div>
-                    </div>
-                    <br> <br><br><br>
-                    <!-- brush -->
-                    <div class="row justify-content-center" id = 'content-timeline' style="height: 50%; padding: 1;">
-                        <svg class="align-self-center" id="timeline"></svg>
-                    </div>
-                    <!--            &lt;!&ndash; graph 2 &ndash;&gt;-->
-                    <!--            <div class="row justify-content-center" id = 'content-area-graph-2'>-->
-                    <!--                <h3 class = 'heading-text'> Residential & Commercial </h3>-->
-                    <!--                <div class="align-self-center" id="stacked-area-chart-2"></div>-->
-                    <!--            </div>-->
-                </div>
+    </div>
+</div>
+<!--    #################### INTRODUCTION Section ####################-->
+<div id="intro_section">
+    <div class="container-fluid no-gutters">
+        <div class="row no-gutters" style="border-top: 1px solid white;">
+            <div class="col no-gutters" style="padding:5px;">
+                <h5 class="scrollFade">Filler Text: The United States uses and produces many different types and sources of energy,
+                    which can be grouped into general categories such as primary and secondary,
+                    renewable and nonrenewable, and fossil fuels.
+                    Primary energy sources include fossil fuels (petroleum, natural gas, and coal),
+                    nuclear energy, and renewable sources of energy.
+                    Electricity is a secondary energy source that is generated (produced)
+                    from primary energy sources.</h5>
+            </div>
+            <div class="col no-gutters" style="padding:5px;">
+                <h5 class="scrollFade">Filler Text: Energy sources are measured in different physical units:
+                    liquid fuels in barrels or gallons, natural gas in cubic feet,
+                    coal in short tons, and electricity in kilowatts and kilowatthours.
+                    In the United States, British thermal units (Btu), a measure of heat energy,
+                    is commonly used for comparing different types of energy to each other.
+                    In 2021, total U.S. primary energy consumption was equal to about
+                    97,331,601,000,000,000 Btu, or about 97 quadrillion Btu.</h5>
             </div>
         </div>
-
-        <br><br><br>
-        <h5>Therefore, to understand the emissions, we analyzed a dataset of: </h5>
-        <h1 class ='highlighted-text'>550,000</h1>
-        <h5 class ='small-text'>residential buildings</h5>
-
-        <br><br><br>
-        <h5> Let's try to understand the residences we live in! </h5>
     </div>
     <br><br><br>
+</div>
+<!--    #################### RES COMM Section ####################-->
+<div id="res_vs_comm_section">
+
     <div class="container-fluid no-gutters">
+        <p>
+        <div class="center">
+            <h3 class="scrollFade"> Residential vs. Commercial Buildings in the US <br></h3>
+        </div>
         <br>
-        <h5>How does energy consumption vary across the US?</h5>
-        <br>
+        <div class="center" >
+            <h5 class="scrollFade"><em>Compare the types of Energy Consumption used by Residential and Commerical Buildings</em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <div class="center">
+        <video width="720" height="540" autoplay muted playsinline loop>
+            <source src="img/res_vs_comm.mp4" type="video/mp4">
 
-        <div class="container-fluid no-gutters">
-            <div class="row no-gutters" >
-                <div class="col no-gutters">
-                    <h6>Filler Text: The United States uses and produces many different types and sources of energy,
-                        which can be grouped into general categories such as primary and secondary,
-                        renewable and nonrenewable, and fossil fuels.
-                        Primary energy sources include fossil fuels (petroleum, natural gas, and coal),
-                        nuclear energy, and renewable sources of energy.
-                        Electricity is a secondary energy source that is generated (produced)
-                        from primary energy sources.</h6>
+        </video>
+    </div>
+
+
+    <!--     ````````````````````````` SUB RES COMM STACKED CHART SECTION  `````````````````````````-->
+    <p>
+        <br><br><br>
+    </p>
+    <!--    <div class="container-fluid no-gutters">-->
+    <div class="row section-vis-row">
+        <div class="row">
+            <div class="col section-col">
+                <div class="center">
+                    <h5 class="scrollFade">Residential Energy Types</h5>
                 </div>
-                <div class="col no-gutters">
-                    <h6>Filler Text: Energy sources are measured in different physical units:
-                        liquid fuels in barrels or gallons, natural gas in cubic feet,
-                        coal in short tons, and electricity in kilowatts and kilowatthours.
-                        In the United States, British thermal units (Btu), a measure of heat energy,
-                        is commonly used for comparing different types of energy to each other.
-                        In 2021, total U.S. primary energy consumption was equal to about
-                        97,331,601,000,000,000 Btu, or about 97 quadrillion Btu.</h6>
+                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 5px">
+
+                    <div id="res-stacked-chart" style="height: 100%; width: 70%"></div>
+
+                </div>
+            </div>
+            <div class="col section-col">
+                <div class="center">
+                    <h5 class="scrollFade">Commercial Energy Types</h5>
+                </div>
+                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 2px">
+                    <div id="comm-stacked-chart" style="height: 100%; width: 70%"></div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row section-vis-row">
 
-    <div id="description"> Average Energy Consumption in kwH by State</div>
+        <div class="row">
 
+            <div class="col section-col">
+                <div class="center">
+                    <h5 class="scrollFade">Residential vs. Commercial</h5>
+                </div>
+                <div class="row justify-content-center" style="height:75vh; width: 75vh; ">
+                    <div id="res-comm-stacked-chart" style="height: 100%; width: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
 
+<!--    #################### CLIMATE ZONE Section ####################-->
+<div id="climate_zone__section">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center" class="scrollFade">
+            <h3 class="scrollFade"> Energy Consumption by Climate Zone <br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em>Compare how Energy Consumption differs by Climate Zone</em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <div class="center">
+        <video width="620" height="440" autoplay muted playsinline loop>
+            <source src="img/energy_type_speed.mp4" type="video/mp4">
 
-    <!--need to fix veiwing issue -- currently hard coding the viewing-->
-        <!-- fixed it but adjusting the css name of canvas -- all names of svg objects need to match the id names in html-->
-        <svg id='canvas-map'></svg>
-<!--        <div id='rightSide'>-->
-        <!-- need to add tooltip to html before adding a tooltip to the js file-->
-            <div id="map-tooltip"></div>
-        <!--need to make sure that the object is svg otherwise fill for svg region will not work-->
-<!--            <svg id="legend"> &lt;!&ndash; just adding the fill colors by adding rectangles that match those colors as a legend &ndash;&gt;-->
-<!--                <g>-->
-<!--                    <rect x="10" y="0" width="40" height="40" fill="#fbe2e5"></rect>-->
-<!--                    <text x="60" y="20" fill="white">First Quartile</text>-->
-<!--                </g>-->
-<!--                <g>-->
-<!--                    <rect x="10" y="40" width="40" height="40" fill="#f29ca7"></rect>-->
-<!--                    <text x="60" y="60" fill="white">Second Quartile</text>-->
-<!--                </g>-->
-<!--                <g>-->
-<!--                    <rect x="10" y="80" width="40" height="40" fill="#eb6979"></rect>-->
-<!--                    <text x="60" y="100" fill="white">Third Quartile</text>-->
-<!--                </g>-->
-<!--                <g>-->
-<!--                    <rect x="10" y="120" width="40" height="40" fill="#b2182b"></rect>-->
-<!--                    <text x="60" y="140" fill="white">Fourth Quartile</text>-->
-<!--                </g>-->
-<!--            </svg>-->
-
-<!--        </div>-->
-
-        <div class="container-fluid no-gutters">
-            <br>
-            <h5>How does energy consumption vary by climate zone?</h5>
-            <br>
-
-            <div class="container-fluid no-gutters">
-                <div class="row no-gutters" >
-                    <div class="col no-gutters">
-                        <h6>Filler Text: The United States uses and produces many different types and sources of energy,
-                            which can be grouped into general categories such as primary and secondary,
-                            renewable and nonrenewable, and fossil fuels.
-                            Primary energy sources include fossil fuels (petroleum, natural gas, and coal),
-                            nuclear energy, and renewable sources of energy.
-                            Electricity is a secondary energy source that is generated (produced)
-                            from primary energy sources.</h6>
-                    </div>
-                    <div class="col no-gutters">
-                        <h6>Filler Text: Energy sources are measured in different physical units:
-                            liquid fuels in barrels or gallons, natural gas in cubic feet,
-                            coal in short tons, and electricity in kilowatts and kilowatthours.
-                            In the United States, British thermal units (Btu), a measure of heat energy,
-                            is commonly used for comparing different types of energy to each other.
-                            In 2021, total U.S. primary energy consumption was equal to about
-                            97,331,601,000,000,000 Btu, or about 97 quadrillion Btu.</h6>
+        </video>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
+    <p>
+    <div class="center">
+        <h5 class="scrollFade"> Description of the Different Types of Climates in the US <br></h5>
+    </div>
+    <br>
+    <div class="center">
+        <h7 class="scrollFade"><em>(See the climate types for each US County from the map below)</em></h7>
+    </div>
+    <br><br><br>
+    </p>
+    <div class="container">
+        <div class="row gy-3 scrollFade">
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/cold.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Cold</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="title">
-                <h3> Energy consumption change throughout...</h3>
-            </div>
-
-            <div class="container" data-toggle="buttons" onchange="displayRadioValue()">
-                <label><input class="option-input radio" type="radio" name="energy_type" value="energy_total" checked>All</label>
-                <label><input class="option-input radio" type="radio" name="energy_type" value="electricity_total">Electricity</label>
-                <label><input class="option-input radio" type="radio" name="energy_type" value="fuelOil_total">Fuel Oil</label>
-                <label><input class="option-input radio" type="radio" name="energy_type" value="naturalGas_total">Natural Gas</label>
-                <label><input class="option-input radio" type="radio" name="energy_type" value="propane_total">Propane</label>
-            </div>
-
-
-
-            <div class="areaChart" id="areaChart-tooltip" style="height:100vh">
-                <div class="row no-gutters" style="height: 4vh">
-                    <div style="height: 100%; width:100%;"></div>
-                    <div style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-0" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-1" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-2" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-3" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-4" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-5" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-6" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-7" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-8" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-9" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-10" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-11" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-12" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-13" style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-14" style="height: 100%; width:100%;"></div>
-                    <div style="height: 100%; width:100%;"></div>
-                    <div id="areaChart-legend" style="height: 100%; width:100%;"></div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/dry.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Dry</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the
+                            card title and make up the bulk of the card's content. Some more quick example text for the
+                            card's content.</p>
+                    </div>
                 </div>
             </div>
-
-            <br><br><br>
-
-            <div class="row" style="height: 6vh">
-                <div class="col" id="areaChartMonth-0">col</div>
-                <div class="col" id="areaChartMonth-1">col</div>
-                <div class="col" id="areaChartMonth-2">col</div>
-                <div class="col" id="areaChartMonth-3">col</div>
-                <div class="col" id="areaChartMonth-4">col</div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/hot.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Hot</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
             </div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/humid.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Humid</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/Marine.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Marine</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/Mixed.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Mixed</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/subartic.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Subartic</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/very_cold.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Very Cold</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
 
-            <div class="container-fluid no-gutters">
-            <h5> Now, let's select the trickiest climate zones in the US and zoom in to understand the residential patterns </h5>
-            <br><br><br>
+    <!--     ````````````````````````` COUNTY MAP SECTION  `````````````````````````-->
+
+    <p>
+    <div class="center">
+        <h5 class="scrollFade"> This map shows how the US is divided by Climate Zones 1 - 8 <br></h5>
+    </div>
+    <br>
+    <div class="center">
+        <h7 class="scrollFade"><em>(Hover over a county to see which zone is falls under)</em></h7>
+    </div>
+    <br><br><br>
+    </p>
+
+    <div class="row gy-3">
+
+        <div class="col">
+
+        <svg id='county-map'></svg>
+
+    </div>
+<!--        <div class="row">-->
+        <div class="col">
+
+        <div id="county-tooltip"></div>
+<!--            </div>-->
+<!--                <div class="row">-->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--     ````````````````````````` TIME CHART SECTION  `````````````````````````-->
+    <div>
+
+
+
+
+        <div class="title">
+            <h5 class="scrollFade">Energy consumption change throughout...</h5>
+        </div>
+
+        <!--    <div id="userBubble" style="height:10vh"></div>-->
+
+        <div class="container" data-toggle="buttons" onchange="displayRadioValue()">
+            <label><input class="option-input radio" type="radio" name="energy_type" value="energy_total"
+                          checked>All</label>
+            <label><input class="option-input radio" type="radio" name="energy_type" value="electricity_total">Electricity</label>
+            <label><input class="option-input radio" type="radio" name="energy_type" value="fuelOil_total">Fuel
+                Oil</label>
+            <label><input class="option-input radio" type="radio" name="energy_type" value="naturalGas_total">Natural
+                Gas</label>
+            <label><input class="option-input radio" type="radio" name="energy_type"
+                          value="propane_total">Propane</label>
         </div>
 
 
-                <!--need to fix veiwing issue -- currently hard coding the viewing-->
-                <!-- fixed it but adjusting the css name of canvas -- all names of svg objects need to match the id names in html-->
+        <div class="areaChart" id="areaChart-tooltip" style="height:100vh">
+            <div class="row no-gutters" style="height: 4vh">
+                <div style="height: 100%; width:100%;"></div>
+                <div style="height: 100%; width:100%;"></div>
+                <div id="areaChart-0" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-1" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-2" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-3" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-4" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-5" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-6" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-7" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-8" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-9" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-10" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-11" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-12" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-13" style="height: 100%; width:100%;"></div>
+                <div id="areaChart-14" style="height: 100%; width:100%;"></div>
+                <div style="height: 100%; width:100%;"></div>
+                <div id="areaChart-legend" style="height: 100%; width:100%;"></div>
+            </div>
+        </div>
 
-            <svg id='county-map'></svg>
-                    <!-- need to add tooltip to html before adding a tooltip to the js file-->
-                    <div id="county-tooltip"></div>
-                    <!--need to make sure that the object is svg otherwise fill for svg region will not work-->
+        <br><br><br>
 
+        <div class="row" style="height: 10vh">
+            <div class="col-2" id="areaChartMonth-0"></div>
+            <div class="col-2" id="areaChartMonth-1"></div>
+            <div class="col-2" id="areaChartMonth-2"></div>
+            <div class="col-2" id="areaChartMonth-3"></div>
+            <div class="col-2" id="areaChartMonth-4"></div>
+        </div>
 
+        <div class="row" style="height: 10vh">
+            <div class="col-2" id="areaChartMonth-5"></div>
+            <div class="col-2" id="areaChartMonth-6"></div>
+            <div class="col-2" id="areaChartMonth-7"></div>
+            <div class="col-2" id="areaChartMonth-8"></div>
+            <div class="col-2" id="areaChartMonth-9"></div>
+        </div>
+
+        <div class="row" style="height: 10vh">
+            <div class="col-2" id="areaChartMonth-10"></div>
+            <div class="col-2" id="areaChartMonth-11"></div>
+            <div class="col-2" id="areaChartMonth-12"></div>
+            <div class="col-2" id="areaChartMonth-13"></div>
+            <div class="col-2" id="areaChartMonth-14"></div>
+        </div>
+
+    </div>
+    <br><br><br>
+</div>
+<!--    #################### BUILDING TYPE Section ####################-->
+<div id="building_type_section">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center" class="scrollFade">
+            <h3 class="scrollFade"> How Different Building Types Consume Energy <br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em>Compare the different types of energy Residential Buildings Consume</em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row gy-3 scrollFade">
+            <div class="col-sm">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/mobile_home.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Mobile Home</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/multi-2-4.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Multi Family 2-4</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the
+                            card title and make up the bulk of the card's content. Some more quick example text for the
+                            card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/multi-5.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Multi Family 5+</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/single-attached.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Single Attached</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/single-detached.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Single Detached</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk
+                            of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--     ````````````````````````` DENDO CHART SECTION  `````````````````````````-->
+    <br><br><br><br><br>
+    <div>
+        <div class="center">
             <div>
 
-            <br><br>
-            <h5>Climate Zones 4,5 and 6 consume a high amount of energy for heating and cooling. Therefore, let's dive deeper by understanding the average consumption by energy type! </h5>
-            <br>
+                <br><br>
+                <h5 class="scrollFade">Climate Zones 4,5 and 6 consume a high amount of energy for heating and cooling. Therefore, let's
+                    dive
+                    deeper! </h5>
+                <br>
+            </div>
         </div>
-
-        <button class = "button button4" onclick="updateButton(dendoFourURL)">Zone: 4</button>
-        <button class = "button button4" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
-        <button class = "button button4" onclick="updateButton(dendoSixURL)">Zone: 6</button>
-
-        <div class="row" style="height: 70vh; width:600vh; background: black; padding: 0;">
-            <svg id="dendo" xmlns="http://www.w3.org/2000/svg" style="overflow:auto"></svg>
-        </div>
-        <div class="row" style="height: 70vh; width:470vh; background: black; padding: 0;">
-            <svg id="sankey-chart"></svg>
+        <div class="center">
+            <div class="center">
+                <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                    <div id="buttonDendoDiv">
+                        <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone: 4</button>
+                        <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
+                        <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone: 6</button>
+                    </div>
+                    <script>
+                        // Add active class to the current button (highlight it)
+                        var header = document.getElementById("buttonDendoDiv");
+                        var btns = header.getElementsByClassName("button-dendo");
+                        for (var i = 0; i < btns.length; i++) {
+                            btns[i].addEventListener("click", function () {
+                                var current = document.getElementsByClassName("active");
+                                current[0].className = current[0].className.replace(" active", "");
+                                this.className += " active";
+                            });
+                        }
+                    </script>
+                    <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                        <svg id="dendo" width="75%" height="75%"></svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <p>
+        <br><br><br>
+    </p>
+</div>
+<!--    #################### BUILDING ATTRIBUTES Section ####################-->
+<div id="building_attributes_sections">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center" class="scrollFade">
+            <h3 class="scrollFade"> How to Reduce Energy Consumption In Your Own Home <br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em>Compare different elements and how they can reduce consuming different types of energy </em></h5>
+        </div>
+        <br><br><br>
+        </p>
     </div>
+<!--    <div class="row section-vis-row">-->
+<!--        <div class="row">-->
+<!--            <div class="col section-col">-->
 
-</body>
-<script defer src='js/map-state.js'></script>
+<!--&lt;!&ndash;    <div class="container-radar">&ndash;&gt;-->
+<!--        <div class="row justify-content-center" style="height:75vh; width: 75vw; background-color: transparent; padding: 5px">-->
+<!--        <div id="legend-radar" ></div>-->
+<!--        <div id="radar-chart" style="height: 90%; width: 90%"></div>-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="row section-vis-row">
 
-<script defer src="js/dendo.js"></script>
+        <div class="row">
 
-<script defer src='js/map-county.js'></script>
+            <div class="col section-col">
+                <div class="center">
+                    <div class="row justify-content-center" style="height:75vh; width: 75vh; ">
+                        <div class="up" style=" width: 75vh; ">&larr; UP</div>
+                        <div class="feature-tree" id="treemap-chart"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
+<div class="center">
+    <div class="scene scene--card-bar">
+        <div class="card-bar">
+            <div class="card-bar__face card-bar__face--front">Windows</div>
+            <div class="card-bar__face card-bar__face--back" id="stacked-barOne" style="height:100%; width: 100%;"></div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="scene scene--card-bar">
+        <div class="card-bar">
+            <div class="card-bar__face card-bar__face--front">Lighting</div>
+            <div class="card-bar__face card-bar__face--back" id="stacked-barTwo" style="height:100%; width: 100%;"></div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="scene scene--card-bar">
+        <div class="card-bar">
+            <div class="card-bar__face card-bar__face--front">Appliances</div>
+            <div class="card-bar__face card-bar__face--back" id="stacked-barThree" style="height:100%; width: 100%;"></div>
+        </div>
+    </div>
+</div>
+    <p>
+        <br><br><br>
+    </p>
+</div>
+<div id="state_incentives_section">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center">
+            <h3 class="scrollFade"> State Energy Incentives Available throughout the US<br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em>Compare the number of Incentives and Average Energy Consumption by State </em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <!--     ````````````````````````` US STATE ENERGY INCENTIVE CHART SECTION  `````````````````````````-->
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center">
+            <h5 class="scrollFade"> This map shows the average energy consumed and the number of incentives available by state <br></h5>
+        </div>
+        <br>
+        <div class="center">
+            <h7 class="scrollFade"><em>(Hover over each state to see the average energy consumed and the number of incentives)</em></h7>
+        </div>
+        <br><br><br>
+        </p>
+        <div class="center">
+            <svg id='state-map'></svg>
+            <div id="state-tooltip"></div>
+
+        </div>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
+</div>
+<!--    #################### ABOUT US Section ####################-->
+<div id="team_section">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center" >
+            <h3 class="scrollFade"> Our Team<br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em></em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row gy-3">
+            <div class="col-sm-3">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Aditi Memani</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Karen Kuo</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content. Some more quick example text for the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
+                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Oswald;">Kritika Kharbanda</h5>
+                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
+</div>
+<!--    #################### APPENDIX Section ####################-->
+<div id="appendix_section">
+    <div class="container-fluid no-gutters">
+        <p>
+        <div class="center">
+            <h3 class="scrollFade"> Sources <br></h3>
+        </div>
+        <br>
+        <div class="center">
+            <h5 class="scrollFade"><em> </em></h5>
+        </div>
+        <br><br><br>
+        </p>
+    </div>
+    <p>
+        <br><br><br>
+    </p>
+</div>
+<a href="#Main_Title" class="gotopbtn">
+    <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+<!--    <span class="visually-hidden"></span>-->
+</a>
+<!-- WRAPPER -->
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+
+<!-- TIME CHART -->
 
 <script src="js/AreaChartMain.js"></script>
 <script src="js/AreaChart.js"></script>
+<script src="js/AreaChartMonth.js"></script>
 <script src="js/AreaChartTooltip.js"></script>
 <script src="js/AreaChartLegend.js"></script>
-<script src="js/UserBubble.js"></script>
-<script src="js/res-stackedAreaChart.js"></script>
-<script src="js/res-timeline.js"></script>
 
+<!-- MAP CHARTS -->
+<script src="js/map-county.js"></script>
+<script src="js/map-state.js"></script>
 
-<!-- Load data, create visualizations -->
-<script src="js/res-main.js"></script>
+<!-- RES COMM STACKED CHARTS -->
 
+<script src="js/res-chart/res-main.js"></script>
+<script src="js/res-chart/res_cat_stackedAreaChart.js"></script>
+
+<script src="js/comm-chart/comm-main.js"></script>
+<script src="js/comm-chart/comm_stackedAreaChart.js"></script>
+
+<script src="js/res-comm-chart/resComm-main.js"></script>
+<script src="js/res-comm-chart/resComm_stackedAreaChart.js"></script>
+<!--&lt;!&ndash; RADAR CHARTS &ndash;&gt;-->
+<!--<script src="other_js/radar-chart.js"></script>-->
+<!-- stacked Bar CHARTS -->
+<script src="js/stackedBar1.js"></script>
+<script src="js/flipStackedBarChartv1.js"></script>
+<!-- DENDO CHARTS -->
+<script src="js/dendo.js"></script>
+<!-- TREEMAP CHARTS -->
+<script src="js/treemap.js"></script>
+<!-- NAV BAR COMPONENTS -->
+<script src="js/toTheTop.js"></script>
+<script src="js/fadein-scroll.js"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
 </html>

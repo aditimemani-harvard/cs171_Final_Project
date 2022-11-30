@@ -3,21 +3,19 @@
 * * * * * * * * * * * * * */
 
 // init global variables & switches
-let myAreaChart0;
-let myAreaChart1;
-let myAreaChart2;
-let myAreaChart3;
-let myAreaChart4;
-let myAreaChart5;
-let myAreaChart6;
-let myAreaChart7;
-let myAreaChart8;
-let myAreaChart9;
-let myAreaChart10;
-let myAreaChart11;
-let myAreaChart12;
-let myAreaChart13;
-let myAreaChart14;
+let myAreaChart0, myAreaChart1, myAreaChart2, myAreaChart3, myAreaChart4, myAreaChart5, myAreaChart6, myAreaChart7;
+let myAreaChart8, myAreaChart9, myAreaChart10, myAreaChart11, myAreaChart12, myAreaChart13, myAreaChart14;
+
+let charts = ['areaChart-0','areaChart-1', 'areaChart-2','areaChart-3', 'areaChart-4',
+            'areaChart-5','areaChart-6', 'areaChart-7','areaChart-8', 'areaChart-9',
+            'areaChart-10','areaChart-11', 'areaChart-12','areaChart-13', 'areaChart-14']
+
+let myAreaChartMonth0, myAreaChartMonth1, myAreaChartMonth2, myAreaChartMonth3, myAreaChartMonth4, myAreaChartMonth5;
+let myAreaChartMonth6, myAreaChartMonth7, myAreaChartMonth8, myAreaChartMonth9, myAreaChartMonth10, myAreaChartMonth11;
+let myAreaChartMonth12, myAreaChartMonth13, myAreaChartMonth14;
+
+
+
 let myAreaChartLegend;
 let myUserBubbleOne;
 
@@ -39,16 +37,37 @@ let promises = [
     d3.csv("data/tot_min/f2b_tot_min.csv"),
     d3.csv("data/tot_min/f3a_tot_min.csv"),
     d3.csv("data/tot_min/f3b_tot_min.csv"),
+
     d3.csv("data/tot_min/f3c_tot_min.csv"),
     d3.csv("data/tot_min/f4a_tot_min.csv"),
     d3.csv("data/tot_min/f4b_tot_min.csv"),
     d3.csv("data/tot_min/f4c_tot_min.csv"),
     d3.csv("data/tot_min/f5a_tot_min.csv"),
+
     d3.csv("data/tot_min/f5b_tot_min.csv"),
     d3.csv("data/tot_min/f6a_tot_min.csv"),
     d3.csv("data/tot_min/f6b_tot_min.csv"),
     d3.csv("data/tot_min/f7a_tot_min.csv"),
     d3.csv("data/tot_min/f7b_tot_min.csv"),
+
+    d3.csv("data/tot_month/f1a_tot_month.csv"),
+    d3.csv("data/tot_month/f2a_tot_month.csv"),
+    d3.csv("data/tot_month/f2b_tot_month.csv"),
+    d3.csv("data/tot_month/f3a_tot_month.csv"),
+    d3.csv("data/tot_month/f3b_tot_month.csv"),
+
+    d3.csv("data/tot_month/f3c_tot_month.csv"),
+    d3.csv("data/tot_month/f4a_tot_month.csv"),
+    d3.csv("data/tot_month/f4b_tot_month.csv"),
+    d3.csv("data/tot_month/f4c_tot_month.csv"),
+    d3.csv("data/tot_month/f5a_tot_month.csv"),
+
+    d3.csv("data/tot_month/f5b_tot_month.csv"),
+    d3.csv("data/tot_month/f6a_tot_month.csv"),
+    d3.csv("data/tot_month/f6b_tot_month.csv"),
+    d3.csv("data/tot_month/f7a_tot_month.csv"),
+    d3.csv("data/tot_month/f7b_tot_month.csv"),
+
 ];
 
 Promise.all(promises)
@@ -61,9 +80,6 @@ Promise.all(promises)
     });
 
 
-
-let datasets = {}
-
 function cleanData(dataArray){
     for (let j=0; j<15; j++) {
         for (let i = 0; i < dataArray[j].length; i++) {
@@ -74,24 +90,26 @@ function cleanData(dataArray){
             dataArray[j][i]['fuelOil_total'] = +dataArray[j][i]['fuelOil_total'];
             dataArray[j][i]['naturalGas_total'] = +dataArray[j][i]['naturalGas_total'];
             dataArray[j][i]['propane_total'] = +dataArray[j][i]['propane_total'];
-            dataArray[j][i]['time'] = +dataArray[j][i]['timestamp'].replace(/[^0-9]/g, '');
+            dataArray[j][i]['hr'] = +dataArray[j][i]['hr'];
+            dataArray[j][i]['min'] = +dataArray[j][i]['min'];
+            dataArray[j][i]['sec'] = (+dataArray[j][i]['hr'])*3600 + (+dataArray[j][i]['min'])*60
         }
-
-        for (let i = 0; i < dataArray[j].length; i++) {
-            if (i < 40 && i >= 4) {
-                if (dataArray[j][i]['time'] < 100) {
-                    dataArray[j][i]['time'] = dataArray[j][i]['time'] * 10
-                }
-            }
-            if (i >=40) {
-                if (dataArray[j][i]['time'] < 1000) {
-                    dataArray[j][i]['time'] = dataArray[j][i]['time'] * 10
-                }
-            }
-        }
-        datasets[j] = dataArray[j];
     }
-    // console.log("cleanedData: ", dataArray)
+
+    for (let k=15; k<30; k++) {
+        for (let i = 0; i < dataArray[k].length; i++) {
+            dataArray[k][i]['electricity_net'] = +dataArray[k][i]['electricity_net'];
+            dataArray[k][i]['electricity_total'] = +dataArray[k][i]['electricity_total'];
+            dataArray[k][i]['energy_net'] = +dataArray[k][i]['energy_net'];
+            dataArray[k][i]['energy_total'] = +dataArray[k][i]['energy_total'];
+            dataArray[k][i]['fuelOil_total'] = +dataArray[k][i]['fuelOil_total'];
+            dataArray[k][i]['naturalGas_total'] = +dataArray[k][i]['naturalGas_total'];
+            dataArray[k][i]['propane_total'] = +dataArray[k][i]['propane_total'];
+            dataArray[k][i]['month'] = +dataArray[k][i]['month'];
+            dataArray[k][i]['hr'] = +dataArray[k][i]['hr'];
+        }
+    }
+    console.log("cleanedData: ", dataArray)
     initMainPage(dataArray);
 }
 
@@ -125,6 +143,22 @@ function initMainPage(dataArray) {
     myAreaChart13 = new AreaChart('areaChart-13', dataArray[13], dataList[13]);
     myAreaChart14 = new AreaChart('areaChart-14', dataArray[14], dataList[14]);
 
+    myAreaChartMonth0 = new AreaChartMonth('areaChartMonth-0', dataArray[15], dataList[0], 15);
+    myAreaChartMonth1 = new AreaChartMonth('areaChartMonth-1', dataArray[16], dataList[1], 16);
+    myAreaChartMonth2 = new AreaChartMonth('areaChartMonth-2', dataArray[17], dataList[2], 17);
+    myAreaChartMonth3 = new AreaChartMonth('areaChartMonth-3', dataArray[18], dataList[3], 18);
+    myAreaChartMonth4 = new AreaChartMonth('areaChartMonth-4', dataArray[19], dataList[4], 19);
+    myAreaChartMonth5 = new AreaChartMonth('areaChartMonth-5', dataArray[20], dataList[5], 20);
+    myAreaChartMonth6 = new AreaChartMonth('areaChartMonth-6', dataArray[21], dataList[6],21);
+    myAreaChartMonth7 = new AreaChartMonth('areaChartMonth-7', dataArray[22], dataList[7],22);
+    myAreaChartMonth8 = new AreaChartMonth('areaChartMonth-8', dataArray[23], dataList[8],23);
+    myAreaChartMonth9 = new AreaChartMonth('areaChartMonth-9', dataArray[24], dataList[9],24);
+    myAreaChartMonth10 = new AreaChartMonth('areaChartMonth-10', dataArray[25], dataList[10],25);
+    myAreaChartMonth11 = new AreaChartMonth('areaChartMonth-11', dataArray[26], dataList[11],26);
+    myAreaChartMonth12 = new AreaChartMonth('areaChartMonth-12', dataArray[27], dataList[12],27);
+    myAreaChartMonth13 = new AreaChartMonth('areaChartMonth-13', dataArray[28], dataList[13],28);
+    myAreaChartMonth14 = new AreaChartMonth('areaChartMonth-14', dataArray[19], dataList[14],29);
+
 }
 
 
@@ -152,5 +186,59 @@ function displayRadioValue() {
     myAreaChart13.updateVis();
     myAreaChart14.updateVis();
 
+    myAreaChartMonth0.updateVis();
+    myAreaChartMonth1.updateVis();
+    myAreaChartMonth2.updateVis();
+    myAreaChartMonth3.updateVis();
+    myAreaChartMonth4.updateVis();
+    myAreaChartMonth5.updateVis();
+    myAreaChartMonth6.updateVis();
+    myAreaChartMonth7.updateVis();
+    myAreaChartMonth8.updateVis();
+    myAreaChartMonth9.updateVis();
+    myAreaChartMonth10.updateVis();
+    myAreaChartMonth11.updateVis();
+    myAreaChartMonth12.updateVis();
+    myAreaChartMonth13.updateVis();
+    myAreaChartMonth14.updateVis();
+
     console.log(button_chart_value)
+}
+
+loadData()
+let climateData;
+
+function loadData() {
+    d3.csv('data/other/climate_zones.csv', row => {
+
+        //State,State FIPS,County FIPS,IECC Climate Zone,IECC Moisture Regime,BA Climate Zone,County Name
+        // AK,2,13,7,N/A,Very Cold,Aleutians East
+
+        row['State FIPS'] = +row['State FIPS'];
+        row['County FIPS'] = +row['County FIPS'];
+        row['IECC Climate Zone'] = +row['IECC Climate Zone'];
+
+        return row
+    }).then(csv => {
+
+        // Store csv data in global variable
+        climateData = csv;
+    });
+}
+
+
+
+function displayUserValue(){
+    let content = d3.select("#your-input").property('value');
+    console.log("user selected: ", content)
+    console.log("climateData: ", climateData)
+
+    var answer = d3.select("#your-answer")
+
+    for (let i=0; i<climateData.length; i++){
+        if (content === climateData[i]['County Name']){
+            answer.text(climateData[i]['County Name'] + ": Climate Zone" + " " + climateData[i]['IECC Climate Zone'] +
+                climateData[i]['IECC Moisture Regime'] + " / " + climateData[i]['BA Climate Zone']);
+        }
+    }
 }

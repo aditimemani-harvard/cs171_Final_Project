@@ -1,14 +1,19 @@
 let countyURL ='data/us_county.json'
-let climateURL = 'data/climate_fips.csv'
+let climateURL = 'data/climate_fips_sub_type.csv'
 console.log(d3)
 console.log(topojson)
 let countyData
-let climateData
-let colors = ['#F8F9FA', '#CED4DA', '#6C757D', '#641220', '#85182A', '#A71E34', '#BD1F36', '#DA1E37'];
+// let climateData
+let colorCounty = ['#F8F9FA', '#CED4DA', '#6C757D', '#641220', '#85182A', '#A71E34', '#BD1F36', '#DA1E37'];
 
+let imageScalePath = ['img/climate_type/cold.png','img/climate_type/dry.png', 'img/climate_type/hot.png', 'img/climate_type/humid.png', 'img/climate_type/marine.png',  'img/climate_type/subartic.png', 'img/climate_type/very_cold.png', 'img/climate_type/hot.png', 'img/climate_type/mixed.png', 'img/climate_type/mixed.png']
+let imageScaleSrc = ['Cold','Dry', 'Hot', 'Humid', 'Marine', 'Subartic','Very Cold', 'Hot/Humid', 'Humid/Mixed', 'Mixed']
+var imageScale = d3.scaleOrdinal().domain(imageScaleSrc).range(imageScalePath)
 
 let canvasCounty = d3.select('#county-map').append('svg') // needs to match name in css file
 let countyTooltip = d3.select('#county-tooltip')
+let countyIcon = d3.select('#county-icon')
+
 
 let drawCountyMap = () => {
     var dataArray = [];
@@ -19,8 +24,9 @@ let drawCountyMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220','#DA1E37'])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220'])
     var projection = d3.geoAlbersUsa()
+    console.log(countyData.features)
     canvasCounty.selectAll('path')
         .data(countyData.features)
         .enter()
@@ -31,39 +37,16 @@ let drawCountyMap = () => {
         //countyDataItem refers to the county level array object from the topojson file
         .attr('fill', (countyDataItem) => {
             //we're matching the topojson arrays to the corresponding climate data based on the FIPS code
-            //id is an element in each array row that identifies the FIPS code for that county
-            //now will match that fips id code with the fips id code for the climate data
-            //find method find the first object where the boolean expression is true
-            //county refers to the county level row for the climateData file
-            //county is each data row in the climateData
 
 
-            //want to find the fips code that matches the id of the topojson county specific array
 
-            // now we need to pull the associated data that we want to color based upon
-            let percentage = countyDataItem.properties.zone
+              let percentage = countyDataItem.properties.zone
             // creating color bins for each county based on associated value
              return colorScale(percentage)//more than 45
         })
-    // stating that data-fips is now the id code from the topojson file
-    //     .attr('data-fips', (countyDataItem)=> { return countyDataItem['id']})
-    //     // stating that data-climate is now the value of a column that has the same fips code stated in the climateData
-    //     .attr('data-climate', (countyDataItem)=> {
-    //         //first pull id code from topojson arrays
-    //         let id = countyDataItem['id']
-    //         //next pull matching code from fips column in edudata
-    //         let county = climateData.find((county) => {
-    //             return +county['fips'] === id
-    //             })
-    //         //now pull data from corresponding column
-    //         let percentage = +county['climate']
-    //         //and return that corresponding value
-    //         return percentage
-    //         //double check that each d object in svg section in console has these new parameters
-    //         //should show a bunch of d values and then 'data-fips','data-climate'
-    //         })
+
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
-        .on('mouseover', (countyDataItem)=>{
+        .on('mouseover', function(event,countyDataItem){
             //since default is hidden we're switching it to visible
             countyTooltip.transition()
                 .style('visibility', 'visible')
@@ -72,25 +55,53 @@ let drawCountyMap = () => {
             let county = climateData.find((county) => {
                 return +county['fips'] === id
             })
-            //now we're setting the text for the tooltip using just the climate data that corresponds to the id code of the topojson file
-            // countyTooltip.text(countyDataItem.properties.code +
-            //     '\n'+' Zone: ' + countyDataItem.properties.zone)
-            countyTooltip
-                .html(`<span >${countyDataItem.properties.code}</span>
-                        <br>
-                        <span>Zone: ${countyDataItem.properties.zone}</span>`)
-                .attr('data-climate', countyDataItem.properties.zone)
-                .style("left", d3.event.pageX + "px")
-                .style("top", d3.event.pageY - 28 + "px");
-            // countyTooltip.text(county['AreaName'] + ', ' +
-            //     county['code'] + ' : ' + county['climate'])
-            //now we need to add the derived value for each county to the countyTooltip by geolocation
-            // countyTooltip.attr('data-climate', county['climate'])
+                 countyTooltip
+                 .attr("x", document.getElementById('county-map').getBoundingClientRect().width-100)
+                 .attr("y", 0)
+                     .html(`<div class="col">
+<div class="center">
+                  <span >${countyDataItem.properties.code}, ${countyDataItem.properties.stateCode}</span>
+                  </div>
+<!--                        <br>-->
+                        <div class="center">
+                     <span>Zone: ${countyDataItem.properties.zone}</span>
+                     </div>
+<!--                    <br>-->
+                    <div class="center">
+                     <span>Sub-Zone: ${countyDataItem.properties.subZone}</span>
+                     </div>
+<!--                    <br>-->
+                    <div class="center">
+                     <span>Climate: ${countyDataItem.properties.zoneType}</span>
+                     </div>
+<!--                 <br>-->
+<!--                 <div class="center">-->
+<!--                 <span>Climate Description: </span><br>-->
+<!--                 </div>-->
+                 <br>
+                 <div class="center">
+                 <img src=${countyDataItem.properties.picSrc} width="50%" height="auto"></div></div>`)
+                     .attr('data-climate', countyDataItem.properties.zone)
+                     .attr('data-subZone', countyDataItem.properties.subZone)
+                     .attr('data-climateType', countyDataItem.properties.zoneType)
+                     .attr('data-climatePic', countyDataItem.properties.picSrc)
+                // .style("left", (event.pageX-15)+ "px")
+                // .style("top", (event.pageY+5) + "px");
+            d3.select(this)
+                .style("stroke", "white")
+                .style("opacity", 1)
+            countyIcon.transition()
+                .style('visibility', 'visible')
+
         })
         //now adding what happens once mouse is no longer there by hiding the countyTooltip
-        .on('mouseout', (countyDataItem) => {
+        .on('mouseout', function(event,countyDataItem){
             countyTooltip.transition()
                 .style('visibility', 'hidden')
+            d3.select(this)
+                // style("opacity", 0.5)
+                .style("stroke", "none")
+            // .style("opacity", "0.5");
         })
 }
 
@@ -102,18 +113,15 @@ d3.json(countyURL).then(
         }
         else{
             console.log(topoData)
-            // countyData = topoData
+
             // need to convert topojson features into geojson so d3 can understand it
-            //county data is id-ed by the FIPS code
+
             countyData = topoData//only want the feature portion of the array that have the geolines
-            // need 2 arguments to do this
-            // first argument: the name of the topojson argument when called in the promise i.e.topoData
-            // second argument: the type of datat needed from the topojson data
-            console.log('County Data')
+                    console.log('County Data')
             console.log(countyData)
 
             // now that the countyURL promise has been resolved we need to nest the climate data within
-            d3.csv(climateURL).then(
+            d3.csv('data/climate_fips_sub_type.csv').then(
                 (data, error) => {
                     if(error){
                         console.log(error)
@@ -132,7 +140,11 @@ d3.json(countyURL).then(
 
                             // Grab data value
                             var dataValue =  +climateData[i].climate;
+                            var dataSubZone =  climateData[i].sub_zone;
+                            var dataType =  climateData[i].climate_type;
+                            var dataPicSrc = imageScale(climateData[i].climate_type);
                             var dataCode =  climateData[i].AreaName;
+                            var dataStateCode =  climateData[i].code;
 
                             // Find the corresponding state inside the GeoJSON
                             for (var j = 0; j < countyData.features.length; j++) {
@@ -142,7 +154,11 @@ d3.json(countyURL).then(
 
                                     // Copy the data value into the JSON
                                     countyData.features[j].properties.zone = dataValue;
+                                    countyData.features[j].properties.subZone = dataSubZone;
+                                    countyData.features[j].properties.zoneType = dataType;
                                     countyData.features[j].properties.code = dataCode;
+                                    countyData.features[j].properties.picSrc = dataPicSrc;
+                                    countyData.features[j].properties.stateCode = dataStateCode;
 
                                     // Stop looking through the JSON
                                     break;

@@ -1,29 +1,26 @@
 dendoSixURL = "data/zone6.json"
 dendoFiveURL = "data/zone5.json"
 dendoFourURL = "data/zone4.json"
-var margin = {top: 15, right: 15, bottom: 15, left: 25},
-    width = window.innerWidth - -margin.left - margin.right
-    height = window.innerHeight - margin.top - margin.bottom;;
 
-// append the svg object to the body of the page
-// appends a 'group' element to 'svg'
-// moves the 'group' element to the top left margin
+var margin = {top: 15, right: 15, bottom: 15, left: 25}
+    width = window.innerWidth,
+    height = window.innerHeight;
 var svg = d3.select("#dendo").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate("
         + margin.left + "," + margin.top + ")");
+let formatDecimal_dendo = d3.format(",.2f");
 
 var i = 0,
     duration = 750,
     root;
 
 // declares a tree layout and assigns the size
-var treemap = d3.tree().size([height / 2, width / 2]);
-function updateButton(dataURL) {
+var treemap = d3.tree().size([height/2, width/2]);
+function updateButton (dataURL) {
     d3.json(dataURL).then(function (treeData) {
-
         // Assigns parent, children, height, depth
         root = d3.hierarchy(treeData, function (d) {
             return d.children;
@@ -56,7 +53,7 @@ function updateButton(dataURL) {
 
             // Normalize for fixed-depth.
             nodes.forEach(function (d) {
-                d.y = d.depth * 170+10
+                d.y = d.depth * 180
             });
 
             // ****************** Nodes section ***************************
@@ -71,23 +68,23 @@ function updateButton(dataURL) {
             var nodeEnter = node.enter().append('g')
                 .attr('class', 'node')
                 .attr("transform", function (d) {
-                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                    return "translate(" + source.y0 + "," + source.x0 / 2 + ")";
                 })
                 .on('click', click);
 
             // Add Circle for the nodes
             nodeEnter.append('circle')
                 .attr('class', 'node')
-                .attr('r', 1e-6)
+                .attr('r', 1e-10)
                 .style("fill", function (d) {
-                    return d._children ? '#CED4DA' : '#641220';
+                    return d._children ? "#d6604d" : "#b2182b";
                 });
 
             // Add labels for the nodes
             nodeEnter.append('text')
-                .attr("dy", ".35em")
+                .attr("dy", ".2em")
                 .attr("x", function (d) {
-                    return d.children || d._children ? -11 : 10;
+                    return d.children || d._children ? -6 : 6;
                 })
                 .attr("text-anchor", function (d) {
                     return d.children || d._children ? "end" : "start";
@@ -95,7 +92,7 @@ function updateButton(dataURL) {
                 .attr('fill', 'white')
                 .text(function (d) {
                     if (d.height > 0) return d.data.name;
-                    return d.data.name + ": " + d.data.value;
+                    return d.data.name + ": " + formatDecimal_dendo(d.data.value)+ ' kWh';
                 });
 
             // UPDATE
@@ -110,9 +107,9 @@ function updateButton(dataURL) {
 
             // Update the node attributes and style
             nodeUpdate.select('circle.node')
-                .attr('r', 10)
+                .attr('r', 4)
                 .style("fill", function (d) {
-                    return d._children ? '#CED4DA' : '#A71E34';
+                    return d._children ? "#808080" : "#85182A";
                 })
                 .attr('cursor', 'pointer');
 
@@ -145,7 +142,7 @@ function updateButton(dataURL) {
             var linkEnter = link.enter().insert('path', "g")
                 .attr("class", "link")
                 .attr('d', function (d) {
-                    var o = {x: source.x0 / 2, y: source.y0}
+                    var o = {x: source.x0, y: source.y0}
                     return diagonal(o, o)
                 });
 
@@ -170,7 +167,7 @@ function updateButton(dataURL) {
 
             // Store the old positions for transition.
             nodes.forEach(function (d) {
-                d.x0 = d.x / 2;
+                d.x0 = d.x;
                 d.y0 = d.y;
             });
 
@@ -178,15 +175,15 @@ function updateButton(dataURL) {
             function diagonal(s, d) {
 
                 path = `M ${s.y} ${s.x}
-                C ${(s.y + d.y) / 2} ${s.x},
-                  ${(s.y + d.y) / 2} ${d.x / 3},
-                  ${d.y} ${d.x}`
+                    C ${(s.y + d.y) / 2} ${s.x},
+                      ${(s.y + d.y) / 2} ${d.x / 3},
+                      ${d.y} ${d.x}`
 
                 return path
             }
 
             // Toggle children on click.
-            function click(d) {
+            function click(event, d) {
                 if (d.children) {
                     d._children = d.children;
                     d.children = null;
@@ -197,7 +194,27 @@ function updateButton(dataURL) {
                 update(d);
             }
         }
-
     })
 }
 updateButton(dendoFourURL)
+
+// const btnDendo4 = document.getElementById('btnDendo4');
+//
+// btnDendo4.addEventListener('click', function onClick() {
+//     btnDendo4.style.backgroundColor = '#85182A';
+//     btnDendo4.style.color = 'white';
+// });
+//
+// const btnDendo5 = document.getElementById('btnDendo5');
+//
+// btnDendo5.addEventListener('click', function onClick() {
+//     btnDendo5.style.backgroundColor = '#85182A';
+//     btnDendo5.style.color = 'white';
+// });
+//
+// const btnDendo6 = document.getElementById('btnDendo6');
+//
+// btnDendo6.addEventListener('click', function onClick() {
+//     btnDendo6.style.backgroundColor = '#85182A';
+//     btnDendo6.style.color = 'white';
+// });
