@@ -307,6 +307,17 @@ button{
 .option-input.radio::after {
     border-radius: 80%;
 }
+
+/*###############INTRODUCTION#####################*/
+/*.main{padding-top: 50px; padding-left: 50px; padding-right: 50px;}*/
+/*body{background-color: rgba(0, 0, 0, 0.99);}*/
+#introduction{padding-left: 0px;padding-right: 0px;padding-top: 0px;}
+.intro_text-legend-year, .intro_text-legend-temp { font-family: Helvetica; font-weight:normal ; color: white; fill: white; font-size: 10px; }
+.intro_text-legend-display, .intro_text-legend-country {font-family: Helvetica; font-weight: lighter; font-size: 4px; }
+.intro_tooltip_circle_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 40px; fill: white;}
+.intro_tooltip_circle_chart_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 20px; fill: white;}
+.intro_legend_country_text{ font-family: "Times New Roman"; font-weight:normal ; color: white; fill: white; font-size: 10px; }
+
 /*##################DENDO STYLES##################*/
 .card-img-top {
     width: 100%;
