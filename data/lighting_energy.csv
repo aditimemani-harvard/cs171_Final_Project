@@ -1,0 +1,4 @@
+group,Incandescent,Halogen,CFL,LED
+energyUsedperYear(per 100),0.82,0.58,0.21,0.06
+cost,0.94,7,3.33,4.99
+ratedLife(per 5 years),0.2,0.4,1.6,3.6

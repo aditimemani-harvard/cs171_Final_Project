@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TEST-STACKED</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/AreaChartStyles.css">
+<!--    <link href="css/style.css" rel="stylesheet">-->
+
+
+<!--    <link rel="stylesheet" type="text/css" href="css/set2.css" />-->
+<!--    <link href="css/globeEvents.css" rel="stylesheet">-->
+</head>
+
+
+<body>
+<p>
+    <br><br><br>
+</p>
+
+<div class="scene scene--card-bar">
+    <div class="card-bar">
+        <div class="card-bar__face card-bar__face--front">Windows</div>
+<div class="card-bar__face card-bar__face--back" id="stacked-barOne" style="height:100%; width: 100%;"></div>
+                </div>
+        </div>
+
+<div class="scene scene--card-bar">
+    <div class="card-bar">
+        <div class="card-bar__face card-bar__face--front">Lighting</div>
+        <div class="card-bar__face card-bar__face--back" id="stacked-barTwo" style="height:100%; width: 100%;"></div>
+    </div>
+</div>
+
+<div class="scene scene--card-bar">
+    <div class="card-bar">
+        <div class="card-bar__face card-bar__face--front">Appliances</div>
+        <div class="card-bar__face card-bar__face--back" id="stacked-barThree" style="height:100%; width: 100%;"></div>
+    </div>
+</div>
+
+<p>
+    <br><br><br>
+</p>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+
+<!-- TIME CHART -->
+
+<script src="js/AreaChartMain.js"></script>
+<script src="js/AreaChart.js"></script>
+<script src="js/AreaChartMonth.js"></script>
+<script src="js/AreaChartTooltip.js"></script>
+<script src="js/AreaChartLegend.js"></script>
+
+<!-- MAP CHARTS -->
+<script src="js/map-county.js"></script>
+<script src="js/map-state.js"></script>
+
+<!-- RES COMM STACKED CHARTS -->
+
+<script src="js/res-chart/res-main.js"></script>
+<script src="js/res-chart/res_cat_stackedAreaChart.js"></script>
+
+<script src="js/comm-chart/comm-main.js"></script>
+<script src="js/comm-chart/comm_stackedAreaChart.js"></script>
+
+<script src="js/res-comm-chart/resComm-main.js"></script>
+<script src="js/res-comm-chart/resComm_stackedAreaChart.js"></script>
+<!--&lt;!&ndash; RADAR CHARTS &ndash;&gt;-->
+<!--<script src="other_js/radar-chart.js"></script>-->
+<!-- stacked Bar CHARTS -->
+<script src="js/stackedBar1.js"></script>
+<script src="js/flipStackedBarChartv1.js"></script>
+<!-- DENDO CHARTS -->
+<script src="js/dendo.js"></script>
+<!-- TREEMAP CHARTS -->
+<script src="js/treemap.js"></script>
+<!-- NAV BAR COMPONENTS -->
+<script src="js/toTheTop.js"></script>
+<script src="js/fadein-scroll.js"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

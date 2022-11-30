@@ -1,0 +1,4 @@
+group,Standard Ceiling Fan,Energyplus Ceiling Fan,Standard Washing machine,Energyplus Washing machine,Standard Dishwasher,Energyplus Dishwasher
+energyUsed,1.68,1.45,4.5,0.56,1.5,0.56
+cost ($1000),0.175,0.3,0.7,1.05,1,1.2
+ratedLife (per Decade),1,1,1.2,1.2,1.5,2

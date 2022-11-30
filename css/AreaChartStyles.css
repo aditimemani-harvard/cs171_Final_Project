@@ -1,0 +1,697 @@
+/*#################Navigation Bar#####################*/
+.active{}
+
+.nav-link{
+    font-family: Oswald;
+}
+
+nav .navbar-nav li a{
+    color: #85182A !important;
+}
+.gotopbtn
+{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #A71E34;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-size: 32px;
+}
+a:hover {
+    color: black;
+}
+
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scrollFade--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scrollFade--visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scrollFade--animate {
+    transition: opacity 1.5s ease-in-out;
+}
+
+/*#################TYPICAL CHANGES#####################*/
+body{
+    background-color: #000000;
+    /*padding-top: 5px;*/
+    /*padding-left: 5px;*/
+    /*padding-right: 5px;*/
+    scroll-behavior: smooth;
+}
+
+h1{
+    font-family: Oswald;
+    color: white;
+    font-size: 100px;
+    line-height: 70px;
+}
+
+h3{
+    font-family: Oswald;
+    align-content: center;
+    color: white;
+    font-size: 40px;
+    line-height: 70px;
+}
+
+h5{
+    font-family: Oswald;
+    font-weight: lighter;
+    color: white;
+    font-size: 20px;
+}
+
+h6{
+    color: white;
+    font-family: Oswald;
+    font-weight: lighter;
+    padding-top: 12px;
+    font-size: 12px;
+    border-top: 0.1px solid white;
+}
+h7{
+    color: white;
+    font-family: Oswald;
+    font-weight: lighter;
+    padding-top: 12px;
+    font-size: 12px;
+    border-top: 0.1px solid white;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    position: center;
+
+    /*padding-left: 100px;*/
+    /*padding-right: 100px;*/
+}
+
+
+.label {
+    font-family: Oswald;
+    font-weight:normal ;
+    color: white;
+    fill: white;
+    font-size: 12px;
+}
+
+.tooltip_text_desc_min {
+    font-family: Oswald;
+    font-weight:normal ;
+    color: white;
+    fill: rgba(255, 255, 255, 0.5);
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.tooltip_text_desc_max{
+    font-family: Oswald;
+    font-weight:normal ;
+    color: white;
+    fill: rgba(255, 255, 255, 0.5);
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.tooltip_text{
+    font-family: Oswald;
+    font-weight: lighter;
+    color: white;
+    font-size: 40px;
+    fill: white;
+}
+
+.tooltip_chart_text{
+    font-family: Oswald;
+    font-weight:normal ;
+    color: white;
+    fill: rgba(255, 255, 255, 0.75);
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.text-legend{
+    font-family: Oswald;
+    font-weight:normal ;
+    font-size: 12px;
+}
+
+.title{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*height: 200px;*/
+    /*border: 3px solid green;*/
+}
+
+input{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    stroke: none;
+    height: 120px;
+    width: 120px;
+
+    text-align: center;
+    position: relative;
+
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 60px;
+
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+}
+
+button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+
+    text-align: center;
+    position: relative;
+
+    color: #A71E34;
+    background-color: rgba(255, 255, 255, 1.0);
+    stroke: none;
+    height: 60px;
+    width: 60px;
+
+    text-align: center;
+    position: relative;
+
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 30px;
+
+    top: 30px;
+    right: 5px;
+    bottom: 0px;
+    left: -20px;
+
+}
+
+button{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+.container{
+    /*padding-left: 0px;*/
+    /*padding-right: 0px;*/
+}
+
+.no-gutters {
+    /*margin-right: 0px;*/
+    /*margin-left: 0px;*/
+}
+
+
+.container{
+    font-family: Oswald;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    alignment: center;
+    position: relative;
+
+}
+
+
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 5px;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+    height: 30px;
+    width: 30px;
+    transition: all 0.15s ease-out 0s;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: center;
+    z-index: 1000;
+}
+.option-input:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+.option-input:checked {
+    background: rgba(255, 255, 255, 0.8);
+}
+.option-input:checked::before {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    /*content: "\f111";*/
+    /*font-family: "Font Awesome 5 Free";*/
+    display: inline-block;
+    /*font-size: 10px;*/
+    text-align: center;
+    line-height: 40px;
+}
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.25s;
+    -moz-animation: click-wave 0.25s;
+    animation: click-wave 0.25s;
+    background: rgba(255, 255, 255, 0.8);
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 80%;
+}
+.option-input.radio::after {
+    border-radius: 80%;
+}
+/*##################DENDO STYLES##################*/
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+
+    border-color: black;
+}
+.card h-100{
+    border-color: black;
+    background-color: black;
+}
+.node circle {
+    fill: #fff;
+}
+
+.node text {
+    font: 14px sans-serif;
+    font-weight: bold;
+}
+
+.link {
+    fill: none;
+    opacity: 0.2;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+.button-dendo {
+    background-color: #e7e7e7;
+    color: black;
+
+
+    text-align: center;
+    position: relative;
+
+    color: rgb(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 1.0);
+    stroke: none;
+    height: 60px;
+    width: 60px;
+
+    text-align: center;
+    position: relative;
+
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 30px;
+
+    top: 30px;
+    right: 5px;
+    bottom: 0px;
+    left: -20px;
+}
+
+
+.active-dendo, .button-dendo:hover{
+    background-color: #85182A;
+    color: white;
+
+
+    text-align: center;
+    position: relative;
+
+    height: 60px;
+    width: 60px;
+
+    text-align: center;
+    position: relative;
+
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 30px;
+
+    top: 30px;
+    right: 5px;
+    bottom: 0px;
+    left: -20px;
+}
+/*################## MAP STYLES##################*/
+#county-map{
+    min-width: 1000px;
+    min-height: 600px
+}
+#county-tooltip{
+    visibility: hidden;
+    position: absolute;
+    font-family: Oswald;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#state-map{
+    min-width: 1000px;
+    min-height: 600px
+}
+
+#state-tooltip{
+    visibility: hidden;
+    position: absolute;
+    font-family: Oswald;
+    background: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+/*################## Stacked Res Comm CHARTS##################*/
+/*.scaling-svg {*/
+/*    position: absolute;*/
+/*    height: 50%;*/
+/*    width: 50%;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*}*/
+/*.scaling-svg-container {*/
+/*    position: relative;*/
+/*    height: 0;*/
+/*    width: 100%;*/
+/*    padding: 0;*/
+/*    padding-bottom: 100%;*/
+/*    !* override this inline for aspect ratio other than square *!*/
+/*}*/
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.axis-stacked path {
+    /*stroke: black;*/
+    /*stroke-width: 2px;*/
+}
+.axis-stacked tick,
+.axis-stacked line {
+    fill: none;
+    stroke: white;
+    /*shape-rendering: crispEdges;*/
+    shape-rendering: geometricPrecision;
+    /*shape-rendering: auto;*/
+}
+.yipsvg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.area {
+    opacity: 0.7;
+    clip-path: url(#clip);
+}
+.area:hover {
+    opacity: 1;
+}
+#header-content{
+    height: 15vh;
+}
+
+#content-area-graph{
+    height: 60vh;
+}
+
+#res-stacked-area-chart{
+    background-size: contain
+}
+#res-stacked-tooltip{
+    visibility: hidden;
+    position: absolute;
+    font-family: Oswald;
+    background: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#comm-stacked-area-chart{
+    background-size: contain
+}
+#comm-stacked-tooltip{
+    visibility: hidden;
+    position: absolute;
+    font-family: Oswald;
+    background: white;
+    border: 2px solid black;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*################## RADAR CHART ##################*/
+/*.container-radar {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.level-line {*/
+/*    stroke: #777777;*/
+/*}*/
+
+/*.level-value {*/
+/*    fill: #777777;*/
+/*}*/
+
+/*.axis-line{*/
+/*    stroke: #777777;*/
+/*}*/
+
+/*.axis-name {*/
+/*    fill: #777777;*/
+/*}*/
+
+/*.value {*/
+/*    fill: #fff;*/
+/*}*/
+
+/*.legend-item-text {*/
+/*    fill: #5F5F64;*/
+/*}*/
+/*################## STACKED BAR CHART V1 ##################*/
+.scene {
+    display: inline-block;
+    width: 30vw;
+    height: 40vh;
+    /*   border: 1px solid #CCC; */
+    margin: 40px 0;
+    perspective: 600px;
+}
+
+.card-bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+}
+
+.card-bar.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-bar__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+
+    text-align: center;
+
+    /*font-size: 40px;*/
+    backface-visibility: hidden;
+}
+
+.card-bar__face--front {
+    background: #85182A;
+    font-size: 40px;
+    color: white;
+    opacity: 0.8;
+    line-height: 260px;
+    font-weight: bold;
+    border-color: black;
+}
+
+.card-bar__face--back {
+    background: black;
+    transform: rotateY(180deg);
+    color: white;
+    font-size: 15px;
+}
+
+
+/*################## TreeMap CHART ##################*/
+.up {
+    /*position: fixed;*/
+    width: 100%;
+    top: 0;
+    padding: 16px;
+    z-index: 100;
+    font: bold 14px/1 sans-serif;
+    color: black;
+    width: 92px;
+    padding: 8px;
+    background-color: white;
+    float: left;
+    cursor: pointer;
+}
+.up:hover {
+    background-color: black;
+    color: white;
+}
+
+.feature-tree {
+    position: relative;
+    width: calc(100% - 0 * 2 * 1px);
+    height: calc(100% - 0 * 2 * 1px);
+    margin: 0px;
+    overflow: hidden;
+    stroke: black;
+    stroke-width:3px;
+}
+
+.node-treemap {
+    position: absolute;
+    background: transparent  no-repeat 50%/cover;
+    overflow: hidden;
+    opacity: 0.95;
+
+    transition: opacity 1s;
+    cursor: pointer;
+}
+.node-treemap .label {
+    display: inline;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: color 0.4s, opacity 1s, filter 0.8s;
+    stroke: black;
+    stroke-width:3px;
+}
+.node-treemap.hide {
+    opacity: 0;
+    pointer-events: none;
+    stroke: black;
+    stroke-width:3px;
+
+}
+.node-treemap.hide .label {
+    filter: blur(10px);
+    stroke: black;
+    stroke-width:3px;
+}
+.node-treemap:hover .label {
+    color: white;
+    stroke: black;
+    stroke-width:3px;
+}
+.node-treemap.level-0 {
+    z-index: 4;
+    font-size: 30px;
+    display: none;
+    stroke: black;
+    stroke-width:3px;
+}
+.node-treemap.level-1 {
+    z-index: 3;
+    font-size: 25px;
+    stroke: black;
+    stroke-width:1px;
+}
+.node-treemap.level-2 {
+    z-index: 2;
+    font-size: 12.5px;
+    stroke: black;
+    stroke-width:3px;
+}
+.node-treemap.level-3 {
+    z-index: 1;
+    font-size: 2.5vmin;
+    stroke: black;
+    stroke-width:3px;
+}

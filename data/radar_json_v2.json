@@ -1,0 +1,61 @@
+[
+  {
+    "className":"natural_gas",
+    "axes": [
+      {
+        "axis": "heating",
+        "value": 0.777
+      },
+      {
+        "axis": "hot_water",
+        "value": 0.1777
+      }
+    ]
+  },
+  {
+    "className": "electricity",
+    "axes": [
+      {
+        "axis": "cooling",
+        "value": 0.2257
+      },
+      {
+        "axis": "plug_loads",
+        "value": 0.1952
+      },
+      {
+        "axis": "heating",
+        "value": 0.1936
+      },
+      {
+        "axis": "lighting_interior",
+        "value": 0.0824
+      },
+      {
+        "axis": "hot_water",
+        "value": 0.0801
+      },
+      {
+        "axis": "refrigerator",
+        "value": 0.0523
+      }
+    ]
+  },
+  {
+    "className": "fuel_oil",
+    "axes": [
+      {
+        "axis": "heating",
+        "value": 0.9239}
+    ]
+  },
+  {
+    "className": "propane",
+    "axes": [
+      {
+        "axis": "heating",
+        "value": 0.8439
+      }
+    ]
+  }
+]
