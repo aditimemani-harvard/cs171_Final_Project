@@ -35,19 +35,25 @@ let drawCountyMap = () => {
         .attr('d', d3.geoPath().projection(projection))
         .attr('class', 'county')
         .attr('stroke-width', 0)
+        .style("opacity", 0.5)
         .attr("transform", "scale(0.7), translate(0,0)")
         //countyDataItem refers to the county level array object from the topojson file
         .attr('fill', (countyDataItem) => {
             //we're matching the topojson arrays to the corresponding climate data based on the FIPS code
 
-              let percentage = countyDataItem.properties.zone
+            let percentage = countyDataItem.properties.zone
             // creating color bins for each county based on associated value
-             return colorScale(percentage)//more than 45
+            return colorScale(percentage)//more than 45
         })
 
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
         .on('mouseover', function(event,countyDataItem){
             //since default is hidden we're switching it to visible
+
+            d3.select(this)
+                .style("stroke", "white")
+                .style("opacity", 1)
+
             countyTooltip.transition()
                 .style('visibility', 'visible')
             //same thing as before we're pulling the id from the arrays and the matching fips code from the eudcation data
@@ -56,43 +62,52 @@ let drawCountyMap = () => {
                 return +county['fips'] === id
             })
 
-                 countyTooltip
-                 .attr("x", document.getElementById('county-map').getBoundingClientRect().width-100)
-                 .attr("y", 0)
-                     .html(`<div class="col">
-<div class="center">
-                  <span >${countyDataItem.properties.code}, ${countyDataItem.properties.stateCode}</span>
-                  </div>
-<!--                        <br>-->
-                        <div class="center">
-                     <span>Zone: ${countyDataItem.properties.zone}</span>
-                     </div>
-<!--                    <br>-->
-                    <div class="center">
-                     <span>Sub-Zone: ${countyDataItem.properties.subZone}</span>
-                     </div>
-<!--                    <br>-->
-                    <div class="center">
-                     <span>Climate: ${countyDataItem.properties.zoneType}</span>
-                     </div>
-<!--                 <br>-->
-<!--                 <div class="center">-->
-<!--                 <span>Climate Description: </span><br>-->
-<!--                 </div>-->
-                 <br>
-                 <div class="center">
-                 <img src=${countyDataItem.properties.picSrc} width="50%" height="auto"></div></div>`)
-                     .attr('data-climate', countyDataItem.properties.zone)
-                     .attr('data-subZone', countyDataItem.properties.subZone)
-                     .attr('data-climateType', countyDataItem.properties.zoneType)
-                     .attr('data-climatePic', countyDataItem.properties.picSrc)
-                // .style("left", (event.pageX-15)+ "px")
-                // .style("top", (event.pageY+5) + "px");
-            d3.select(this)
-                .style("stroke", "white")
-                .style("opacity", 1)
-            countyIcon.transition()
-                .style('visibility', 'visible')
+
+            countyTooltip
+                .html(`<img src=${countyDataItem.properties.picSrc} width="13%" height="auto">
+                       <br><span style="font-family: 'Times New Roman'; 
+                       font-size:20px">${countyDataItem.properties.code+ ", "+countyDataItem.properties.stateCode}</span>
+                       <br><span>Zone: ${countyDataItem.properties.zone}</span>
+                       <br><span>Sub-Zone: ${countyDataItem.properties.subZone}</span>
+                       <br><span>Climate: ${countyDataItem.properties.zoneType}</span>
+                      
+                        
+                  `)
+                .style("left", (event.pageX-10)+ "px")
+                .style("top", (event.pageY+20) + "px");
+
+
+
+//             countyTooltip
+//                 .attr("x", document.getElementById('county-map').getBoundingClientRect().width-100)
+//                 .attr("y", 0)
+//                 .html(`<div class="col">
+// <div class="center">
+//                   <span >${countyDataItem.properties.code}, ${countyDataItem.properties.stateCode}</span>
+//                   </div>
+//                         <div class="center">
+//                      <span>Zone: ${countyDataItem.properties.zone}</span>
+//                      </div>
+//                     <div class="center">
+//                      <span>Sub-Zone: ${countyDataItem.properties.subZone}</span>
+//                      </div>
+//                     <div class="center">
+//                      <span>Climate: ${countyDataItem.properties.zoneType}</span>
+//                      </div>
+//                  <br>
+//                  <div class="center">
+//                  <img src=${countyDataItem.properties.picSrc} width="10%" height="auto"></div></div>`)
+//                 .attr('data-climate', countyDataItem.properties.zone)
+//                 .attr('data-subZone', countyDataItem.properties.subZone)
+//                 .attr('data-climateType', countyDataItem.properties.zoneType)
+//                 .attr('data-climatePic', countyDataItem.properties.picSrc)
+//             // .style("left", (event.pageX-15)+ "px")
+//             // .style("top", (event.pageY+5) + "px");
+//             d3.select(this)
+//                 .style("stroke", "white")
+//                 .style("opacity", 1)
+//             countyIcon.transition()
+//                 .style('visibility', 'visible')
 
         })
         //now adding what happens once mouse is no longer there by hiding the countyTooltip
@@ -102,7 +117,7 @@ let drawCountyMap = () => {
             d3.select(this)
                 // style("opacity", 0.5)
                 .style("stroke", "none")
-            // .style("opacity", "0.5");
+                .style("opacity", "0.5");
         })
 }
 
@@ -118,7 +133,7 @@ d3.json(countyURL).then(
             // need to convert topojson features into geojson so d3 can understand it
 
             countyData = topoData//only want the feature portion of the array that have the geolines
-                    console.log('County Data')
+            console.log('County Data')
             console.log(countyData)
 
             // now that the countyURL promise has been resolved we need to nest the climate data within
