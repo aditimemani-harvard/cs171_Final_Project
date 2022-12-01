@@ -234,7 +234,7 @@ h7{
 }
 
 .link-text{
-    color: lightcoral;
+    color: white;
     text-decoration: underline;
     font-family: Oswald;
     font-weight: normal;
@@ -294,6 +294,22 @@ h7{
 
 .margin-left{
     margin-left: 30px;
+}
+
+.card-title{
+    text-align: center;
+    font-style: normal;
+}
+
+.card-text{
+    text-align: center;
+    font-weight: lighter;
+}
+
+.medium-caption{
+    font-family: Oswald;
+    font-style: normal;
+    color: grey;
 }
 
 
