@@ -59,8 +59,38 @@
 <p>
     <br><br><br>
 </p>
+<nav class="navbar-vertical">
+    <ul class="dot-nav--list list-unstyled">
+        <li class="navbar__item"><a class="active" href="#home_section" >
+            <span class=navbar__circle></span><span class="navbar__title">Home</span></a></li>
+        <li class="navbar__item"><a href="#intro_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Intro</span></a></li>
+        <li class="navbar__item"><a href="#res_vs_comm_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Buildings</span></a></li>
+        <li class="navbar__item"><a href="#climate_zone__section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Climate Zones</span></a></li>
+        <li class="navbar__item"><a href="#building_type_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Building Type</span></a></li>
+        <li class="navbar__item"><a href="#building_attributes_sections" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Attributes</span></a></li>
+        <li class="navbar__item"><a href="#state_incentives_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Incentives</span></a></li>
+        <li class="navbar__item"><a href="#team_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Team</span></a></li>
+        <li class="navbar__item"><a href="#appendix_section" >
+            <span class=navbar__circle></span>
+            <span class="navbar__title">Appendix</span></a></li>
+    </ul>
+</nav>
 
-<!--<div id="introduction" style="height:100vh">-->
+<!--    #################### Landing Section ####################-->
 
 <div>
     <div id="introduction" style="height:100vh">
@@ -136,43 +166,72 @@
     <p>
         <br><br><br>
     </p>
+    <div class="col section-col">
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="card-bar">
+                <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
+                     style="height:100%; width: 100%;"></div>
+            </div>
+        </div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="col section-col">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="card-bar">
+                    <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
+                    <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
+                         style="height:100%; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="col section-col">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="card-bar">
+                    <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
+                    <div class="card-bar__face card-bar__face--back" id="res-comm-stacked-chart"
+                         style="height:100%; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--    <div class="container-fluid no-gutters">-->
-    <div class="row section-vis-row">
-        <div class="row">
-            <div class="col section-col">
-                <div class="center">
-                    <h5 class="scrollFade">Residential Energy Types</h5>
-                </div>
-                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 5px">
+<!--    <div class="row section-vis-row">-->
+<!--        <div class="row">-->
+<!--            <div class="col section-col">-->
+<!--                <div class="center">-->
+<!--                    <h5 class="scrollFade">Residential Energy Types</h5>-->
+<!--                </div>-->
+<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 5px">-->
 
-                    <div id="res-stacked-chart" style="height: 100%; width: 70%"></div>
+<!--                    <div id="res-stacked-chart" style="height: 100%; width: 70%"></div>-->
 
-                </div>
-            </div>
-            <div class="col section-col">
-                <div class="center">
-                    <h5 class="scrollFade">Commercial Energy Types</h5>
-                </div>
-                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 2px">
-                    <div id="comm-stacked-chart" style="height: 100%; width: 70%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row section-vis-row">
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col section-col">-->
+<!--                <div class="center">-->
+<!--                    <h5 class="scrollFade">Commercial Energy Types</h5>-->
+<!--                </div>-->
+<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 2px">-->
+<!--                    <div id="comm-stacked-chart" style="height: 100%; width: 70%"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row section-vis-row">-->
 
-        <div class="row">
+<!--        <div class="row">-->
 
-            <div class="col section-col">
-                <div class="center">
-                    <h5 class="scrollFade">Residential vs. Commercial</h5>
-                </div>
-                <div class="row justify-content-center" style="height:75vh; width: 75vh; ">
-                    <div id="res-comm-stacked-chart" style="height: 100%; width: 70%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--            <div class="col section-col">-->
+<!--                <div class="center">-->
+<!--                    <h5 class="scrollFade">Residential vs. Commercial</h5>-->
+<!--                </div>-->
+<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; ">-->
+<!--                    <div id="res-comm-stacked-chart" style="height: 100%; width: 70%"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <br><br><br>
 </div>
 
@@ -311,21 +370,20 @@
     <br><br><br>
     </p>
 
-    <div class="row gy-3">
-
-        <div class="col">
-
-        <svg id='county-map'></svg>
-
-    </div>
-<!--        <div class="row">-->
-        <div class="col">
-
-        <div id="county-tooltip"></div>
-<!--            </div>-->
-<!--                <div class="row">-->
-            </div>
+    <div class="row">
+        <!--    <div class="row justify-content-center">-->
+        <div class="col-7">
+            <!--            <div >-->
+            <svg class="center" id='county-map'></svg>
+            <!--            </div>-->
         </div>
+
+        <div class="col-sm-3">
+
+            <div id="county-tooltip" style="height: 100%; width: 90%"></div>
+
+        </div>
+    </div>
     </div>
 
 
@@ -535,19 +593,7 @@
         <br><br><br>
         </p>
     </div>
-<!--    <div class="row section-vis-row">-->
-<!--        <div class="row">-->
-<!--            <div class="col section-col">-->
 
-<!--&lt;!&ndash;    <div class="container-radar">&ndash;&gt;-->
-<!--        <div class="row justify-content-center" style="height:75vh; width: 75vw; background-color: transparent; padding: 5px">-->
-<!--        <div id="legend-radar" ></div>-->
-<!--        <div id="radar-chart" style="height: 90%; width: 90%"></div>-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="row section-vis-row">
 
         <div class="row">
@@ -566,28 +612,31 @@
     <p>
         <br><br><br>
     </p>
-<div class="center">
-    <div class="scene scene--card-bar">
-        <div class="card-bar">
-            <div class="card-bar__face card-bar__face--front">Windows</div>
-            <div class="card-bar__face card-bar__face--back" id="stacked-barOne" style="height:100%; width: 100%;"></div>
+    <div class="center">
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="card-bar">
+                <div class="card-bar__face card-bar__face--front">Windows</div>
+                <div class="card-bar__face card-bar__face--back" id="stacked-barOne"
+                     style="height:100%; width: 100%;"></div>
+            </div>
+        </div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="card-bar">
+                <div class="card-bar__face card-bar__face--front">Lighting</div>
+                <div class="card-bar__face card-bar__face--back" id="stacked-barTwo"
+                     style="height:100%; width: 100%;"></div>
+            </div>
+        </div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="card-bar">
+                <div class="card-bar__face card-bar__face--front">Appliances</div>
+                <div class="card-bar__face card-bar__face--back" id="stacked-barThree"
+                     style="height:100%; width: 100%;"></div>
+            </div>
         </div>
     </div>
-    <p>&nbsp;</p>
-    <div class="scene scene--card-bar">
-        <div class="card-bar">
-            <div class="card-bar__face card-bar__face--front">Lighting</div>
-            <div class="card-bar__face card-bar__face--back" id="stacked-barTwo" style="height:100%; width: 100%;"></div>
-        </div>
-    </div>
-    <p>&nbsp;</p>
-    <div class="scene scene--card-bar">
-        <div class="card-bar">
-            <div class="card-bar__face card-bar__face--front">Appliances</div>
-            <div class="card-bar__face card-bar__face--back" id="stacked-barThree" style="height:100%; width: 100%;"></div>
-        </div>
-    </div>
-</div>
     <p>
         <br><br><br>
     </p>
@@ -645,7 +694,7 @@
         <div class="row gy-3">
             <div class="col-sm-3">
                 <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <img src="img/A.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="font-family: Oswald;">Aditi Memani</h5>
                         <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -654,7 +703,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <img src="img/K.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="font-family: Oswald;">Karen Kuo</h5>
                         <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content. Some more quick example text for the card's content.</p>
@@ -663,7 +712,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/icons8-person-90.png" class="card-img-top" alt="...">
+                    <img src="img/K.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="font-family: Oswald;">Kritika Kharbanda</h5>
                         <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk of the card's content.</p>
@@ -755,6 +804,7 @@
 <!-- NAV BAR COMPONENTS -->
 <script src="js/toTheTop.js"></script>
 <script src="js/fadein-scroll.js"></script>
+<script src="js/verticalNavBar.js"></script>
 
 <!-- d3 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
