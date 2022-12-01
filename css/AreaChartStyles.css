@@ -201,7 +201,7 @@ h7{
     font-size: 12px;
 }
 
-/*MAIN TEXT STYLING*/
+/*ADDED STYLING WITH TEXT*/
 .main-heading-text{
     color: white;
     line-height: 70px;
@@ -275,10 +275,31 @@ h7{
     margin-left: 30px;
 }
 
+.user-text{
+    font-family: Oswald;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-left: 30px;
+    color: grey;
+    margin-bottom: -20px;
+}
+
 .video-div{
     margin-right: 30px;
 }
 
+.img-div{
+    margin-right: 90px;
+}
+
+.margin-left{
+    margin-left: 30px;
+}
+
+
+
+
+/*FINISH OF ADDED STYLING WITH TEXT*/
 
 .tooltip_text_desc_min {
     font-family: Oswald;
@@ -731,13 +752,14 @@ button{
 
 .card-bar__face--front {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), black);
-    font-size: 40px;
+    font-family: Oswald;
+    font-size: 30px;
     color: white;
     opacity: 1;
     vertical-align: middle;
     text-align: center;
     line-height: 360px;
-    font-weight: bold;
+    font-weight: normal;
     border-color: black;
 }
 

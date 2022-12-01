@@ -143,17 +143,11 @@
         </div>
         </p>
     </div>
-<!--    <div class="center">-->
-<!--        <video width="720" height="540" autoplay muted playsinline loop>-->
-<!--            <source src="img/res_vs_comm.mp4" type="video/mp4">-->
-
-<!--        </video>-->
-<!--    </div>-->
     <div class="row no-gutters">
         <div class="col no-gutters center" style="padding:5px;">
             <h5 class="scrollFade intro-text">In the US, there are 4.8 million commercial buildings,
                 there are over 128 million residential buildings. <br>
-                Residential buildings consume ~15% more energy than the commercial buildings.</h5>
+                <span class = "highlight-text"> Residential buildings consume ~15% more energy than the commercial buildings.</span></h5>
         </div>
         <div class="col no-gutters video-div" style="padding:5px;">
             <video width="720" height="540" autoplay muted playsinline loop>
@@ -167,16 +161,28 @@
     <p>
         <br><br><br>
     </p>
-    <div class="col section-col">
-        <div class="scene-bar scene-bar--card-bar">
-            <div class="card-bar">
-                <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
-                <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
-                     style="height:100%; width: 100%;"></div>
+    <div class="container-fluid no-gutters">
+        <h5 class="scrollFade user-text"> Click on the card below to study the energy consumption of both residential and commercial buildings.</h5>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col no-gutters section-col margin-left">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="card-bar">
+                    <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                    <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
+                         style="height:100%; width: 100%;"></div>
+                </div>
             </div>
         </div>
-        <p>&nbsp;&nbsp;&nbsp;</p>
-        <div class="col section-col">
+        <div class="col no-gutters img-div" style="padding:5px;">
+            <img src="img/stacked_chart_support/res_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
+        </div>
+    </div>
+
+
+    <div class="row no-gutters">
+        <div class="col no-gutters section-col margin-left">
             <div class="scene-bar scene-bar--card-bar">
                 <div class="card-bar">
                     <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
@@ -185,8 +191,13 @@
                 </div>
             </div>
         </div>
-        <p>&nbsp;&nbsp;&nbsp;</p>
-        <div class="col section-col">
+        <div class="col no-gutters img-div" style="padding:5px;">
+            <img src="img/stacked_chart_support/comm_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col no-gutters section-col margin-left">
             <div class="scene-bar scene-bar--card-bar">
                 <div class="card-bar">
                     <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
@@ -195,7 +206,11 @@
                 </div>
             </div>
         </div>
+        <div class="col no-gutters img-div" style="padding:5px;">
+            <img src="img/stacked_chart_support/All.jpg" alt="" srcset="" style="width: 100%">
+        </div>
     </div>
+
     <!--    <div class="container-fluid no-gutters">-->
 <!--    <div class="row section-vis-row">-->
 <!--        <div class="row">-->
