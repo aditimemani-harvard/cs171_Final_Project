@@ -6,10 +6,15 @@ console.log(topojson)
 let energyData
 let stateData
 
-let canvas = d3.select('#state-map').append('svg') // needs to match name in css file
+let canvas = d3.select('#state-map').append('svg')
+// .attr("width", 200)
+// .attr("height", 200)
+
+// needs to match name in css file
 let stateTooltip = d3.select('#state-tooltip')
 
-let colorState = ['#F8F9FA', '#CED4DA', '#6C757D', '#641220', '#85182A', '#A71E34', '#BD1F36', '#DA1E37'];
+let colorState = ['rgba(248,249,250,0.8)', 'rgba(206,212,218,0.8)', 'rgba(108,117,125,0.8)',
+    'rgba(100,18,32,0.8)', 'rgba(133,24,42,0.8)', 'rgba(167,30,52,0.8)', 'rgba(189,31,54,0.8)', 'rgba(218,30,55,0.8)'];
 let formatDecimal = d3.format(",.2f");
 let formatInteger = d3.format(",");
 
@@ -25,7 +30,9 @@ let drawMap = () => {
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
-    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ '#CED4DA',  '#641220'])
+    var colorScale = d3.scaleLinear().domain([minVal,maxVal]).range([ 'rgba(206,212,218,1.0)',  'rgba(100,18,32,1.0)'])
+
+    console.log("canvas", canvas)
     canvas.selectAll('path')
         .data(stateData)
         .enter()
@@ -33,6 +40,9 @@ let drawMap = () => {
         //d3.geoPath() converts the array of lines in the topojson file into d lines to actually draw on the map
         .attr('d', d3.geoPath())
         .attr('stroke', 'black')
+        .attr('stroke-width', 0.5)
+        .style("opacity", 0.5)
+        .attr("transform", "scale(0.7), translate(0,0)")
 
         //stateDataItem refers to the state level array object from the topojson file
         .attr('fill', (stateDataItem) => {
@@ -90,6 +100,10 @@ let drawMap = () => {
         })
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
         .on('mouseover', function(event,stateDataItem){
+            d3.select(this)
+                .attr('stroke-width', 2)
+                .style("opacity", 1.0)
+
             //since default is hidden we're switching it to visible
             stateTooltip.transition()
                 .style('visibility', 'visible')
@@ -99,14 +113,14 @@ let drawMap = () => {
                 return state['fips'] === id
             })
             stateTooltip
-                .html(`<span >${state['state']}</span>
+                .html(`<span style="font-family: 'Times New Roman'; font-size:30px">${state['state']}</span>
                         <br>
                         <span>Incentives: ${state['incentive_count']}</span>
                         <br>
                         <span>Avg Energy Consumed: ${format(state['elec_total_kwh_mean'])} kWh</span>`)
                 .attr('data-energy', state['elec_total_kwh_mean'])
                 .attr('data-incentive', state['incentive_count'])
-                .style("left", (event.pageX-15)+ "px")
+                .style("left", (event.pageX-5)+ "px")
                 .style("top", (event.pageY+5) + "px");
             //now we need to add the derived value for each state to the tooltip by geolocation
 
@@ -114,6 +128,10 @@ let drawMap = () => {
         })
         //now adding what happens once mouse is no longer there by hiding the tooltip
         .on('mouseout', function(event,stateDataItem) {
+            d3.select(this)
+                .attr('stroke-width', 0.5)
+                .style("opacity", 0.5)
+
             stateTooltip.transition()
                 .style('visibility', 'hidden')
         })
@@ -130,7 +148,7 @@ d3.json(stateURL).then(
             // stateData = topoData
             // need to convert topojson features into geojson so d3 can understand it
             //state data is id-ed by the FIPS code
-             // need 2 arguments to do this
+            // need 2 arguments to do this
             // first argument: the name of the topojson argument when called in the promise i.e.topoData
             // second argument: the type of datat needed from the topojson data
             stateData = topojson.feature(topoData, topoData.objects.states).features
