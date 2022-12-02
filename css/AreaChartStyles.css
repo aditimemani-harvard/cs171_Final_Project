@@ -144,27 +144,6 @@ body{
     scroll-behavior: smooth;
 }
 
-/*h1{*/
-/*    font-family: Oswald;*/
-/*    color: white;*/
-/*    font-size: 100px;*/
-/*    line-height: 70px;*/
-/*}*/
-
-/*h3{*/
-/*    font-family: Oswald;*/
-/*    align-content: center;*/
-/*    color: white;*/
-/*    font-size: 40px;*/
-/*    line-height: 70px;*/
-/*}*/
-
-/*h5{*/
-/*    font-family: Oswald;*/
-/*    font-weight: lighter;*/
-/*    color: white;*/
-/*    font-size: 20px;*/
-/*}*/
 
 h6{
     color: white;
@@ -201,7 +180,10 @@ h7{
     font-size: 12px;
 }
 
-/*ADDED STYLING WITH TEXT*/
+
+
+/* #######ADDED STYLING WITH TEXT #######*/
+
 .main-heading-text{
     color: white;
     line-height: 70px;
@@ -373,11 +355,23 @@ h7{
     100% { opacity:0; transform: translateX(-2vw); }
 }
 
+.card-title-about{
+    text-align: center;
+    font-size: 30px;
+}
+.card-text-about{
+    text-align: center;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.img-about{
+    width: 30%;!important;
+}
 
 
 
-
-/*FINISH OF ADDED STYLING WITH TEXT*/
+/* ####### FINISH OF ADDED STYLING WITH TEXT #######*/
 
 .tooltip_text_desc_min {
     font-family: Oswald;
@@ -596,8 +590,8 @@ img{object-fit: scale-down;}
 
 
 .card-img-top {
-    width: 100%;
-    height: 5vw;
+    width: 90%;
+    /*height: 5vw;*/
 
     border-color: black;
 }
@@ -821,8 +815,8 @@ img{object-fit: scale-down;}
 
 .card-bar {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center right;
@@ -843,13 +837,13 @@ img{object-fit: scale-down;}
 .card-bar__face--front {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), black);
     font-family: Oswald;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     opacity: 1;
     vertical-align: middle;
     text-align: center;
     line-height: 360px;
-    font-weight: normal;
+    font-weight: lighter;
     border-color: black;
 }
 
