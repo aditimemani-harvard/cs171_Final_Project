@@ -114,10 +114,8 @@ let drawMap = () => {
             })
             stateTooltip
                 .html(`<span style="font-family: 'Times New Roman'; font-size:30px">${state['state']}</span>
-                        <br>
-                        <span>Incentives: ${state['incentive_count']}</span>
-                        <br>
-                        <span>Avg Energy Consumed: ${format(state['elec_total_kwh_mean'])} kWh</span>`)
+                        <br><span><b>Incentives: </b>${state['incentive_count']}</span>
+                        <br><span><b>Avg Energy Consumed: </b>${format(state['elec_total_kwh_mean'])} kWh</span>`)
                 .attr('data-energy', state['elec_total_kwh_mean'])
                 .attr('data-incentive', state['incentive_count'])
                 .style("left", (event.pageX-5)+ "px")
