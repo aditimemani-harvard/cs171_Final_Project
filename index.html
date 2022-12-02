@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
           crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/AreaChartStyles.css">
+
+        <link rel="stylesheet" href="css/AreaChartStyles.css">
+<!--    <link rel="stylesheet" href="css/Main.css">-->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 <!--    FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
@@ -20,8 +23,6 @@
 
 <body>
 <!-- NAVIGATION BAR AREA-->
-<!--<a class="nav-link" href="#home_section" class="top-btn">Back to Top &#8593;</a>-->
-<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 <div id="Main_Title"></div>
 <nav class="navbar navbar-expand-sm" style="background-color: white;">
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
@@ -104,14 +105,12 @@
 
 <!--    #################### HOME Section ####################-->
 
-<br>
+<br><br><br>
 </div>
     <div class="container-fluid no-gutters">
         <h1 class="scrollFade main-heading-text"> energy </h1>
-        <br>
         <h1 class="scrollFade main-heading-text">crisis.</h1>
-        <br><br>
-        <h5 class="scrollFade sub-heading-text">Understanding the residential energy consumption patterns in the US</h5>
+        <h4 class="scrollFade sub-heading-text">Understanding the residential energy consumption patterns in the US</h4>
         <br>
     </div>
 </div>
@@ -144,12 +143,12 @@
         </p>
     </div>
     <div class="row no-gutters">
-        <div class="col no-gutters center" style="padding:5px;">
+        <div class="col no-gutters center" >
             <h5 class="scrollFade intro-text">In the US, there are 4.8 million commercial buildings,
                 there are over 128 million residential buildings. <br>
                 <span class = "highlight-text"> Residential buildings consume ~15% more energy than the commercial buildings</span>, as demonstrated below.</h5>
         </div>
-        <div class="col no-gutters video-div" style="padding:5px;">
+        <div class="col no-gutters video-div" >
             <video width="720" height="540" autoplay muted playsinline loop>
                 <source src="img/res_vs_comm.mp4" type="video/mp4">
             </video>
@@ -169,13 +168,13 @@
         <div class="col no-gutters section-col margin-left">
             <div class="scene-bar scene-bar--card-bar">
                 <div class="card-bar">
-                    <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                    <div class="card-bar__face card-bar__face--front">Residenzonetial Buildings</div>
                     <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
                          style="height:100%; width: 100%;"></div>
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" style="padding:5px;">
+        <div class="col no-gutters img-div" >
             <img src="img/stacked_chart_support/res_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
         </div>
     </div>
@@ -191,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" style="padding:5px;">
+        <div class="col no-gutters img-div" >
             <img src="img/stacked_chart_support/comm_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
         </div>
     </div>
@@ -206,7 +205,7 @@
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" style="padding:5px;">
+        <div class="col no-gutters img-div" >
             <img src="img/stacked_chart_support/All.jpg" alt="" srcset="" style="width: 100%">
         </div>
     </div>
@@ -236,81 +235,86 @@
     <br><br><br>
 
 
-    <div class="container">
+    <div class="container center">
         <div class="row gy-3 scrollFade">
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/cold.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/cold.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Cold</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region with between 5,400-9,000 heating degree days (65°F basis)</p>
+                        <h5 class="card-title" >Cold</h5>
+                        <p class="card-text" >Region with between 5,400-9,000 heating degree days (65°F basis)</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/dry.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/dry.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Dry</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region that receives less than
+                        <h5 class="card-title" >Dry</h5>
+                        <p class="card-text" >Region that receives less than
                             20 inches (50 cm) of annual precipitation</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/hot.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/hot.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Hot</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region where the average outdoor temperature
+                        <h5 class="card-title" >Hot</h5>
+                        <p class="card-text" >Region where the average outdoor temperature
                             remains >45°F throughout the year</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/humid.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/humid.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Humid</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region that receives >20 inches (50 cm) of annual precipitation</p>
+                        <h5 class="card-title" >Humid</h5>
+                        <p class="card-text" >Region that receives >20 inches (50 cm) of annual precipitation</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="container center">
+        <div class="row gy-3 scrollFade">
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/Marine.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/Marine.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Marine</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region that has a coldest month with mean temperature between 27-65°F,
+                        <h5 class="card-title" >Marine</h5>
+                        <p class="card-text" >Region that has a coldest month with mean temperature between 27-65°F,
                             a warmest month with <72°F and min. 4 months with >50°F</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/Mixed.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/Mixed.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Mixed</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region with both annual precipitation,
+                        <h5 class="card-title" >Mixed</h5>
+                        <p class="card-text" >Region with both annual precipitation,
                             and where the average outdoor temperature drops below 45°F during winter</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/subartic.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/subartic.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Subartic</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region with >12,600 heating degree days (65° basis)</p>
+                        <h5 class="card-title" >Subartic</h5>
+                        <p class="card-text" >Region with >12,600 heating degree days (65° basis)</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/climate_type/very_cold.png" class="card-img-top" alt="..." style = "width:130%">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/climate_type/very_cold.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Very Cold</h5>
-                        <p class="card-text" style="font-family: Oswald;">Region with between 9,000-12,600 heating degree days (65°F basis)</p>
+                        <h5 class="card-title" >Very Cold</h5>
+                        <p class="card-text" >Region with between 9,000-12,600 heating degree days (65°F basis)</p>
                     </div>
                 </div>
             </div>
@@ -357,13 +361,14 @@
       </h5>
     </div>
         <div class="center ">
-            <video width="75%" autoplay muted playsinline loop>
+            <video width="50%" autoplay muted playsinline loop>
                 <source src="img/energy_type_speed.mp4" type="video/mp4">
 
             </video>
         </div>
 
     <!--     ````````````````````````` TIME CHART SECTION  `````````````````````````-->
+    <br><br><br>
     <div>
         <div class="center">
             <h5 class="scrollFade medium-caption">Energy consumption change throughout different climate zones in a 24-hour time period </h5>
@@ -466,51 +471,51 @@
     <div class="container">
         <div class="row gy-3 scrollFade">
             <div class="col-sm">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/building_types/mobile_home.png" class="card-img-top" alt="...">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/mobile_home.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Mobile Home</h5>
-                        <p class="card-text" style="font-family: Oswald;">A prefabricated structure, also known as a trailer) that can be moved. In the US, in the 1950s,
+                        <h5 class="card-title" >Mobile Home</h5>
+                        <p class="card-text" >A prefabricated structure, also known as a trailer) that can be moved. In the US, in the 1950s,
                             these homes began to be marketed primarily as an inexpensive form of housing</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/building_types/multi-2-4.png" class="card-img-top" alt="...">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/multi-2-4.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Multi Family 2-4</h5>
-                        <p class="card-text" style="font-family: Oswald;">This is a rental apartment building where the entire building
+                        <h5 class="card-title" >Multi Family 2-4</h5>
+                        <p class="card-text" >This is a rental apartment building where the entire building
                             (with 2-4 apartments) is under the same ownership</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/building_types/multi-5.png" class="card-img-top" alt="...">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/multi-5.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Multi Family 5+</h5>
-                        <p class="card-text" style="font-family: Oswald;">This is a rental apartment building where the entire building
+                        <h5 class="card-title" >Multi Family 5+</h5>
+                        <p class="card-text" >This is a rental apartment building where the entire building
                             (with more than 5 apartments) is under the same ownership </p>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/building_types/single-attached.png" class="card-img-top" alt="...">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/single-attached.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Single Attached</h5>
-                        <p class="card-text" style="font-family: Oswald;">An element of the residence's construction (such as a wall, ceiling, or floor)
+                        <h5 class="card-title" >Single Attached</h5>
+                        <p class="card-text" >An element of the residence's construction (such as a wall, ceiling, or floor)
                             is shared with another property</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/building_types/single-detached.png" class="card-img-top" alt="...">
+                <div class="card h-100 scrollFade center" style="border-color: black;background-color: black;">
+                    <img src="img/building_types/single-detached.png" class="card-img-top" alt="..." style = "width:70%">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Single Detached</h5>
-                        <p class="card-text" style="font-family: Oswald;">A stand-alone residence, excluding manufactured homes, for which the sale
+                        <h5 class="card-title" >Single Detached</h5>
+                        <p class="card-text" >A stand-alone residence, excluding manufactured homes, for which the sale
                             includes the land on which the residence is located</p>
                     </div>
                 </div>
@@ -520,83 +525,178 @@
     <!--     ````````````````````````` DENDO CHART SECTION  `````````````````````````-->
     <br><br>
     <div class="center">
-        <h5 class="scrollFade medium-caption"> US Climate Zones 1 - 8 and sub-zones A,B,C <br></h5>
+        <h5 class="scrollFade medium-caption"> Energy Consumption based on Climate Zone and Residential Building Type <br></h5>
     </div>
     <br>
     <div class="center">
         <h7 class="scrollFade user-text"><em>(Click on the circular nodes to study the branches under each Climate Zone)</em></h7>
     </div>
+
     <br> <br>
-        <div class="center">
+<!--Arrow-->
+<div class=" container-fluid no-gutters">
+    <div class="row legend-dendo">
+        <div class="col center">
+            <p class = "legend-dendo">Climate Zone
             <div class="center">
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Sub-Climate Zone
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Residential Type
+            <div class="center">
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Structural Material
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col center"> <p class = "legend-dendo">Construction Year
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "center legend-dendo">Site Energy
+            <div>
+        </div>
+    </div>
+</div>
+
+    <div class="center">
+        <div class="center">
+            <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                <div id="buttonDendoDiv">
+                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone: 4</button>
+                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
+                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone: 6</button>
+                </div>
+                <script>
+                    // Add active class to the current button (highlight it)
+                    var header = document.getElementById("buttonDendoDiv");
+                    var btns = header.getElementsByClassName("button-dendo");
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function () {
+                            var current = document.getElementsByClassName("active");
+                            current[0].className = current[0].className.replace(" active", "");
+                            this.className += " active";
+                        });
+                    }
+                </script>
                 <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                    <div id="buttonDendoDiv">
-                        <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone: 4</button>
-                        <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
-                        <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone: 6</button>
-                    </div>
-                    <script>
-                        // Add active class to the current button (highlight it)
-                        var header = document.getElementById("buttonDendoDiv");
-                        var btns = header.getElementsByClassName("button-dendo");
-                        for (var i = 0; i < btns.length; i++) {
-                            btns[i].addEventListener("click", function () {
-                                var current = document.getElementsByClassName("active");
-                                current[0].className = current[0].className.replace(" active", "");
-                                this.className += " active";
-                            });
-                        }
-                    </script>
-                    <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                        <svg id="dendo" width="75%" height="75%"></svg>
-                    </div>
+                    <svg id="dendo" width="75%" height="75%"></svg>
                 </div>
             </div>
         </div>
     </div>
-    <p>
-        <br><br><br>
-    </p>
 </div>
+
+<br><br>
+
 <!--    #################### BUILDING ATTRIBUTES Section ####################-->
 <div id="building_attributes_sections">
     <div class="container-fluid no-gutters">
         <p>
-        <div class="center" class="scrollFade">
-            <h3 class="scrollFade"> How to Reduce Energy Consumption In Your Own Home <br></h3>
+        <div class="scrollFade">
+            <h3 class="scrollFade section-heading-text"> Energy Consumption by Building Attributes <br></h3>
         </div>
-        <br>
-        <div class="center">
-            <h5 class="scrollFade"><em>Compare different elements and how they can reduce consuming different types of energy </em></h5>
+        <div >
+            <h5 class="scrollFade section-subheading-text"><em>Compare different elements and how they can reduce consuming different types of energy </em></h5>
         </div>
-        <br><br><br>
+        <br><br>
+        <div>
+            <h5 class="scrollFade intro-text"> We now know the energy consumption by climate  and residential building types.
+                Now, let's dive deeper inside each building and <span class = "highlight-text"> see what appliances consume how much energy, </span> and where
+                does this energy come from - is it electricity or fuel? Click on each area in the map below to get a better understanding.
+            </h5>
         </p>
     </div>
-
+        <br><br><br>
     <div class="row section-vis-row">
-
         <div class="row">
-
             <div class="col section-col">
                 <div class="center">
                     <div class="row justify-content-center" style="height:75vh; width: 75vh; ">
                         <div class="up" style=" width: 75vh; ">&larr; UP</div>
                         <div class="feature-tree" id="treemap-chart"></div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <p>
-        <br><br><br>
-    </p>
-    <div class="center">
+
+    <br><br><br>
+        <div class="container-fluid no-gutters">
+                <h5 class="scrollFade intro-text"> Still curious? You can study how different types of <span class = "highlight-text">WINDOW, LIGHTING TYPE AND APPLIANCE</span>
+                    compare across the categories of <span class = "highlight-text"> energy consumption, cost and rated lifetime.</span>
+                    <br>
+                    We hope you can use it the next time you think of renovating your own house!
+                </h5>
+                </p>
+        </div>
+
+    <div class="center ">
         <div class="scene-bar scene-bar--card-bar">
             <div class="card-bar">
                 <div class="card-bar__face card-bar__face--front">Windows</div>
                 <div class="card-bar__face card-bar__face--back" id="stacked-barOne"
-                     style="height:100%; width: 100%;"></div>
+                     style="height:80%; width: 80%;"></div>
             </div>
         </div>
         <p>&nbsp;&nbsp;&nbsp;</p>
@@ -604,7 +704,7 @@
             <div class="card-bar">
                 <div class="card-bar__face card-bar__face--front">Lighting</div>
                 <div class="card-bar__face card-bar__face--back" id="stacked-barTwo"
-                     style="height:100%; width: 100%;"></div>
+                     style="height:80%; width: 80%;"></div>
             </div>
         </div>
         <p>&nbsp;&nbsp;&nbsp;</p>
@@ -612,111 +712,130 @@
             <div class="card-bar">
                 <div class="card-bar__face card-bar__face--front">Appliances</div>
                 <div class="card-bar__face card-bar__face--back" id="stacked-barThree"
-                     style="height:100%; width: 100%;"></div>
+                     style="height:80%; width: 80%;"></div>
             </div>
         </div>
     </div>
-    <p>
-        <br><br><br>
-    </p>
 </div>
+    <br><br><br><br><br><br>
 <div id="state_incentives_section">
     <div class="container-fluid no-gutters">
-        <p>
-        <div class="center">
-            <h3 class="scrollFade"> State Energy Incentives Available throughout the US<br></h3>
+        <div >
+            <h3 class="scrollFade section-heading-text"> Energy Incentives in the US<br></h3>
         </div>
-        <br>
-        <div class="center">
-            <h5 class="scrollFade"><em>Compare the number of Incentives and Average Energy Consumption by State </em></h5>
+        <div >
+            <h5 class="scrollFade section-subheading-text"><em> Compare the number of Incentives and the current Average Energy Consumption by State </em></h5>
         </div>
-        <br><br><br>
-        </p>
-    </div>
+        <br><br>
+            <div>
+                <h5 class="scrollFade intro-text"> It is also important to understand the incentives that a homeowner can avail to get aid for renovations. These incentives include
+                    Regulatory Policies and Financial Incentives. You can learn more about this
+                    <a class = "scrollFade link-text" href= "https://www.dsireusa.org/" target="_blank"> HERE.</a>
+                </h5>
+            </div>
+            <br><br><br>
+        </div>
+</div>
     <!--     ````````````````````````` US STATE ENERGY INCENTIVE CHART SECTION  `````````````````````````-->
     <div class="container-fluid no-gutters">
-        <p>
         <div class="center">
-            <h5 class="scrollFade"> This map shows the average energy consumed and the number of incentives available by state <br></h5>
+            <h5 class="scrollFade medium-caption"> Average Energy Consumed vs the Energy Incentives by State <br></h5>
         </div>
         <br>
         <div class="center">
-            <h7 class="scrollFade"><em>(Hover over each state to see the average energy consumed and the number of incentives)</em></h7>
+            <h7 class="scrollFade user-text"><em>(Hover over each state)</em></h7>
         </div>
         <br><br><br>
-        </p>
         <div class="center">
             <svg id='state-map'></svg>
             <div id="state-tooltip"></div>
         </div>
     </div>
-    <p>
-        <br><br><br>
-    </p>
+ <br><br><br><br><br><br>
 </div>
 <!--    #################### ABOUT US Section ####################-->
 <div id="team_section">
     <div class="container-fluid no-gutters">
         <p>
-        <div class="center" >
-            <h3 class="scrollFade"> Our Team<br></h3>
+        <div>
+            <h3 class="scrollFade section-heading-text"> Our Team<br></h3>
         </div>
         <br>
-        <div class="center">
-            <h5 class="scrollFade"><em></em></h5>
+        <div>
+            <h5 class="scrollFade section-subheading-text"><em></em></h5>
         </div>
         <br><br><br>
         </p>
     </div>
     <div class="container">
         <div class="row gy-3">
-            <div class="col-sm-3">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/A.png" class="card-img-top" alt="...">
+            <div class="col-4">
+                    <img src="img/A.png" class="card-img-top img-about" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Aditi Memani</h5>
-                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title-about" >Aditi Memani</h5>
+                        <p class="card-text-about" >Master of Science, MS CSE ('23), Harvard School of Engineering and Applied Science</p>
+                        <a class = "link-text center" href = 'https://www.linkedin.com/in/aditi-memani-96a54423/' target="_blank">LinkedIn</a>
                     </div>
-                </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/K.png" class="card-img-top" alt="...">
+            <div class="col-4">
+                    <img src="img/K.png" class="card-img-top img-about" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Karen Kuo</h5>
-                        <p class="card-text" style="font-family: Oswald;">Some quick example text to build on the card title and make up the bulk of the card's content. Some more quick example text for the card's content.</p>
+                        <h5 class="card-title-about" >Karen Kuo</h5>
+                        <p class="card-text-about" >MArch I, Master in Design Studies, Technology ('23), Harvard Graduate School of Design</p>
+                        <a class = "link-text center" href = 'https://www.linkedin.com/in/kalunkuo/' target="_blank">LinkedIn</a>
                     </div>
-                </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card h-100 scrollFade" style="border-color: black;background-color: black;">
-                    <img src="img/K.png" class="card-img-top" alt="...">
+            <div class="col-4">
+                    <img src="img/K.png" class="card-img-top img-about" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title" style="font-family: Oswald;">Kritika Kharbanda</h5>
-                        <p class="card-text" style="font-family: Oswald;">Some quick example text to make up the bulk of the card's content.</p>
+                        <h5 class="card-title-about" >Kritika Kharbanda</h5>
+                        <p class="card-text-about" >Master in Design Studies, Energy and Environments ('23), Harvard Graduate School of Design</p>
+                        <a class = "link-text center" href = 'https://www.linkedin.com/in/kritika-kharbanda-kritika/' target="_blank">LinkedIn</a>
                     </div>
-                </div>
             </div>
-
         </div>
     </div>
     <p>
-        <br><br><br>
+        <br><br><br><br><br>
     </p>
 </div>
 <!--    #################### APPENDIX Section ####################-->
 <div id="appendix_section">
     <div class="container-fluid no-gutters">
         <p>
-        <div class="center">
-            <h3 class="scrollFade"> Sources <br></h3>
+        <div>
+            <h3 class="scrollFade section-heading-text"> References <br></h3>
         </div>
         <br>
-        <div class="center">
-            <h5 class="scrollFade"><em> </em></h5>
-        </div>
-        <br><br><br>
-        </p>
+        <ol class="scrollFade intro-text">
+            <li class="list-text" > Wilson, EJ. H. et. al. 2022. End-Use Load Profiles for the U.S. Building Stock:
+                Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification.
+                Golden, CO: National Renewable Energy Laboratory. NREL/TP-5500-80889.
+                <a class = "link-text" href = 'https://doi.org/10.2172/1854582' target="_blank">LINK</a> </li>
+            <li class="list-text" > Find Policies & Incentives by State. DSIRE USA.
+                <a class = "link-text" href = 'https://www.dsireusa.org/' target="_blank">LINK</a> </li>
+            <li class="list-text"> Building America Best Practices Series, Volume 7.3, Guide to Determining Climate Regions by County,
+                Pacific Northwest National Laboratory, August 2015. </li>
+            <li class="list-text">Kadric´ D. et. al. October 2021. Cost-related analysis of implementing energy-efficient retrofit measures
+                in the residential building sector of a middle-income country – A case
+                study of Bosnia and Herzegovina. Energy & Buildings 257 (2022) 111765. </li>
+            <li class="list-text">Latini, A. et. al.2015. IEE/12/758/SI2.644752 D.6.7.
+                Best practices for improving energy efficiency in Fruit and Vegetable processing plants. </li>
+            <li class="list-text">Aksoezen M. et. al. October 2014. Building age as an indicator for energy consumption. Energy and Buildings 87 (2015) 74–86 </li>
+            <li class="list-text">Hyedari A. et. al. 2021. Effects of different window configurations on energy consumption in
+                building : Optimization and economic analysis. Journal of Building Engineering 35 (2021) 102099</li>
+            <li class="list-text">Residential vs. Commercial Energy Use, Solar Feeds
+                <a class = "link-text" href = 'https://www.solarfeeds.com/mag/residential-vs-commercial-energy-use/#:~:text=1)%20In%20the%20residential%20sector,energy%20as%20the%20commercial%20sector.'
+                   target="_blank">(Link)</a></li>
+            <li class="list-text">States Investing the Most in New Housing, Construction Coverage
+                <a class = "link-text-small" href = 'https://constructioncoverage.com/research/states-investing-the-most-in-new-housing'
+                   target="_blank">(Link)</a></li>
+            <li class="list-text">ASHRAE Climate Zones, Open EI
+                <a class = "link-text" href = 'https://openei.org/wiki/ASHRAE_Climate_Zones'
+                   target="_blank">(Link)</a></li>
+        </ol>
+
+
     </div>
     <p>
         <br><br><br>

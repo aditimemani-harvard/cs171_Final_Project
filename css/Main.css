@@ -2,7 +2,7 @@
 .active{}
 
 .nav-link{
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav .navbar-nav li a{
@@ -147,7 +147,7 @@ body{
 
 h6{
     color: white;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     padding-top: 12px;
     font-size: 12px;
@@ -155,7 +155,7 @@ h6{
 }
 h7{
     color: white;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     padding-top: 12px;
     font-size: 12px;
@@ -173,7 +173,7 @@ h7{
 
 
 .label {
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight:normal ;
     color: white;
     fill: white;
@@ -184,87 +184,50 @@ h7{
 
 /* #######ADDED STYLING WITH TEXT #######*/
 
-.main-heading-text{
-    color: white;
-    line-height: 70px;
-    font-family: Oswald;
-    font-size: 100px;
-    font-weight: normal;
-    margin-left: 30px;
+.main-heading-text, .sub-heading-text, .intro-text{padding-left: 100px; padding-right: 100px}
+.section-heading-text, .section-subheading-text,.user-text{padding-left: 100px; padding-right: 100px;color: white;}
+
+.main-heading-text, .sub-heading-text, .section-heading-text,.section-subheading-text, .medium-caption{font-family: "Times New Roman";color: white; }
+.intro-text, .placeholder-text, .link-text, .link-text-small{font-family: 'Roboto Light', sans-serif; color: white;}
+
+
+.main-heading-text{ line-height: 70px;font-size: 100px;}
+.sub-heading-text{ font-size: 32px; }
+.medium-caption{ font-size: 20px}
+
+.highlight-text{ font-family: 'Roboto Medium', sans-serif; }
+.section-heading-text{ line-height:22px;text-align: left;!important; font-size: 40px; font-weight: normal;}
+.section-subheading-text{ text-align: left;!important; font-size: 20px; font-weight: lighter;}
+.intro-text{ font-size: 15px; text-align: left;!important; color: rgba(255, 255, 255,1.0); }
+
+
+.user-text{
+    font-family:'Roboto Thin', sans-serif;
+    font-size: 15px;
+
+    /*color: grey;*/
+    margin-bottom: -20px;
 }
 
-.sub-heading-text{
-    color: white;
-    font-family: Oswald;
-    font-size: 32px;
-    margin-left: 30px;
-    font-weight: lighter;
-}
 
-.intro-text{
-    font-family: Oswald;
-    font-weight: lighter;
-    font-size: 20px;
-    text-align: left;!important;
-    margin-left: 30px;
-    margin-right: 120px;
-    color: lightgrey;
-}
-
-.placeholder-text{
-    color: hotpink;
-}
+.placeholder-text{ color: hotpink}
 
 .link-text{
     color: white;
     text-decoration: underline;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 18px;
 }
 
 .link-text-small{
-    color: lightgrey;
+    /*color: lightgrey;*/
     text-decoration: underline;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     font-size: 14px;
 }
 
-.highlight-text{
-    font-size: 20px;
-    text-align: left;!important;
-    font-weight: normal;
-}
-
-.section-heading-text{
-    color: lightgrey;
-    line-height: 40px;
-    font-family: Oswald;
-    text-align: left;!important;
-    font-size: 30px;
-    font-weight: normal;
-    margin-left: 30px;
-}
-
-.section-subheading-text{
-    color: white;
-    line-height: 40px;
-    font-family: Oswald;
-    text-align: left;!important;
-    font-size: 22px;
-    font-weight: lighter;
-    margin-left: 30px;
-}
-
-.user-text{
-    font-family: Oswald;
-    font-weight: lighter;
-    font-size: 18px;
-    margin-left: 30px;
-    color: grey;
-    margin-bottom: -20px;
-}
 
 .video-div{
     margin-right: 30px;
@@ -275,7 +238,7 @@ h7{
 }
 
 .margin-left{
-    margin-left: 30px;
+    
 }
 
 .card-title{
@@ -284,21 +247,17 @@ h7{
 }
 
 .card-text{
+    font-family: 'Roboto Light', sans-serif;
     text-align: center;
     font-weight: lighter;
 }
 
-.medium-caption{
-    font-family: Oswald;
-    font-style: normal;
-    color: grey;
-}
 
 .legend-dendo{
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     color: lightgrey;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 12px;
     margin-left: 50px;
     margin-right: 50px;
     padding-right: 50px;
@@ -374,8 +333,7 @@ h7{
 /* ####### FINISH OF ADDED STYLING WITH TEXT #######*/
 
 .tooltip_text_desc_min {
-    font-family: Oswald;
-    font-weight:normal ;
+    font-family: 'Roboto Light', sans-serif;
     color: white;
     fill: rgba(255, 255, 255, 0.5);
     font-weight: lighter;
@@ -383,8 +341,7 @@ h7{
 }
 
 .tooltip_text_desc_max{
-    font-family: Oswald;
-    font-weight:normal ;
+    font-family: 'Roboto Light', sans-serif;
     color: white;
     fill: rgba(255, 255, 255, 0.5);
     font-weight: lighter;
@@ -392,15 +349,14 @@ h7{
 }
 
 .tooltip_text{
-    font-family: Oswald;
-    font-weight: lighter;
+    font-family: "Times New Roman";
     color: white;
     font-size: 40px;
     fill: white;
 }
 
 .tooltip_chart_text{
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight:normal ;
     color: white;
     fill: rgba(255, 255, 255, 0.75);
@@ -409,7 +365,7 @@ h7{
 }
 
 .text-legend{
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight:normal ;
     font-size: 12px;
 }
@@ -440,7 +396,7 @@ input{
     text-align: center;
     position: relative;
 
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 12px;
     border-radius: 60px;
@@ -467,8 +423,7 @@ button{
     text-align: center;
     position: relative;
 
-    font-family: Oswald;
-    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     border-radius: 30px;
 
@@ -499,7 +454,7 @@ button{
 
 
 .container{
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: rgb(255, 255, 255);
     display: flex;
@@ -631,7 +586,7 @@ img{object-fit: scale-down;}
     text-align: center;
     position: relative;
 
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 12px;
     border-radius: 30px;
@@ -657,7 +612,7 @@ img{object-fit: scale-down;}
     text-align: center;
     position: relative;
 
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 12px;
     border-radius: 30px;
@@ -675,7 +630,7 @@ img{object-fit: scale-down;}
 #county-tooltip{
     /*visibility: hidden;*/
     /*position: absolute;*/
-    /*font-family: Oswald;*/
+    /*font-family: 'Roboto', sans-serif;*/
     /*background: black;*/
     /*color: white;*/
     /*border: 2px solid black;*/
@@ -767,7 +722,7 @@ img{object-fit: scale-down;}
 #res-stacked-tooltip{
     visibility: hidden;
     position: absolute;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     background: white;
     border: 2px solid black;
     left: 100px;
@@ -780,7 +735,7 @@ img{object-fit: scale-down;}
 #comm-stacked-tooltip{
     visibility: hidden;
     position: absolute;
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     background: white;
     border: 2px solid black;
     left: 100px;
@@ -836,7 +791,7 @@ img{object-fit: scale-down;}
 
 .card-bar__face--front {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), black);
-    font-family: Oswald;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     color: white;
     opacity: 1;
