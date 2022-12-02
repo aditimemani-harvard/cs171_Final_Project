@@ -67,9 +67,9 @@ let drawCountyMap = () => {
                 .html(`<img src=${countyDataItem.properties.picSrc} width="13%" height="auto">
                        <br><span style="font-family: 'Times New Roman'; 
                        font-size:20px">${countyDataItem.properties.code+ ", "+countyDataItem.properties.stateCode}</span>
-                       <br><span>Zone: ${countyDataItem.properties.zone}</span>
-                       <br><span>Sub-Zone: ${countyDataItem.properties.subZone}</span>
-                       <br><span>Climate: ${countyDataItem.properties.zoneType}</span>
+                       <br><span><b>Zone: </b>${countyDataItem.properties.zone}</span>
+                       <br><span><b>Sub-Zone: </b>${countyDataItem.properties.subZone}</span>
+                       <br><span><b>Climate: </b>${countyDataItem.properties.zoneType}</span>
                       
                         
                   `)
