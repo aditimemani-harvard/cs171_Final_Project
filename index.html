@@ -211,43 +211,6 @@
         </div>
     </div>
 
-    <!--    <div class="container-fluid no-gutters">-->
-<!--    <div class="row section-vis-row">-->
-<!--        <div class="row">-->
-<!--            <div class="col section-col">-->
-<!--                <div class="center">-->
-<!--                    <h5 class="scrollFade">Residential Energy Types</h5>-->
-<!--                </div>-->
-<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 5px">-->
-
-<!--                    <div id="res-stacked-chart" style="height: 100%; width: 70%"></div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col section-col">-->
-<!--                <div class="center">-->
-<!--                    <h5 class="scrollFade">Commercial Energy Types</h5>-->
-<!--                </div>-->
-<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; padding: 2px">-->
-<!--                    <div id="comm-stacked-chart" style="height: 100%; width: 70%"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row section-vis-row">-->
-
-<!--        <div class="row">-->
-
-<!--            <div class="col section-col">-->
-<!--                <div class="center">-->
-<!--                    <h5 class="scrollFade">Residential vs. Commercial</h5>-->
-<!--                </div>-->
-<!--                <div class="row justify-content-center" style="height:75vh; width: 75vh; ">-->
-<!--                    <div id="res-comm-stacked-chart" style="height: 100%; width: 70%"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
     <br><br><br><br><br>
 </div>
 
@@ -263,7 +226,7 @@
         <br>
         <div class="row no-gutters" >
             <br>
-            <h5 class="scrollFade intro-text"> Now, the energy consumption for each residence varies a lot based on the different climate zones across the US.
+            <h5 class="scrollFade intro-text"> However, the energy consumption for each residence varies a lot based on the different climate zones across the US.
                 Therefore, before diving deeper into that, we must understand the climate zones that exist and their characteristics. Below is a map broken
                 down by county level, and their corresponding climate type.
                 More information on these can be found
@@ -361,7 +324,7 @@
 
     <p>
     <div class="center">
-        <h5 class="scrollFade medium-caption"> This map shows how the US is divided by Climate Zones 1 - 8 <br></h5>
+        <h5 class="scrollFade medium-caption"> US Climate Zones 1 - 8 and sub-zones A,B,C <br></h5>
     </div>
     <br>
     <div class="center">
@@ -371,39 +334,37 @@
     </p>
 
     <div class="row">
-        <!--    <div class="row justify-content-center">-->
         <div class="col-7">
-            <!--            <div >-->
             <svg class="center" id='county-map'></svg>
-            <!--            </div>-->
         </div>
-
         <div class="col-sm-3">
-
             <div id="county-tooltip" style="height: 100%; width: 90%"></div>
-
         </div>
     </div>
 
-
-        <div class="center">
-            <video width="620" height="440" autoplay muted playsinline loop>
+    <div class="container-fluid no-gutters">
+    <h5 class="scrollFade intro-text"> We can even see what climate zone consumes what <span class = "highlight-text"> 'SOURCE'</span> of energy! What do we mean by that?
+        This means that the <span class = "highlight-text">  'TOTAL SITE ENERGY' that your house or residence uses </span> comes from Natural Gas, Propane, Fuel Oil and finally,
+        Electricity. <br><br>So, we still rely heavily on <span class = "highlight-text">  NON-RENEWABLE  </span> sources for the daily energy usage in our homes.
+      </h5>
+    </div>
+        <div class="center ">
+            <video width="75%" autoplay muted playsinline loop>
                 <source src="img/energy_type_speed.mp4" type="video/mp4">
 
             </video>
         </div>
 
-
     <!--     ````````````````````````` TIME CHART SECTION  `````````````````````````-->
     <div>
-
-
-
-
-        <div class="title">
-            <h5 class="scrollFade">Energy consumption change throughout...</h5>
+        <div class="center">
+            <h5 class="scrollFade medium-caption">Energy consumption change throughout different climate zones in a 24-hour time period </h5>
         </div>
-
+        <br>
+        <div class="center">
+            <h7 class="scrollFade user-text"><em>(Select the energy source using the buttons below)</em></h7>
+        </div>
+        <br><br>
         <!--    <div id="userBubble" style="height:10vh"></div>-->
 
         <div class="container" data-toggle="buttons" onchange="displayRadioValue()">
@@ -473,6 +434,8 @@
     <br><br><br>
 <!--</div>-->
 </div>
+
+
 <!--    #################### BUILDING TYPE Section ####################-->
 <div id="building_type_section">
     <div class="container-fluid no-gutters">
