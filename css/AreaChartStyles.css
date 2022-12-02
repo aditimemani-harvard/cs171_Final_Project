@@ -312,6 +312,68 @@ h7{
     color: grey;
 }
 
+.legend-dendo{
+    font-family: Oswald;
+    color: lightgrey;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#arrowAnim {
+    width: 5vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 1vw;
+    height: 1vw;
+    border: 0.2vw solid;
+    border-color: white transparent transparent white;
+    transform: rotate(135deg);
+}
+
+
+.arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite;
+    animation: slide 4s linear infinite;
+}
+
+.delay1 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.delay2 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.delay3 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateX(2vw); }
+    20% { opacity:1; transform: translateX(0.5vw); }
+    80% { opacity:1; transform: translateX(-0.5vw); }
+    100% { opacity:0; transform: translateX(-2vw); }
+}
+@keyframes slide {
+    0% { opacity:0; transform: translateX(2vw); }
+    20% { opacity:1; transform: translateX(0.5vw); }
+    80% { opacity:1; transform: translateX(-0.5vw); }
+    100% { opacity:0; transform: translateX(-2vw); }
+}
+
+
 
 
 

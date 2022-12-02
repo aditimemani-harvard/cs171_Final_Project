@@ -20,8 +20,6 @@
 
 <body>
 <!-- NAVIGATION BAR AREA-->
-<!--<a class="nav-link" href="#home_section" class="top-btn">Back to Top &#8593;</a>-->
-<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
 <div id="Main_Title"></div>
 <nav class="navbar navbar-expand-sm" style="background-color: white;">
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
@@ -512,59 +510,149 @@
     <!--     ````````````````````````` DENDO CHART SECTION  `````````````````````````-->
     <br><br>
     <div class="center">
-        <h5 class="scrollFade medium-caption"> US Climate Zones 1 - 8 and sub-zones A,B,C <br></h5>
+        <h5 class="scrollFade medium-caption"> Energy Consumption based on Climate Zone and Residential Building Type <br></h5>
     </div>
     <br>
     <div class="center">
         <h7 class="scrollFade user-text"><em>(Click on the circular nodes to study the branches under each Climate Zone)</em></h7>
     </div>
+
     <br> <br>
-        <div class="center">
+<!--Arrow-->
+<div class=" container-fluid no-gutters">
+    <div class="row legend-dendo">
+        <div class="col center">
+            <p class = "legend-dendo">Climate Zone
             <div class="center">
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Sub-Climate Zone
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Residential Type
+            <div class="center">
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "legend-dendo">Structural Material
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col center"> <p class = "legend-dendo">Construction Year
+            <div class="center" >
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+            </div> </div>
+        <div class="col center"> <p class = "center legend-dendo">Site Energy
+            <div>
+    </div>
+</div>
+
+
+    <div class="center">
+        <div class="center">
+            <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                <div id="buttonDendoDiv">
+                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone: 4</button>
+                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
+                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone: 6</button>
+                </div>
+                <script>
+                    // Add active class to the current button (highlight it)
+                    var header = document.getElementById("buttonDendoDiv");
+                    var btns = header.getElementsByClassName("button-dendo");
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function () {
+                            var current = document.getElementsByClassName("active");
+                            current[0].className = current[0].className.replace(" active", "");
+                            this.className += " active";
+                        });
+                    }
+                </script>
                 <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                    <div id="buttonDendoDiv">
-                        <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone: 4</button>
-                        <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone: 5</button>
-                        <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone: 6</button>
-                    </div>
-                    <script>
-                        // Add active class to the current button (highlight it)
-                        var header = document.getElementById("buttonDendoDiv");
-                        var btns = header.getElementsByClassName("button-dendo");
-                        for (var i = 0; i < btns.length; i++) {
-                            btns[i].addEventListener("click", function () {
-                                var current = document.getElementsByClassName("active");
-                                current[0].className = current[0].className.replace(" active", "");
-                                this.className += " active";
-                            });
-                        }
-                    </script>
-                    <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                        <svg id="dendo" width="75%" height="75%"></svg>
-                    </div>
+                    <svg id="dendo" width="75%" height="75%"></svg>
                 </div>
             </div>
         </div>
     </div>
-    <p>
-        <br><br><br>
-    </p>
+</div>
+
+    <br>
 </div>
 <!--    #################### BUILDING ATTRIBUTES Section ####################-->
 <div id="building_attributes_sections">
     <div class="container-fluid no-gutters">
         <p>
-        <div class="center" class="scrollFade">
-            <h3 class="scrollFade"> How to Reduce Energy Consumption In Your Own Home <br></h3>
+        <div class="scrollFade">
+            <h3 class="scrollFade section-heading-text"> Energy Consumption by Building Attributes <br></h3>
         </div>
-        <br>
-        <div class="center">
-            <h5 class="scrollFade"><em>Compare different elements and how they can reduce consuming different types of energy </em></h5>
+        <div >
+            <h5 class="scrollFade section-subheading-text"><em>Compare different elements and how they can reduce consuming different types of energy </em></h5>
         </div>
-        <br><br><br>
+        <br><br>
+        <div>
+            <h5 class="scrollFade intro-text"> We now know the energy consumption by climate  and residential building types.
+                Now, let's dive deeper inside each building and <span class = "highlight-text"> see what appliances consume how much energy, </span> and where
+                does this energy come from - is it electricity or fuel? Click on each area in the map below to get a better understanding.
+            </h5>
         </p>
     </div>
-
+        <br><br><br>
     <div class="row section-vis-row">
 
         <div class="row">
