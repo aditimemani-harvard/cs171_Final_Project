@@ -27,7 +27,7 @@ class TotalStackedAreaChart {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 50, right: 0, bottom: 200, left: 30};
+        vis.margin = {top: 30, right: 30, bottom: 20, left: 30};
 
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom
@@ -37,8 +37,8 @@ class TotalStackedAreaChart {
 
         // SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
-            .attr("width", vis.width + vis.margin.left + vis.margin.right+70)
-            .attr("height", vis.height + vis.margin.top + vis.margin.bottom+70)
+            .attr("width", vis.width + vis.margin.left + vis.margin.right)
+            .attr("height", vis.height + vis.margin.top + vis.margin.bottom+60)
             .append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
@@ -64,12 +64,12 @@ class TotalStackedAreaChart {
         // Add X axis label:
         vis.svg.append("text")
             .attr("text-anchor", "end")
-            .attr("x", 120)
-            .attr("y", vis.height + 50)
+            .attr("x", vis.width)
+            .attr("y", vis.height + 40)
             .text("Time (Years)")
-            .style('font-family', 'Helvetica')
-            .style('font-size', '14px')
-            .style('font-weight', 'bold').style('fill', 'white');
+            .style('font-family', 'Roboto')
+            .style('font-size', '10px')
+            .style('fill', 'white');
 
         // Add Y axis
 
@@ -102,21 +102,26 @@ class TotalStackedAreaChart {
         // create a tooltip
         vis.Tooltip = vis.svg
             .append("text")
-            .attr("x", width/3)
-            .attr("y", 0)
+            .attr("x", vis.width/2)
+            .attr("y", -19)
             .style("opacity", 0)
             .style("font-size", 20)
+            .attr("text-anchor", "middle")
 
         // Three function that change the tooltip when user hover / move / leave a cell
         var mouseover = function(d) {
             vis.Tooltip.style("opacity", 1)
             d3.selectAll(".myArea").style("opacity", .2)
             d3.select(this)
-                .style("stroke", "white")
+                .style("stroke", "black")
                 .style("opacity", 1)
         }
         var mousemove = function(d,i) {
-            vis.Tooltip.text('  Category '+i.key).style('font-size', 15).style('fill', 'white')
+            vis.Tooltip.text('  Category '+i.key)
+                .style('fill', 'white')
+                .style('font-family', 'Roboto')
+                .style('font-size', '12px')
+                .style('fill', 'white');
         }
         var mouseleave = function(d) {
             vis.Tooltip.style("opacity", 0)
@@ -147,7 +152,7 @@ class TotalStackedAreaChart {
             .on("mouseleave", mouseleave)
 
         vis.xAxis = d3.axisBottom()
-            .scale(vis.x);
+            .scale(vis.x).ticks(5);
         // vis.xAxis.select(".domain")
         //     .attr("stroke","black")
         //     .attr("stroke-width","6px")
@@ -155,11 +160,12 @@ class TotalStackedAreaChart {
         vis.svg.append("g")
             .attr("class", "x-axis axis-stacked")
             .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.xAxis).style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
+            .call(vis.xAxis).style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove())
 
         // Append y-axis
         vis.yAxis = d3.axisLeft()
-            .scale(vis.y);
+            .scale(vis.y).ticks(5);
         // vis.yAxis.select(".domain")
         //     .attr("stroke","black")
         //     .attr("stroke-width","6px")
@@ -168,15 +174,18 @@ class TotalStackedAreaChart {
         vis.svg.append("g")
             .attr("class", "y-axis axis-stacked")
             // .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.yAxis).style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
+            .call(vis.yAxis).style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove());
+
         vis.svg.append("text")
             .attr("text-anchor", "end")
             .attr("y", 0-15)
             .attr("x", 0+10)
             .text("Value")
-            .style('font-family', 'Helvetica')
-            .style('font-size', '14px')
-            .style('font-weight', 'bold').style('fill', 'white');
+            .style('font-family', 'Roboto')
+            .style('font-size', '10px')
+            .style('fill', 'white');
+
 
 
     }

@@ -27,7 +27,7 @@ class COMMStackedAreaChart {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 50, right: 0, bottom: 200, left: 30};
+        vis.margin = {top: 30, right: 30, bottom: 20, left: 30};
 
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom
@@ -35,10 +35,26 @@ class COMMStackedAreaChart {
         // console.log(vis.width)
         // console.log(vis.height)
 
+
+        // Image tooltip
+        let commTooltip = d3.select('#image-tooltip')
+        let imageScalePath = ['img/stacked_chart/commercial/Delivered Energy.png',
+            'img/stacked_chart/commercial/Distillate Fuel Oil.jpg',
+            'img/stacked_chart/commercial/Energy Related Losses.jpg',
+            'img/stacked_chart/commercial/Natural Gas.jpg',
+            'img/stacked_chart/commercial/Petroleum and Other Liquids Subtotal.jpg',
+            'img/stacked_chart/commercial/Purchased Electricity.jpg']
+
+        // let imageScalePath = ['img/climate_type/cold.png','img/climate_type/dry.png', 'img/climate_type/hot.png', 'img/climate_type/humid.png', 'img/climate_type/marine.png',  'img/climate_type/subartic.png', 'img/climate_type/very_cold.png', 'img/climate_type/hot.png', 'img/climate_type/mixed.png', 'img/climate_type/mixed.png']
+        let imageScaleSrc = ['Delivered Energy','Distillate Fuel Oil', 'Energy Related Losses',
+            'Natural Gas', 'Petroleum and Other Liquids Subtotal', 'Purchased Electricity']
+        var imageScale = d3.scaleOrdinal().domain(imageScaleSrc).range(imageScalePath)
+
+
         // SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
-            .attr("width", vis.width + vis.margin.left + vis.margin.right+70)
-            .attr("height", vis.height + vis.margin.top + vis.margin.bottom+70)
+            .attr("width", vis.width + vis.margin.left + vis.margin.right)
+            .attr("height", vis.height + vis.margin.top + vis.margin.bottom + 60)
             .append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
@@ -53,35 +69,19 @@ class COMMStackedAreaChart {
             .domain([0, 30])
             .range([ vis.height, 0 ]);
 
-        // vis.svg.append("g")
-        // 	.attr("transform", "translate(0," + vis.height*0.6 + ")")
-        // 	.call(d3.axisBottom(vis.x).tickSize(- vis.height*.7).tickValues([1900, 1925, 1975, 2000]))
-        // 	.select(".domain").remove()
-
         // Customization
-        vis.svg.selectAll(".tick line").attr("stroke", "white")
+        vis.svg.selectAll(".tick line").attr("stroke", "black")
 
         // Add X axis label:
         vis.svg.append("text")
+            // .attr("class", "text-legend")
             .attr("text-anchor", "end")
-            .attr("x", 120)
-            .attr("y", vis.height + 50)
+            .attr("x", vis.width)
+            .attr("y", vis.height + 40)
             .text("Time (Years)")
-            .style('font-family', 'Helvetica')
-            .style('font-size', '14px')
-            .style('font-weight', 'bold').style('fill', 'white');
-
-        // Add Y axis
-
-        // console.log(vis.max_y)
-
-        // vis.yAxis= svg.append("g")
-        //     .call(d3.axisLeft(y))
-        //     .style('color', 'white')
-        //     .style('font-family', 'Helvetica')
-        // vis.yAxis.select(".domain")
-        //     .attr("stroke","black")
-        //     .attr("stroke-width","6px")
+            .style('font-family', 'Roboto')
+            .style('font-size', '10px')
+            .style('fill', 'white');
 
         var customPalette = ['#eeeeee',
             '#dddddd',
@@ -110,23 +110,38 @@ class COMMStackedAreaChart {
         // create a tooltip
         vis.Tooltip = vis.svg
             .append("text")
-            .attr("x", width/3)
-            .attr("y", 0)
+            .attr("x", vis.width/2)
+            .attr("y", -19)
             .style("opacity", 0)
             .style("font-size", 20)
+            .attr("text-anchor", "middle")
 
         // Three function that change the tooltip when user hover / move / leave a cell
-        var mouseover = function(d) {
+        var mouseover = function(d,i) {
             vis.Tooltip.style("opacity", 1)
             d3.selectAll(".myArea").style("opacity", .2)
             d3.select(this)
                 .style("stroke", "white")
                 .style("opacity", 1)
+
+            commTooltip
+                .html(`<img src=${imageScale(i.key)} width="100%" height="auto">
+                  `)
+                .style("left", (event.pageX-50)+ "px")
+                .style("top", (event.pageY-50) + "px");
+
         }
         var mousemove = function(d,i) {
-            vis.Tooltip.text('  Commerical: '+i.key).style('font-size', 15).style('fill', 'white')
+            vis.Tooltip.text('  Commercial: '+i.key)
+                .style('fill', 'white')
+                .style('font-family', 'Roboto')
+                .style('font-size', '12px')
+                .style('fill', 'white');
+
         }
         var mouseleave = function(d) {
+            // commTooltip.transition()
+            //     .style('visibility', 'hidden')
             vis.Tooltip.style("opacity", 0)
             d3.selectAll(".myArea").style("opacity", 1)
                 .style("stroke", "none")
@@ -153,38 +168,42 @@ class COMMStackedAreaChart {
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
+            // .on('mouseout', function(event,countyDataItem){
+            //     commTooltip.transition()
+            //         .style('visibility', 'hidden')
+            // })
 
         vis.xAxis = d3.axisBottom()
-            .scale(vis.x);
-        // vis.xAxis.select(".domain")
-        //     .attr("stroke","black")
-        //     .attr("stroke-width","6px")
-        // Append x-axis
+            .scale(vis.x)
+            .ticks(5);
+
         vis.svg.append("g")
             .attr("class", "x-axis axis-stacked")
             .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.xAxis).style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
+            .call(vis.xAxis).style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove())
+
 
         // Append y-axis
         vis.yAxis = d3.axisLeft()
-            .scale(vis.y);
-        // vis.yAxis.select(".domain")
-        //     .attr("stroke","black")
-        //     .attr("stroke-width","6px")
+            .scale(vis.y)
+            .ticks(5);
 
 
         vis.svg.append("g")
             .attr("class", "y-axis axis-stacked")
             // .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.yAxis).style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
+            .call(vis.yAxis).style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove())
+
         vis.svg.append("text")
             .attr("text-anchor", "end")
             .attr("y", 0-15)
             .attr("x", 0+10)
             .text("Value")
-            .style('font-family', 'Helvetica')
-            .style('font-size', '14px')
-            .style('font-weight', 'bold').style('fill', 'white');
+            .style('font-family', 'Roboto')
+            .style('font-size', '10px')
+            .style('fill', 'white');
 
 
     }

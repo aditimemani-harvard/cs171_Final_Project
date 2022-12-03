@@ -9,7 +9,6 @@
           crossorigin="anonymous">
     <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
 
-
 <!--        <link rel="stylesheet" href="css/AreaChartStyles.css">-->
     <link rel="stylesheet" href="css/Main.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -163,51 +162,48 @@
         <h5 class="scrollFade user-text"> <em>(Click on the card below to study the energy consumption of both residential and commercial buildings)</em></h5>
     </div>
 
-    <div class="row no-gutters">
-        <div class="col no-gutters section-col margin-left">
-            <div class="scene-bar scene-bar--card-bar">
-                <div class="card-bar ">
-                    <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
-                    <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
-                         style="height:100%; width: 100%;"></div>
+
+    <div class="center ">
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="col no-gutters section-col margin-left">
+                <div class="scene-bar scene-bar--card-bar">
+                    <div class="card-bar ">
+                        <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                        <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
+                             style="height:100%; width: 100%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" >
-            <img src="img/stacked_chart_support/res_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
-        </div>
-    </div>
-
-
-    <div class="row no-gutters">
-        <div class="col no-gutters section-col margin-left">
-            <div class="scene-bar scene-bar--card-bar">
-                <div class="card-bar">
-                    <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
-                    <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
-                         style="height:100%; width: 100%;"></div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="col no-gutters section-col margin-left">
+                <div class="scene-bar scene-bar--card-bar">
+                    <div class="card-bar">
+                        <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
+                        <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
+                             style="height:100%; width: 100%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" >
-            <img src="img/stacked_chart_support/comm_delivered_energy.jpg" alt="" srcset="" style="width: 100%">
-        </div>
-    </div>
-
-    <div class="row no-gutters">
-        <div class="col no-gutters section-col margin-left">
-            <div class="scene-bar scene-bar--card-bar">
-                <div class="card-bar">
-                    <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
-                    <div class="card-bar__face card-bar__face--back" id="res-comm-stacked-chart"
-                         style="height:100%; width: 100%;"></div>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="col no-gutters section-col margin-left">
+                <div class="scene-bar scene-bar--card-bar">
+                    <div class="card-bar">
+                        <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
+                        <div class="card-bar__face card-bar__face--back" id="res-comm-stacked-chart"
+                             style="height:100%; width: 100%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col no-gutters img-div" >
-            <img src="img/stacked_chart_support/All.jpg" alt="" srcset="" style="width: 100%">
-        </div>
     </div>
+    <br>
+    <div id="image-tooltip" style="height: 100%; width: 100%"></div>
+
+<!--    <img src="img/stacked_chart/commercial/Delivered Energy.jpg" width="50%" height="auto">-->
 
     <br><br><br><br><br>
 </div>
