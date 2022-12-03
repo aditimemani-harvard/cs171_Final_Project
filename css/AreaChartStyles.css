@@ -267,7 +267,12 @@ h7{
 }
 
 .video-div{
-    margin-right: 30px;
+    margin-right: 75px;
+    padding-right: 50px;
+}
+
+.reduced-div{
+    padding-right: 50px;
 }
 
 .img-div{
