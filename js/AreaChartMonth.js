@@ -123,7 +123,7 @@ class AreaChartMonth {
                     vis.svg.selectAll('.tooltip_chart_text')
                         .data(vis.data)
                         .style("opacity", 1)
-                        .text(mouse_time + ": " + f(mouse_value))
+                        .text(mouse_time + ": " + f(mouse_value) + " kwh")
                         .attr("x", 30)
                         .attr("y", vis.height + 15)
                         .attr('alignment-baseline', 'alphabetic')

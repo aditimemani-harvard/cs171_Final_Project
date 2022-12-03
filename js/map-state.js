@@ -41,7 +41,7 @@ let drawMap = () => {
         .attr('d', d3.geoPath())
         .attr('stroke', 'black')
         .attr('stroke-width', 0.5)
-        .style("opacity", 0.5)
+        .style("opacity", 0.7)
         .attr("transform", "scale(0.7), translate(0,0)")
 
         //stateDataItem refers to the state level array object from the topojson file
@@ -128,7 +128,7 @@ let drawMap = () => {
         .on('mouseout', function(event,stateDataItem) {
             d3.select(this)
                 .attr('stroke-width', 0.5)
-                .style("opacity", 0.5)
+                .style("opacity", 0.7)
 
             stateTooltip.transition()
                 .style('visibility', 'hidden')

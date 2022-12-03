@@ -172,7 +172,7 @@ h7{
 }
 
 
-.label {
+.label, .text-legend2 {
     font-family: 'Roboto', sans-serif;
     font-weight:normal ;
     color: white;
@@ -364,11 +364,13 @@ h7{
     font-size: 12px;
 }
 
-.text-legend{
+.text-legend, .text-legend3{
     font-family: 'Roboto', sans-serif;
     font-weight:normal ;
     font-size: 12px;
 }
+
+
 
 .title{
     padding-top: 100px;
@@ -533,7 +535,7 @@ button{
 .intro_text-legend-display, .intro_text-legend-country {font-family: Helvetica; font-weight: lighter; font-size: 4px; }
 .intro_tooltip_circle_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 40px; fill: white;}
 .intro_tooltip_circle_chart_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 20px; fill: white;}
-.intro_legend_country_text{ font-family: "Times New Roman"; font-weight:normal ; color: white; fill: white; font-size: 10px; }
+.intro_legend_country_text{ font-family: "Times New Roman"; font-weight:normal ; color: white; fill: white; font-size: 15px; }
 /*###################CARD IMG #####################*/
 .card-title{ font-size: 18px; font-weight: 900; }
 .card-text{font-size: 10px; font-weight: 1; color: rgba(255, 255, 255, 1.0)}

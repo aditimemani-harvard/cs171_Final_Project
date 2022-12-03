@@ -374,8 +374,9 @@ function introCurves(data){
                 svg.selectAll('.intro_legend_country_text')
                     .style("opacity", 1)
                     .text(arr_display[mouse_country].key + " :  " + arr_display[mouse_country].temp + "°c" )
-                    .attr("x", mouse[0])
-                    .attr("y", height-250)
+                    .attr("x", mouse[0]+2)
+                    .attr("y", height-320)
+                    .attr("alignment-baseline", "ideographic")
                     .attr('writing-mode','vertical-rl')
                     .attr('glyph-orientation-vertical','180');
 

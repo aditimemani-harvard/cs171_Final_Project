@@ -56,6 +56,27 @@ class AreaChartTooltip {
             .domain([0,86400])
             .range([0, vis.width]);
 
+        // labels
+        var legend_text2 = vis.svg.append("text")
+            .classed('text-legend2', true)
+            .text("Climate Zone")
+            .attr("x", -45)
+            .attr("y", vis.height_chart*16 + 23)
+            .attr('text-anchor','middle')
+            // .attr('writing-mode','vertical-rl')
+            // .attr('glyph-orientation-vertical','0')
+            .attr('fill', 'rgba(255,255,255,0.5)');
+
+        var legend_text3 = vis.svg.append("text")
+            .classed('text-legend3', true)
+            .text("Time")
+            .attr("x", vis.width+40)
+            .attr("y", vis.height_chart*16 + 68)
+            .attr('text-anchor','middle')
+            // .attr('writing-mode','vertical-rl')
+            // .attr('glyph-orientation-vertical','0')
+            .attr('fill', 'rgba(255,255,255,0.5)');
+
 
         // appending the empty tooltips
         vis.svg.append('g').append('line').classed('tooltip_line', true);
@@ -132,13 +153,13 @@ class AreaChartTooltip {
 
                 vis.svg.selectAll('.tooltip_text_desc_min')
                     .style("opacity", 1)
-                    .text("min: "+ dataList[min_index]+", "+ f(tooltip_obj[min_index][button_chart_value]))
+                    .text("min: "+ dataList[min_index]+", "+ f(tooltip_obj[min_index][button_chart_value]) + " kwh")
                     .attr("x", mouse[0]-vis.margin.left+vis.offset_pointer)
                     .attr("y", vis.height-vis.buffer_pointer-55)
 
                 vis.svg.selectAll('.tooltip_text_desc_max')
                     .style("opacity", 1)
-                    .text("max: "+ dataList[max_index]+", "+ f(tooltip_obj[max_index][button_chart_value]))
+                    .text("max: "+ dataList[max_index]+", "+ f(tooltip_obj[max_index][button_chart_value]) + " kwh")
                     .attr("x", mouse[0]-vis.margin.left+vis.offset_pointer)
                     .attr("y", vis.height-vis.buffer_pointer-40)
 
@@ -158,7 +179,7 @@ class AreaChartTooltip {
 
                     vis.svg.selectAll('.tooltip_chart_text')
                         .style("opacity", 1)
-                        .text(dataList[climateZone_tooltip]+": "+ f(tooltip_obj[climateZone_tooltip][button_chart_value]))
+                        .text(dataList[climateZone_tooltip]+": "+ f(tooltip_obj[climateZone_tooltip][button_chart_value]) + " kwh")
                         .attr("x", mouse[0]-vis.margin.left + vis.offset_pointer)
                         .attr("y", mouse[1]-vis.height_chart)
                         .attr('alignment-baseline','middle')

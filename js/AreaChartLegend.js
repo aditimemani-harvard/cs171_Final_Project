@@ -24,7 +24,6 @@ class AreaChartLegend {
             .append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-
         // scale the x-axis based on the 24 hour range in seconds
         var x = d3.scaleLinear()
             .domain([0, 86400])

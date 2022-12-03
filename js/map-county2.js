@@ -35,7 +35,7 @@ let drawCountyMap = () => {
         .attr('d', d3.geoPath().projection(projection))
         .attr('class', 'county')
         .attr('stroke-width', 0)
-        .style("opacity", 0.5)
+        .style("opacity", 0.7)
         .attr("transform", "scale(0.7), translate(0,0)")
         //countyDataItem refers to the county level array object from the topojson file
         .attr('fill', (countyDataItem) => {
@@ -117,7 +117,7 @@ let drawCountyMap = () => {
             d3.select(this)
                 // style("opacity", 0.5)
                 .style("stroke", "none")
-                .style("opacity", "0.5");
+                .style("opacity", "0.7");
         })
 }
 
