@@ -24,6 +24,12 @@ class AreaChartLegend {
             .append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+        vis.svg.append("text")
+            .classed("text-legend", true)
+            .attr("x", 0)
+            .attr("y", vis.height-150)
+            .text("Climate Zone")
+
 
         // scale the x-axis based on the 24 hour range in seconds
         var x = d3.scaleLinear()
