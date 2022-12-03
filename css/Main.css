@@ -230,7 +230,7 @@ h7{
 
 
 .video-div{
-    margin-right: 30px;
+    margin-right: 75px;
 }
 
 .img-div{
@@ -238,7 +238,7 @@ h7{
 }
 
 .margin-left{
-    
+    margin-left: 0px;
 }
 
 .card-title{
@@ -331,6 +331,16 @@ h7{
 
 
 /* ####### FINISH OF ADDED STYLING WITH TEXT #######*/
+.tooltipBar{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    fill: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-anchor: middle;
+    text-align: center;
+
+}
+
 
 .tooltip_text_desc_min {
     font-family: 'Roboto Light', sans-serif;

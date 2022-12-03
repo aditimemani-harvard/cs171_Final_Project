@@ -16,7 +16,7 @@ let domThree = 'stacked-barThree'
 
 // Parse the Data
 function UpdateChart(dom, dataURL, max_val) {
-    var margin = {top: 10, right: 30, bottom: 20, left: 50},
+    var margin = {top: 20, right: 30, bottom: 20, left: 30},
         width = document.getElementById(dom).getBoundingClientRect().width - margin.left - margin.right,
         height = document.getElementById(dom).getBoundingClientRect().height - margin.top - margin.bottom;
     var svgBar = d3.select("#"+dom)
@@ -41,8 +41,9 @@ function UpdateChart(dom, dataURL, max_val) {
         svgBar.append("g")
             .attr("transform", `translate(0, ${height})`)
             .call(d3.axisBottom(x).tickSizeOuter(0))
-            .style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
-        ;
+            .style('color', 'rgba(255, 255, 255, 0.75)')
+            .style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove())
 
         // Add Y axis
         var y = d3.scaleLinear()
@@ -50,8 +51,9 @@ function UpdateChart(dom, dataURL, max_val) {
             .range([height, 0]);
         svgBar.append("g")
             .call(d3.axisLeft(y))
-            .style('color', 'white').style('font-size', 10).style('font-family', 'Helvetica');
-        ;
+            .style('color', 'rgba(255, 255, 255, 0.75)')
+            .style('font-size', 8).style('font-family', 'Roboto')
+            .call(g => g.select(".domain").remove());
 
         // color palette = one color per subgroup
         var color = d3.scaleOrdinal()
@@ -77,7 +79,7 @@ function UpdateChart(dom, dataURL, max_val) {
         var tooltipBar = d3.select("#"+dom)
             .append("div")
             .style("opacity", 0)
-            .attr("class", "tooltipBar")
+            .attr("class", "tooltipBar center")
             // .style("position", "absolute")
             // .style("background-color", "white")
             // .style("border", "solid")
@@ -86,7 +88,7 @@ function UpdateChart(dom, dataURL, max_val) {
             // .style("padding", "10px")
             // .style("left", "100px")
             .attr("x", 0)
-            .attr("y", -100)
+            .attr("y", -100);
 
         // Three function that change the tooltipBar when user hover / move / leave a cell
         var mouseover = function (event, d) {
@@ -94,10 +96,10 @@ function UpdateChart(dom, dataURL, max_val) {
             var subgroupValue = d.data[subgroupName];
             tooltipBar
                 // .text('  Category '+subgroupName + "Value: "+ subgroupValue)
-
+                // .html('<br>'+subgroupName +'<br>' +" Value: " + subgroupValue)
                 .html('<br>'+subgroupName +'<br>' +" Value: " + subgroupValue)
                 .style("opacity", 1)
-                .style('font-size', 4).style('fill', 'white')
+                .style('font-size',4).style('fill', 'white')
 
         }
         var mousemove = function (event, d) {
@@ -127,7 +129,8 @@ function UpdateChart(dom, dataURL, max_val) {
             .attr("y", d => y(d[1]))
             .attr("height", d => y(d[0]) - y(d[1]))
             .attr("width", x.bandwidth())
-            .attr("stroke", "grey")
+            .attr("stroke", "black")
+            .attr("stroke-width", 0.1)
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
