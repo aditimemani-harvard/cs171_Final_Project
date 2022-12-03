@@ -184,8 +184,8 @@ h7{
 
 /* #######ADDED STYLING WITH TEXT #######*/
 
-.main-heading-text, .sub-heading-text, .intro-text{padding-left: 100px; padding-right: 100px}
-.section-heading-text, .section-subheading-text,.user-text{padding-left: 100px; padding-right: 100px;color: white;}
+.main-heading-text, .sub-heading-text, .intro-text{padding-left: 120px; padding-right: 120px}
+.section-heading-text, .section-subheading-text,.user-text{padding-left: 120px; padding-right: 120px;color: white;}
 
 .main-heading-text, .sub-heading-text, .section-heading-text,.section-subheading-text, .medium-caption{font-family: "Times New Roman";color: white; }
 .intro-text, .placeholder-text, .link-text, .link-text-small{font-family: 'Roboto Light', sans-serif; color: white;}
