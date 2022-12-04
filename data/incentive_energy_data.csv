@@ -1,52 +1,50 @@
-,state,code,census_region,census_region_div,elec_total_kwh_mean,fips,incentive_count
-0,Alabama,AL,Southeast,East South Central,15645.62575,01,67
-1,Alaska,AK,West Coast,Pacific,8565.961689,02,34
-2,Arizona,AZ,West,Mountain South,12692.95287,04,107
-3,Arkansas,AR,Southwest,West South Central,15475.98708,05,55
-4,California,CA,West Coast,Pacific,8565.961689,06,389
-5,Colorado,CO,West,Mountain South,12692.95287,08,206
-6,Connecticut,CT,Northeast,New England,8415.681173,09,139
-7,Delaware,DE,South,South Atlantic,14175.7713,10,57
-8,District of Columbia,DC,South,South Atlantic,14175.7713,11,34
-9,Florida,FL,South,South Atlantic,14175.7713,12,173
-10,Georgia,GA,South,South Atlantic,14175.7713,13,95
-11,Hawaii,HI,West Coast,Pacific,8565.961689,15,54
-12,Idaho,ID,West ,Mountain North,9585.731684,16,66
-13,Illinois,IL,Midwest,East North Central,9746.464217,17,128
-14,Indiana,IN,Midwest,East North Central,9746.464217,18,113
-15,Iowa,IA,Midwest,West North Central,12678.20561,19,106
-16,Kansas,KS,Midwest,West North Central,12678.20561,20,42
-17,Kentucky,KY,Southeast,East South Central,15645.62575,21,92
-18,Louisiana,LA,Southwest,West South Central,15475.98708,22,46
-19,Maine,ME,Northeast,New England,8415.681173,23,47
-20,Maryland,MD,South,South Atlantic,14175.7713,24,134
-21,Massachusetts,MA,Northeast,New England,8415.681173,25,180
-22,Michigan,MI,Midwest,East North Central,9746.464217,26,142
-23,Minnesota,MN,Midwest,West North Central,12678.20561,27,214
-24,Mississippi,MS,Southeast,East South Central,15645.62575,28,41
-25,Missouri,MO,Midwest,West North Central,12678.20561,29,99
-26,Montana,MT,West ,Mountain North,9585.731684,30,62
-27,Nebraska,NE,Midwest,West North Central,12678.20561,31,36
-28,Nevada,NV,West,Mountain South,12692.95287,32,53
-29,New Hampshire,NH,Northeast,New England,8415.681173,33,70
-30,New Jersey,NJ,Northeast,Middle Atlantic,8970.632557,34,86
-31,New Mexico,NM,West,Mountain South,12692.95287,35,73
-32,New York,NY,Northeast,Middle Atlantic,8970.632557,36,181
-33,North Carolina,NC,South,South Atlantic,14175.7713,37,142
-34,North Dakota,ND,Midwest,West North Central,12678.20561,38,27
-35,Ohio,OH,Midwest,East North Central,9746.464217,39,104
-36,Oklahoma,OK,Southwest,West South Central,15475.98708,40,54
-37,Oregon,OR,West Coast,Pacific,8565.961689,41,195
-38,Pennsylvania,PA,Northeast,Middle Atlantic,8970.632557,42,108
-39,Rhode Island,RI,Northeast,New England,8415.681173,44,59
-40,South Carolina,SC,South,South Atlantic,14175.7713,45,88
-41,South Dakota,SD,Midwest,West North Central,12678.20561,46,42
-42,Tennessee,TN,Southeast,East South Central,15645.62575,47,83
-43,Texas,TX,Southwest,West South Central,15475.98708,48,205
-44,Utah,UT,West,Mountain South,12692.95287,49,58
-45,Vermont,VT,Northeast,New England,8415.681173,50,101
-46,Virginia,VA,South,South Atlantic,14175.7713,51,102
-47,Washington,WA,West Coast,Pacific,8565.961689,53,211
-48,West Virginia,WV,South,South Atlantic,14175.7713,54,19
-49,Wisconsin,WI,Midwest,East North Central,9746.464217,55,149
-50,Wyoming,WY,West ,Mountain North,9585.731684,56,47
+state,code,census_region,census_region_div,avg_energy,FIPS,incentive_count
+Alabama,AL,Southeast,East South Central,20644.97865,01,67
+Arizona,AZ,West,Mountain South,17102.09327,04,107
+Arkansas,AR,Southwest,West South Central,24097.67473,05,55
+California,CA,West Coast,Pacific,14514.78978,06,389
+Colorado,CO,West,Mountain South,26851.79823,08,206
+Connecticut,CT,Northeast,New England,32513.25771,09,139
+Delaware,DE,South,South Atlantic,26770.77403,10,57
+District of Columbia,DC,South,South Atlantic,21243.25952,11,34
+Florida,FL,South,South Atlantic,14542.27814,12,173
+Georgia,GA,South,South Atlantic,20549.22263,13,95
+Idaho,ID,West ,Mountain North,26155.83358,16,66
+Illinois,IL,Midwest,East North Central,36044.11288,17,128
+Indiana,IN,Midwest,East North Central,33489.86567,18,113
+Iowa,IA,Midwest,West North Central,39014.94707,19,106
+Kansas,KS,Midwest,West North Central,35615.79118,20,42
+Kentucky,KY,Southeast,East South Central,26836.92814,21,92
+Louisiana,LA,Southwest,West South Central,19633.68936,22,46
+Maine,ME,Northeast,New England,31202.49139,23,47
+Maryland,MD,South,South Atlantic,27400.564,24,134
+Massachusetts,MA,Northeast,New England,33200.18904,25,180
+Michigan,MI,Midwest,East North Central,37697.36388,26,142
+Minnesota,MN,Midwest,West North Central,41297.25277,27,214
+Mississippi,MS,Southeast,East South Central,21480.89222,28,41
+Missouri,MO,Midwest,West North Central,31765.13011,29,99
+Montana,MT,West ,Mountain North,34590.49726,30,62
+Nebraska,NE,Midwest,West North Central,39361.40725,31,36
+Nevada,NV,West,Mountain South,18147.06233,32,53
+New Hampshire,NH,Northeast,New England,33142.93449,33,70
+New Jersey,NJ,Northeast,Middle Atlantic,32396.64511,34,86
+New Mexico,NM,West,Mountain South,21400.6123,35,73
+New York,NY,Northeast,Middle Atlantic,32380.87918,36,181
+North Carolina,NC,South,South Atlantic,21081.99248,37,142
+North Dakota,ND,Midwest,West North Central,41685.46091,38,27
+Ohio,OH,Midwest,East North Central,34014.7612,39,104
+Oklahoma,OK,Southwest,West South Central,28908.71726,40,54
+Oregon,OR,West Coast,Pacific,19038.47592,41,195
+Pennsylvania,PA,Northeast,Middle Atlantic,32293.45317,42,108
+Rhode Island,RI,Northeast,New England,32548.39309,44,59
+South Carolina,SC,South,South Atlantic,19543.85306,45,88
+South Dakota,SD,Midwest,West North Central,38553.62134,46,42
+Tennessee,TN,Southeast,East South Central,22909.1614,47,83
+Texas,TX,Southwest,West South Central,20508.90176,48,205
+Utah,UT,West,Mountain South,26309.41409,49,58
+Vermont,VT,Northeast,New England,32041.82114,50,101
+Virginia,VA,South,South Atlantic,24178.85391,51,102
+Washington,WA,West Coast,Pacific,20376.59311,53,211
+West Virginia,WV,South,South Atlantic,25938.68743,54,19
+Wisconsin,WI,Midwest,East North Central,34983.67653,55,149
+Wyoming,WY,West ,Mountain North,34111.55248,56,47

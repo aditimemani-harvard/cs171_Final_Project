@@ -1,25 +1,68 @@
 let colorTree = ['#6C757D',
-	'#641220',
-	'#85182A',
-	'#A71E34',
-	'#BD1F36',
-	'#DA1E37',
+	'#333333',
 	'#555555',
 	'#777777',
+	'#A71E34',
+	'#444444',
+	'#555555',
+	'#6C757D',
+	'#333333',
+	'#555555',
+	'#A71E34',
+	'#777777',
+	'#6C757D',
+	'#333333',
+	'#555555',
+	'#777777',
+	'#555555',
+	'#777777',
+	'#777777',
+	'#6C757D',
+	'#333333',
+	'#555555',
+	'#777777',
+	'#A71E34',
+	'#555555',
+	'#777777',
+	'#6C757D',
 ];
+let treeMapSrc =['Heating Bkup',
+	'Ceiling Fan',
+	'Clothes Dryer',
+	'Clothes Dryer/Washer',
+	'Cooling',
+	'Cooling Fans Pumps',
+	'Dishwasher',
+	'Fireplace',
+	'Freezer',
+	'Grill',
+	'Heating',
+	'Heating Fans Pumps',
+	'Hot Tub Heater',
+	'Hot Tub Heater/Pump',
+	'Hot Water',
+	'Lighting',
+	'Mech Vent',
+	'Plug Loads',
+	'Pool Heater',
+	'Pool Heater/Pump',
+	'Range Oven',
+	'Refrigerator',
+	'Well Pump',
+	'Electricity',
+	'Fuel Oil',
+	'Natural Gas',
+	'Propane']
+
+
 var width = height = 100, // % of the parent element
 	
 	x = d3.scaleLinear().domain([0, width]).range([0, width]),
     y = d3.scaleLinear().domain([0, height]).range([0, height]),
 
 	color = d3.scaleOrdinal()
-		.range(colorTree
-			.map(function(c) { 
-				c = d3.rgb(c); 
-				//c.opacity = 0.5; 
-				return c; 
-			})
-		),
+		.domain(treeMapSrc)
+		.range(colorTree),
 	
 	Ttreemap = d3.treemap()
     	.size([width, height])
@@ -30,168 +73,154 @@ var width = height = 100, // % of the parent element
 	data = {
 		"children": [
 			{
-				"name": "Natural Gas",
-				"children": [
-					{
-						"name": "Heating",
-						 "value": 0.777 
-					},
-					{
-						"name": "Hot Water",
-						 "value": 0.1777 
-					},
-					{
-						"name": "Range Oven",
-						 "value": 0.0214 
-					},
-					{
-						"name": "Clothes Dryer",
-						 "value": 0.0096 
-					},
-					{
-						"name": "Pool Heater",
-						 "value": 0.0053 
-					},
-					{
-						"name": "Fireplace",
-						 "value": 0.0041 
-					},
-					{
-						"name": "Hot Tub Heater",
-						 "value": 0.0027 
-					},
-					{
-						"name": "Grill",
-						 "value": 0.0018 
-					},
-					{
-						"name": "Lighting",
-						 "value": 0.0005 
-					}
-				] 
-			},
-			{
 				"name": "Electricity",
 				"children": [
 					{
+						"name": "Ceiling Fan",
+						"value": 0.0042
+					},
+					{
+						"name": "Clothes Dryer/Washer",
+						"value": 0.0323
+					},
+					{
 						"name": "Cooling",
-						 "value": 0.2257 
-					},
-					{
-						"name": "Plug Loads",
-						 "value": 0.1952 
-					},
-					{
-						"name": "Heating",
-						 "value": 0.1936 
-					},
-					{
-						"name": "Lighting",
-						 "value": 0.0906 
-					},
-					{
-						"name": "Hot Water",
-						 "value": 0.0801 
-					},
-					{
-						"name": "Refrigerator",
-						 "value": 0.0523 
+						"value": 0.2257
 					},
 					{
 						"name": "Cooling Fans Pumps",
-						 "value": 0.0443 
-					},
-					{
-						"name": "Clothes Dryer",
-						 "value": 0.0305 
-					},
-					{
-						"name": "Range Oven",
-						 "value": 0.0211 
-					},
-					{
-						"name": "Heating Fans Pumps",
-						 "value": 0.0191 
-					},
-					{
-						"name": "Pool Pump",
-						 "value": 0.0138 
-					},
-					{
-						"name": "Heating_hp_bkup",
-						 "value": 0.0086 
-					},
-					{
-						"name": "freezer",
-						 "value": 0.0082 
-					},
-					
-					{
-						"name": "Hot Tub Pump",
-						 "value": 0.0046 
-					},
-					{
-						"name": "Ceiling Fan",
-						 "value": 0.0042 
-					},
-					{
-						"name": "Well Pump",
-						 "value": 0.0036 
+						"value": 0.0443
 					},
 					{
 						"name": "Dishwasher",
-						 "value": 0.0035 
+						"value": 0.0035
 					},
 					{
-						"name": "Hot Tub Heater",
-						 "value": 0.0035 
+						"name": "Freezer",
+						"value": 0.0082
 					},
 					{
-						"name": "Clothes Washer",
-						 "value": 0.0019 
+						"name": "Heating",
+						"value": 0.1936
+					},
+					{
+						"name": "Heating Fans Pumps",
+						"value": 0.0191
+					},
+					{
+						"name": "Heating Bkup",
+						"value": 0.0086
+					},
+					{
+						"name": "Hot Tub Heater/Pump",
+						"value": 0.0081
+					},
+					{
+						"name": "Hot Water",
+						"value": 0.0801
+					},
+					{
+						"name": "Lighting",
+						"value": 0.0906
 					},
 					{
 						"name": "Mech Vent",
-						 "value": 0.0017 
+						"value": 0.0017
 					},
-					
 					{
-						"name": "Pool Heater",
-						 "value": 0.0007 
+						"name": "Plug Loads",
+						"value": 0.1952
+					},
+					{
+						"name": "Pool Heater/Pump",
+						"value": 0.0146
+					},
+					{
+						"name": "Range Oven",
+						"value": 0.0211
+					},
+					{
+						"name": "Refrigerator",
+						"value": 0.0523
+					},
+					{
+						"name": "Well Pump",
+						"value": 0.0036
 					}
-				] 
+				]
 			},
 			{
 				"name": "Fuel Oil",
 				"children": [
 					{
 						"name": "Heating",
-						 "value": 0.9239 
+						"value": 0.9239
 					},
 					{
 						"name": "Hot Water",
-						 "value": 0.0761 
+						"value": 0.0761
 					}
-				] 
+				]
+			},
+			{
+				"name": "Natural Gas",
+				"children": [
+					{
+						"name": "Clothes Dryer",
+						"value": 0.0096
+					},
+					{
+						"name": "Fireplace",
+						"value": 0.0041
+					},
+					{
+						"name": "Grill",
+						"value": 0.0018
+					},
+					{
+						"name": "Heating",
+						"value": 0.777
+					},
+					{
+						"name": "Hot Tub Heater",
+						"value": 0.0027
+					},
+					{
+						"name": "Hot Water",
+						"value": 0.1777
+					},
+					{
+						"name": "Lighting",
+						"value": 0.0005
+					},
+					{
+						"name": "Pool Heater",
+						"value": 0.0053
+					},
+					{
+						"name": "Range Oven",
+						"value": 0.0214
+					}
+				]
 			},
 			{
 				"name": "Propane",
 				"children": [
 					{
+						"name": "Clothes Dryer",
+						"value": 0.0057
+					},
+					{
 						"name": "Heating",
-						 "value": 0.8439 
+						"value": 0.8439
 					},
 					{
 						"name": "Hot Water",
-						 "value": 0.1214 
+						"value": 0.1214
 					},
 					{
 						"name": "Range Oven",
-						 "value": 0.029 
-					},
-					{
-						"name": "Clothes Dryer",
-						 "value": 0.0057 
+						"value": 0.029
 					}
 				]
 			}
@@ -217,6 +246,9 @@ var cells = chart
 	// .attr('stroke-width', '2px')
 	.attr("class", function(d) { return "node-treemap level-" + d.depth; })
 	.attr("title", function(d) { return d.data.name ? d.data.name : "null"; });
+var pmax = d3.max(Tnodes, function(d) {
+	if(d.depth<1) return +d.size;
+})
 
 cells
 	.style("left", function(d) { return x(d.x0) + "%"; })

@@ -42,3 +42,17 @@
 //         document.body.scrollTop = 0;
 //         document.documentElement.scrollTop = 0;
 //     }
+mybutton = document.getElementById("gotobtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
