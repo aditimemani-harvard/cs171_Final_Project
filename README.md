@@ -169,6 +169,7 @@ Energy Crisis is a project that aims to help viewers understand the residential 
     └───res-comm-chart
             resComm_stackedAreaChart.js
 
+```
 
 ## Navigating the Website
 1. Introduction
