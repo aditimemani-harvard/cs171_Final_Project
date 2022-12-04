@@ -4,17 +4,13 @@
 mynavbar = document.getElementById("verticalNav");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-    scrollFunction();
-};
+addEventListener('load', function() {
+    mynavbar.style.display = 'none';
+});
 
-function scrollFunction() {
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-        mynavbar.style.display = "block";
-    } else {
-        mynavbar.style.display = "none";
-    }
-}
+window.addEventListener('scroll', e => {
+    mynavbar.style.display = window.scrollY > 1000 ? 'block' : 'none';
+});
 
 document.querySelector('.navbar-vertical').addEventListener('click', (e) => {
 

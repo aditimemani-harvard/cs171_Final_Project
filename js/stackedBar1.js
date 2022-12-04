@@ -4,8 +4,8 @@
 
 // append the svg object to the body of the page
 
-let dataURLOne = "data/window_energy_normalized.csv";
-let max_valOne = 1*5;
+let dataURLOne = "data/window_energy_cleaned.csv";
+let max_valOne = 1*8.8;
 let domOne = 'stacked-barOne';
 let dataURLTwo = "data/lighting_energy.csv";
 let max_valTwo = 7*2;
