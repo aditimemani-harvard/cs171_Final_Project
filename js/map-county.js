@@ -166,7 +166,7 @@ d3.json(countyURL).then(
                                 }
                             }
                         }
-                        console.log('County Data')
+                        console.log('County Data after adding Vals')
                         console.log(countyData)
                         drawCountyMap()
                     }
