@@ -171,6 +171,11 @@ Energy Crisis is a project that aims to help viewers understand the residential 
 
 ```
 
+## Usage
+1. Clone the repository to your local system
+2. Open ```bash index.html ``` in a browser or run through a local server (ideally through WebStorm or ```python3 -m http.server```)
+
+
 ## Navigating the Website
 1. Introduction
    - A rising trend for temperatures globally is highlighted through a novel visualization that maps the rise in temperatures from 1960-2021 for all the countries.
