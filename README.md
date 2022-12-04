@@ -12,33 +12,34 @@ Energy Crisis is a project that aims to help viewers understand the residential 
 - Video Link: https://www.youtube.com/watch?v=GfSF-cFaqlU&feature=youtu.be
 - Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
 
-## Navigating the Website
+## Project Structure
 
+## Navigating the Website
 1. Introduction
-    1A. A rising trend for temperatures globally is highlighted through a novel visualization that maps the rise in temperatures from 1960-2021 for all the countries.     As one hovers over the visualization, the tooltips how the temperature rise, and the no. of countries (highlighted in red) that have surpassed a normal threshold       of temperature.
-    In order to reduce carbon emissions, we need to reform the built environment because it contributes to a staggering 40% of these emissions.
+   - A rising trend for temperatures globally is highlighted through a novel visualization that maps the rise in temperatures from 1960-2021 for all the countries.
+   - As one hovers over the visualization, the tooltips how the temperature rise, and the no. of countries (highlighted in red) that have surpassed a normal threshold      of temperature.
 
 2. The Built Environment
-   The section begins with a dynamic GIF showing the comparison between residential and commercial building numbers to show that we need to focus on residential more.
-    2A. Comparison between residential and commercial energy patterns
+   	- This section shows a comparison between residential and commercial building numbers to show that we need to focus on residential more.
+   	- Comparison between residential and commercial energy patterns is shown when the user clicks on the cards, and hovers on the stacked area charts
 
-Energy consumption based on Climate Zones
-3A. US map at county level to show climate zone and characteristics, supported by a legend
-3B. Area charts that show energy consumption pattern for different types of energy source (electricity, fuel oil, natural gas, and propane) in a day
-3C. Area charts that compare the shape of energy consumption in a day for different climate zones
+3. Energy consumption based on Climate Zones
+	- US map at county level to show climate zone and characteristics, supported by a legend
+	- Area charts that show energy consumption pattern for different types of energy source (electricity, fuel oil, natural gas, and propane) in a day
+	- Area charts that compare the shape of energy consumption in a day for different climate zones
 
-Energy consumption based on Residential Building Types
-4A. Dendrogram chart that zooms in on climate zones 4,5 and 6 (as an example) to show energy consumption values for different residential buildings, different structural material types and the year built.
+4. Energy consumption based on Residential Building Types
+	- Dendrogram chart that zooms in on climate zones 4,5 and 6 (as an example) to show energy consumption values for different residential buildings, different 	structural material types and the year built.
 
-Energy consumption based on Building Attributes
-4A. Treemap that compares different energy types, and shows the element or attribute in a building that uses that energy type
-	4B. Stacked bar charts that indicate the energy consumption, cost and rated lifespan for different -
-Window Type
-Lighting Type
-Appliance Type
+5. Energy consumption based on Building Attributes
+	- Treemap that compares different energy types, and shows the element or attribute in a building that uses that energy type
+	- Stacked bar charts that indicate the energy consumption, cost and rated lifespan for different -
+		- Window Type
+		- Lighting Type
+		- Appliance Type
 
-Financial Incentives
-6A. A map that shows the number of financial incentives that exist for homeowners and builders to make retrofits in their residential buildings that can reduce the energy use numbers. In the same map, we show the current total energy use per state as a message to policy makers on where the reforms are needed.
+6. Financial Incentives
+	- A map that shows the number of financial incentives that exist for homeowners and builders to make retrofits in their residential buildings that can reduce 		the energy use numbers. In the same map, we show the current total energy use per state as a message to policy makers on where the reforms are needed.
 
 
 ## Libraries
