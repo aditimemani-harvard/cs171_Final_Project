@@ -1,6 +1,7 @@
 # cs171_Final_Project
 
-This repository holds the final project for CS171 Visualization course (Fall 2022), Harvard University.
+This repository holds the final project for CS171 Visualization course (Fall 2022), Harvard University.  
+
 Authors: Aditi Memani([@aditimemani-harvard](https://github.com/aditimemani-harvard)), Karen Kuo([@kalunkuo](https://github.com/kalunkuo)), and Kritika Kharbanda([@krkh-1702](https://github.com/krkh-1702))
 
 --------------------
