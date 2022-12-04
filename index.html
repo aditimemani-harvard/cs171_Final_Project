@@ -147,7 +147,7 @@
                 <span class = "highlight-text"> Residential buildings consume ~15% more energy than the commercial buildings</span>, as demonstrated below.</h5>
         </div>
         <div class="col no-gutters video-div" >
-            <video width="720" height="540" autoplay muted playsinline loop>
+            <video width="600" height="auto" autoplay muted playsinline loop>
                 <source src="img/res_vs_comm.mp4" type="video/mp4">
             </video>
         </div>
@@ -549,7 +549,35 @@
     <br><br><br><br><br>
 <!--Arrow-->
 <div class=" container-fluid no-gutters">
-    <div class="row legend-dendo">
+
+
+    <div class="center">
+        <div class="center">
+            <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                <div id="buttonDendoDiv">
+                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>
+                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>
+                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>
+                </div>
+                <script>
+                    // Add active class to the current button (highlight it)
+                    var header = document.getElementById("buttonDendoDiv");
+                    var btns = header.getElementsByClassName("button-dendo");
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function () {
+                            var current = document.getElementsByClassName("active");
+                            current[0].className = current[0].className.replace(" active", "");
+                            this.className += " active";
+                        });
+                    }
+                </script>
+                <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
+                    <svg id="dendo" width="75%" height="75%"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center legend-dendo">
         <div class="col center">
             <p class = "legend-dendo">Climate Zone
             <div class="center">
@@ -629,33 +657,6 @@
             </div> </div>
         <div class="col center"> <p class = "center legend-dendo">Site Energy
             <div>
-        </div>
-    </div>
-</div>
-
-    <div class="center">
-        <div class="center">
-            <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                <div id="buttonDendoDiv">
-                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>
-                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>
-                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>
-                </div>
-                <script>
-                    // Add active class to the current button (highlight it)
-                    var header = document.getElementById("buttonDendoDiv");
-                    var btns = header.getElementsByClassName("button-dendo");
-                    for (var i = 0; i < btns.length; i++) {
-                        btns[i].addEventListener("click", function () {
-                            var current = document.getElementsByClassName("active");
-                            current[0].className = current[0].className.replace(" active", "");
-                            this.className += " active";
-                        });
-                    }
-                </script>
-                <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                    <svg id="dendo" width="75%" height="75%"></svg>
-                </div>
             </div>
         </div>
     </div>

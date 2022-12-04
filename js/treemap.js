@@ -2,14 +2,14 @@ let colorTree = ['#6C757D',
 	'#333333',
 	'#555555',
 	'#777777',
-	'#A71E34',
+	'#641220',
 	'#444444',
 	'#555555',
 	'#6C757D',
+	"#aeb0b4",
 	'#333333',
-	'#555555',
 	'#A71E34',
-	'#777777',
+	"#aeb0b4",
 	'#6C757D',
 	'#333333',
 	'#555555',
@@ -258,6 +258,7 @@ cells
 	//.style("background-image", function(d) { return d.value ? imgUrl + d.value : ""; })
 	//.style("background-image", function(d) { return d.value ? "url(http://placekitten.com/g/300/300)" : "none"; }) 
 	.style("background-color", function(d) { while (d.depth > 2) d = d.parent; return color(d.data.name); })
+	// .style("border-color", function(d) { while (d.depth > 2) d = d.parent; return "white"; })
 	// .style('stroke', function(d) { while (d.depth < 2)  return 'black'; })
 	// .style('stroke-width', function(d) { while (d.depth < 2)  return '2px'; })
 	.on("click", zoom)

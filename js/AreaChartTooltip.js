@@ -239,13 +239,14 @@ class AreaChartTooltip {
         line_current.append('line')
             .classed('line', true)
             .style("stroke",  'white')
-            .style("stroke-width", 0.5)
+            .style("stroke-width", 0.75)
             // .attr("x1", x(originalTime))
             // .attr("x2", x(originalTime))
             .attr("x1", 0)
             .attr("x2", 0)
             .attr("y1", 0)
-            .attr("y2", vis.height-vis.buffer_current);
+            .attr("y2", vis.height-vis.buffer_current)
+            .style("stroke-dasharray", ("2,4"));
 
         // display current time label
         const line_current_label= vis.svg.append('g')

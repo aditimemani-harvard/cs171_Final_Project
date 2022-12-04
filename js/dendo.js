@@ -95,7 +95,7 @@ function updateButton (dataURL) {
                 .attr('fill', 'white')
                 .text(function (d) {
                     if (d.height > 0) return d.data.name;
-                    return d.data.name + ": " + d.data.value;
+                    return d.data.name + ": " + d.data.value +" kWh";
                 })
                 .attr("text-anchor", function (d) {
                     if (d.data.name.length > 2){ return 'start'; }

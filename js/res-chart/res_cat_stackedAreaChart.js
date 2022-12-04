@@ -4,16 +4,17 @@ d3.csv("data/res_all.csv").then( function(data) {
     var margin = {top: 60, right: 230, bottom: 50, left: 50},
         width = 660 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-    let imageScalePath = ['img/stacked_chart/residential/DeliveredEnergy.jpg',
+    let imageScalePath = ['img/stacked_chart/residential/DeliveredEnergy.jpeg',
         'img/stacked_chart/residential/DistillateFuelOil.jpg',
-        'img/stacked_chart/residential/EnergyRelatedLosses.jpg',
+        'img/stacked_chart/residential/EnergyRelatedLosses.jpeg',
         'img/stacked_chart/residential/NaturalGas.jpg',
         'img/stacked_chart/residential/Petroleum.jpg',
         'img/stacked_chart/residential/PurchasedElectricity.jpg',
-    'img/stacked_chart/residential/RenewableEnergy.png']
+    'img/stacked_chart/residential/RenewableEnergy.png',
+        'img/stacked_chart/residential/Petroleum.jpg']
 
     let imageScaleSrc = ['  Delivered Energy',' Distillate Fuel Oil', ' Energy Related Losses',
-        '   Natural Gas', ' Petroleum and Other Liquids Subtotal', '    Purchased Electricity', 'Renewable Energy']
+        '   Natural Gas', ' Petroleum and Other Liquids Subtotal', '    Purchased Electricity', 'Renewable Energy','   Propane']
     var imageScale = d3.scaleOrdinal().domain(imageScaleSrc).range(imageScalePath)
 
 

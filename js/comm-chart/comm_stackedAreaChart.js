@@ -4,9 +4,9 @@ d3.csv("data/comm_all.csv").then( function(data) {
     var margin = {top: 60, right: 230, bottom: 50, left: 50},
         width = 660 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-    let imageScalePath = ['img/stacked_chart/commercial/DeliveredEnergy.jpg',
+    let imageScalePath = ['img/stacked_chart/commercial/DeliveredEnergy.jpeg',
         'img/stacked_chart/commercial/DistillateFuelOil.jpg',
-        'img/stacked_chart/commercial/ElectricityRelatedLosses.jpg',
+        'img/stacked_chart/commercial/EnergyRelatedLosses.jpeg',
         'img/stacked_chart/commercial/NaturalGas.jpg',
         'img/stacked_chart/commercial/Petroleum.jpg',
         'img/stacked_chart/commercial/PurchasedElectricity.jpg']
