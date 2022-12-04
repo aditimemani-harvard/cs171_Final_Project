@@ -5,7 +5,7 @@ This repository holds the final project for CS171 Visualization course (Fall 202
 Authors: Aditi Memani([@aditimemani-harvard](https://github.com/aditimemani-harvard)), Karen Kuo([@kalunkuo](https://github.com/kalunkuo)), and Kritika Kharbanda([@krkh-1702](https://github.com/krkh-1702))
 
 --------------------
-
+## About
 Energy Crisis is a project that aims to help viewers understand the residential energy consumption patterns in the US, based on the different climate zones, building types and internal building attributes (appliance type, lighting type, window type etc.). The goal of this project is to aid homeowners, developers, architects and policymakers make sustainable building decisions.
 
 - Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/ 
@@ -13,8 +13,8 @@ Energy Crisis is a project that aims to help viewers understand the residential 
 - Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
 
 ---------------
+## Libraries
 
-Libraries:
 1. Bootstrap:
     1. https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css
     2. https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
