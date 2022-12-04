@@ -7,9 +7,9 @@ Authors: Aditi Memani([@aditimemani-harvard](https://github.com/aditimemani-harv
 
 Energy Crisis is a project that aims to help viewers understand the residential energy consumption patterns in the US, based on the different climate zones, building types and internal building attributes (appliance type, lighting type, window type etc.). The goal of this project is to aid homeowners, developers, architects and policymakers make sustainable building decisions.
 
-Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/ 
-Video Link: https://www.youtube.com/watch?v=GfSF-cFaqlU&feature=youtu.be
-Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
+- Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/ 
+- Video Link: https://www.youtube.com/watch?v=GfSF-cFaqlU&feature=youtu.be
+- Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
 
 ---------------
 
