@@ -20,6 +20,7 @@ Authors: **Aditi Memani**([@aditimemani-harvard](https://github.com/aditimemani-
 
 ## Project Structure
 ```bash
+cs171_Final_Project
 │   .DS_Store
 │   index.html
 │   README.md
@@ -225,7 +226,10 @@ Authors: **Aditi Memani**([@aditimemani-harvard](https://github.com/aditimemani-
     4. https://d3js.org/d3-scale-chromatic.v1.min.js
     5. https://d3js.org/topojson.v2.min.js
     6. https://d3js.org/d3-geo.v1.min.js
-4. Miscellaneous:
+4. jQuery:
+   1. ```cs171_Final_Project/js/jquery.counterup.min.js```
+   2. ```cs171_Final_Project/js/jquery.vide.js```
+6. Miscellaneous:
     1. https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js
     2. https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js
  
