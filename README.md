@@ -13,6 +13,162 @@ Energy Crisis is a project that aims to help viewers understand the residential 
 - Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
 
 ## Project Structure
+```bash
+│   .DS_Store
+│   index.html
+│   README.md
+│
+├───.idea
+│       .gitignore
+│       modules.xml
+│       test-3.iml
+│       vcs.xml
+│       workspace.xml
+│
+├───css
+│       AreaChartStyles.css
+│       font-awesome.css
+│       Main.css
+│
+├───data
+│   │   .DS_Store
+│   │   all_cat_res_comm.csv
+│   │   appliance_energy.csv
+│   │   climate_fips_sub_type.csv
+│   │   comm_all.csv
+│   │   incentive_energy_data.csv
+│   │   lighting_energy.csv
+│   │   res_all.csv
+│   │   res_comm.csv
+│   │   res_com_total.csv
+│   │   treemap_data.json
+│   │   us_county.json
+│   │   window_energy_cleaned.csv
+│   │   zone4.json
+│   │   zone5.json
+│   │   zone6.json
+│   │
+│   ├───other
+│   │       climate_disaster_freq_country_level.csv
+│   │       climate_zones.csv
+│   │       country_level_co2_yearly_data.csv
+│   │       country_list.csv
+│   │       country_temp.csv
+│   │       temp_change_country level.csv
+│   │       US-temp-data.csv
+│   │
+│   ├───tot_min
+│   │       f1a_tot_min.csv
+│   │       f2a_tot_min.csv
+│   │       f2b_tot_min.csv
+│   │       f3a_tot_min.csv
+│   │       f3b_tot_min.csv
+│   │       f3c_tot_min.csv
+│   │       f4a_tot_min.csv
+│   │       f4b_tot_min.csv
+│   │       f4c_tot_min.csv
+│   │       f5a_tot_min.csv
+│   │       f5b_tot_min.csv
+│   │       f6a_tot_min.csv
+│   │       f6b_tot_min.csv
+│   │       f7a_tot_min.csv
+│   │       f7b_tot_min.csv
+│   │
+│   └───tot_month
+│           f1a_tot_month.csv
+│           f2a_tot_month.csv
+│           f2b_tot_month.csv
+│           f3a_tot_month.csv
+│           f3b_tot_month.csv
+│           f3c_tot_month.csv
+│           f4a_tot_month.csv
+│           f4b_tot_month.csv
+│           f4c_tot_month.csv
+│           f5a_tot_month.csv
+│           f5b_tot_month.csv
+│           f6a_tot_month.csv
+│           f6b_tot_month.csv
+│           f7a_tot_month.csv
+│           f7b_tot_month.csv
+│
+├───img
+│   │   .DS_Store
+│   │   A.png
+│   │   energy_type_speed.mp4
+│   │   K.png
+│   │   res_vs_comm.mp4
+│   │
+│   ├───building_types
+│   │       .DS_Store
+│   │       mobile_home.png
+│   │       multi-2-4.png
+│   │       multi-5.png
+│   │       single-attached.png
+│   │       single-detached.png
+│   │
+│   ├───climate_type
+│   │       cold.png
+│   │       dry.png
+│   │       hot.png
+│   │       humid.png
+│   │       Marine.png
+│   │       Mixed.png
+│   │       subartic.png
+│   │       very_cold.png
+│   │
+│   └───stacked_chart
+│       │   .DS_Store
+│       │   TotalCommercial.jpeg
+│       │   TotalResidential.jpeg
+│       │
+│       ├───commercial
+│       │       DeliveredEnergy.jpeg
+│       │       DistillateFuelOil.jpg
+│       │       EnergyRelatedLosses.jpeg
+│       │       NaturalGas.jpg
+│       │       Petroleum.jpg
+│       │       PurchasedElectricity.jpg
+│       │
+│       └───residential
+│               DeliveredEnergy.jpeg
+│               DistillateFuelOil.jpg
+│               EnergyRelatedLosses.jpeg
+│               NaturalGas.jpg
+│               Petroleum.jpg
+│               PurchasedElectricity.jpg
+│
+└───js
+    │   .DS_Store
+    │   AreaChart.js
+    │   AreaChartLegend.js
+    │   AreaChartMain.js
+    │   AreaChartMonth.js
+    │   AreaChartTooltip.js
+    │   bootstrap.min.js
+    │   dendo.js
+    │   fadein-scroll.js
+    │   flipcardv2.js
+    │   flipStackedBarChartv1.js
+    │   introduction.js
+    │   jquery.counterup.min.js
+    │   jquery.vide.js
+    │   map-county2.js
+    │   map-state.js
+    │   stackedBar1.js
+    │   toTheTop.js
+    │   treemap.js
+    │   verticalNavBar.js
+    │   viz.js
+    │
+    ├───comm-chart
+    │       comm_stackedAreaChart.js
+    │
+    ├───res-chart
+    │       res_cat_stackedAreaChart.js
+    │
+    └───res-comm-chart
+            resComm_stackedAreaChart.js
+
 
 ## Navigating the Website
 1. Introduction
