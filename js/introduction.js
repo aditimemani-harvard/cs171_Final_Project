@@ -1,8 +1,14 @@
+/* * * * * * * * * * * * * *
+*      Introduction        *
+* * * * * * * * * * * * * */
+
+
 let introData_C02;
 loadIntroData();
 
 var country_list = [];
 
+// loading the dataset 1
 d3.csv("data/other/country_list.csv", function(data) {
     country_list.push(data);
 })
@@ -17,6 +23,7 @@ console.log("country_temp: ", country_temp)
 
 
 
+// loading the dataset 2
 function loadIntroData() {
     d3.csv('data/other/country_level_co2_yearly_data.csv', row => {
 
@@ -37,6 +44,7 @@ function loadIntroData() {
 
 function introCurves(data){
 
+    // setting up the margin
     const margin = {top: 0, right: 10, bottom: 10, left: 10};
     const width = document.getElementById('introduction').getBoundingClientRect().width - margin.left - margin.right;
     const height = document.getElementById('introduction').getBoundingClientRect().height - margin.top - margin.bottom;
@@ -54,7 +62,7 @@ function introCurves(data){
         .append("rect").attr("width", width).attr("height", height);
 
 
-    // testing
+    // gettint length of the data
     const len = data.length;
     // console.log("introData_C02: ", data[0]);
     // console.log("introData_C02 len: ", len )
@@ -73,6 +81,7 @@ function introCurves(data){
     // console.log("country temp: ", country_temp)
     // console.log("test: ", country_temp[0], country_temp.length, country_temp[0].length)
 
+    // adding padding for visualization
     const padding_v = 0;
     const padding_h = 400;
     const buffer_current = 180;
@@ -80,18 +89,19 @@ function introCurves(data){
     const offset_pointer = 25;
     const legend_padding = 160;
 
-
+    // append temperature line
     const temp_line = svg.append('g').classed('intro_temp_line', true);
 
+    // scales for x and y axis
     var xScale_temp = d3.scaleLinear().domain([1961,2021]).range([0,width-padding_v]);
     var yScale_temp = d3.scaleLinear().domain([-1.5,2.5]).range([0,height-padding_h]);
 
     var line_temp = d3.line()
         .x((d) => xScale_temp(d.y))
         .y((d) => yScale_temp(d.x))
-        // .curve(d3.curveCatmullRom)
         .curve(d3.curveStep)
 
+    // create a new dataset for visualization (top chart)
     for (var j=0; j<country_temp.length; j++){
         var arr_temp = [];
         for (var k=1; k<62; k++){
@@ -111,8 +121,8 @@ function introCurves(data){
         var line_notdashed = d3.line().defined(function (d) { return d.x !== ''; });
         var filteredData_notdashed = arr_temp.filter(line_notdashed.defined());
 
+        // TOP CHART
         // console.log("testtest: ",filteredData_notdashed)
-
         temp_line.append("path")
             .attr("d", line_temp(filteredData_notdashed))
             .attr("fill", "none")
@@ -122,7 +132,7 @@ function introCurves(data){
 
     }
 
-    // legend year
+    // create a list for the legend (x-axis)
     var legend_year = ['1965','1970','1975' ,'1980', '1985', '1990', '1995' ,'2000', '2005', '2010', '2015', '2020']
 
     svg.selectAll('.intro_text-legend-year')
@@ -137,7 +147,7 @@ function introCurves(data){
         .attr('fill', 'rgb(255,255,255)')
         .attr('text-anchor', 'middle');
 
-    // legend line
+    // adding the legend line (x-axis)
     svg.selectAll('.intro_text-legend-line')
         .data(legend_year).enter()
         .append("g").append("line")
@@ -149,7 +159,7 @@ function introCurves(data){
         .style("stroke-width", 1.25)
         .style("stroke", 'rgb(255,255,255)');
 
-    // legend temp
+    // create a list for the legend (y-axis)
     var legend_temp = ['-1', '-0.5', '0', '0.5', '1','1.5','2','2.5','3']
     svg.selectAll('.intro_text-legend-temp')
         .data(legend_temp)
@@ -166,7 +176,7 @@ function introCurves(data){
         .attr('alignment-baseline', 'central')
         .attr('text-achor', 'end');
 
-    // legend line
+    // adding the legend line (7-axis)
     svg.selectAll('.intro_text-legend-line-v')
         .data(legend_temp).enter()
         .append("g")
@@ -188,11 +198,13 @@ function introCurves(data){
     svg.append('g').append('text').classed('intro_tooltip_circle_text', true);
     svg.append('g').append('text').classed('intro_legend_country_text', true);
 
+    // create tooltips when mouse is moving
     d3.select("#introduction")
         .on("mousemove", function(event) {
             let mouse = d3.pointer(event);
             // console.log(mouse)
 
+            // setting up the range for the mouse
             if (mouse[0] < width && mouse[0] > 0 &&
                 mouse[1] < height-padding_h && mouse[1] > 0){
 
@@ -204,6 +216,8 @@ function introCurves(data){
 
                 // console.log("mouse_time: ", mouse_year_update, mouse_temp)
 
+                // VISUALIZATION (BOTTOM CHART)
+                // create a new dataset for visualization (bottom chart)
                 const arr_display = [];
                 for (var j=0; j<country_temp.length; j++) {
 
@@ -219,15 +233,16 @@ function introCurves(data){
                 // console.log("arr_display_sorted", arr_display_sorted);
 
 
+                // calculate the selected country when the mouse is moving
                 let bar_country = width/arr_display.length
                 let mouse_country = Math.floor(mouse[0] /bar_country)
                 console.log("mouse_country: ", mouse_country)
 
 
-                // COUNTRY SMALL LINES
+                // adding individual ines for each country
                 var legend_dash = svg.select("g").selectAll(".intro_text-legend-dash").data(arr_display);
 
-                legend_dash.exit().remove();//remove unneeded circles
+                legend_dash.exit().remove();
                 legend_dash.enter().append("line")
                     .style("opacity", 1)
                     .classed('intro_text-legend-dash', true)
@@ -241,7 +256,6 @@ function introCurves(data){
                         return i*(width/arr_display.length)+(width/arr_display.length);
                     })
                     .attr('stroke-width', '1')
-                    // .attr('fill', 'rgba(255,255,255,0.1)')
                     .style('stroke', function(d,i) {
                         if( d.temp<=0 ){ return 'rgba(255,255,255,0.2)' }
                         if( d.temp>0 && d.temp<=1.0 ){ return 'rgba(255,255,255,0.4)' }
@@ -252,7 +266,7 @@ function introCurves(data){
                     .attr('alignment-baseline', 'central');
 
 
-                // TEMPERATURE
+                // adding temperature information for each country
                 var legend = svg.select("g").selectAll(".intro_text-legend-display").data(arr_display);
 
                 legend.exit().remove();//remove unneeded circles
@@ -277,7 +291,7 @@ function introCurves(data){
                     .attr('glyph-orientation-vertical','0');
 
 
-                // COUNTRY TEXT
+                // adding individual texts to label each country
                 var legend_country = svg.select("g").selectAll(".intro_text-legend-country").data(arr_display);
 
                 legend_country.exit().remove();//remove unneeded circles
@@ -303,7 +317,7 @@ function introCurves(data){
                     .attr('glyph-orientation-vertical','0');
 
 
-                // HOVER LINE
+                // Adding tooltip line
                 var legend_line = svg.select("g").selectAll(".intro_text-legend-line").data(arr_display);
 
                 legend_line.exit().remove();//remove unneeded circles
@@ -338,6 +352,7 @@ function introCurves(data){
                     .attr("x2", mouse[0])
                     .style("stroke-dasharray", ("2,4"));
 
+                // appending circle on tooltips
                 svg.selectAll('.intro_tooltip_circle_chart')
                     .style("opacity", 1)
                     .style("stroke", 'rgba(255,255,255,1)')
@@ -347,6 +362,7 @@ function introCurves(data){
                     .attr('r', 10)
                     .style("stroke-dasharray", ("2,4"));
 
+                // appending text about temperature on tooltip circle
                 svg.selectAll('.intro_tooltip_circle_chart_text')
                     .style("opacity", 1)
                     .text(f(mouse_temp)+"°c")
@@ -354,6 +370,7 @@ function introCurves(data){
                     .attr("y", mouse[1])
                     .attr("alignment-baseline", "central");
 
+                // adding another tooltip circle
                 svg.selectAll('.intro_tooltip_circle')
                     .style("opacity", 1)
                     .style("stroke", 'rgba(255,255,255,1)')
@@ -363,6 +380,7 @@ function introCurves(data){
                     .attr('r', 15)
                     .style("stroke-dasharray", ("2,4"));
 
+                // appending text about year on tooltip circle
                 svg.selectAll('.intro_tooltip_circle_text')
                     .style("opacity", 1)
                     .text(mouse_year)
@@ -371,6 +389,7 @@ function introCurves(data){
                     .attr("alignment-baseline", "central");
 
 
+                // appending tooltip text about country and temperature when hover
                 svg.selectAll('.intro_legend_country_text')
                     .style("opacity", 1)
                     .text(arr_display[mouse_country].key + " :  " + arr_display[mouse_country].temp + "°c" )
@@ -388,6 +407,7 @@ function introCurves(data){
 
             }
             else{
+                // removing the opacity when the mouse is not in range
                 svg.selectAll('.intro_tooltip_circle').style("opacity", 0);
                 svg.selectAll('.intro_tooltip_line').style("opacity", 0);
                 // svg.selectAll('.intro_text-legend-country').style("opacity", 0);

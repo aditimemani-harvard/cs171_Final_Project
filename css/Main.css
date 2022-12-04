@@ -807,7 +807,7 @@ img{object-fit: scale-down;}
     width: 30vw;
     height: 40vh;
     /*   border: 1px solid #CCC; */
-    margin: 40px 0;
+    margin: 40px;
     perspective: 600px;
 }
 

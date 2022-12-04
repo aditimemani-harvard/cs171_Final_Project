@@ -13,6 +13,7 @@ class AreaChartLegend {
 
         let vis = this;
 
+        // setting the margin
         vis.margin = {top: 0, right: 200, bottom: 0, left: 200};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
@@ -33,21 +34,25 @@ class AreaChartLegend {
         const data_test = d3.range(0,25,2);
         const data_time = [];
 
-
+        // checking out the dataset
         console.log(data_test)
 
+        // creating values for the time legend
         for (let i=0; i<data_test.length; i++){
             data_time[i] = data_test[i] * 3600
         }
         // console.log(data_test);
         console.log(data_time);
 
+
+        // creating the lines for time legend
         var legend = vis.svg.selectAll(".line-legend")
             .data(data_time)
             .enter()
             .append("g")
             .classed('line-legend', true)
 
+        // appending the lines for time legend
         legend.append("line")
             .style("stroke", 'rgba(255,255,255,0.5)')
             .attr("x1", function(d) {return x(d)})
@@ -56,12 +61,14 @@ class AreaChartLegend {
             .attr("y1", 15)
             .attr("y2", 5);
 
+        // creating the text for time legend
         var legend_text = vis.svg.selectAll(".text-legend")
             .data(data_test)
             .enter()
             .append("g")
             .classed('text-legend', true)
 
+        // appending the text for time legend
         legend_text.append("text")
             .text(function(d) {return d + ":00"})
             .attr("x", function(d) {return x(d*3600)})

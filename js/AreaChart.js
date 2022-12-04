@@ -3,6 +3,7 @@
 * * * * * * * * * * * * * */
 
 
+// define chart
 class AreaChart {
 
     constructor(_parentElement, _data, _title) {
@@ -20,6 +21,7 @@ class AreaChart {
         let vis = this;
         vis.displayData = vis.data;
 
+        // define margin
         vis.margin = {top: 0, right: 200, bottom: 0, left: 200};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
@@ -51,12 +53,9 @@ class AreaChart {
             .attr('text-anchor','end')
             .attr('fill', 'rgb(255,255,255)');
 
-
-
         console.log("value: ", button_chart_value)
 
-        // area chart
-        // var x = d3.scaleBand()
+        // area chart x and y scales
         vis.x = d3.scalePoint()
             .domain(vis.displayData.map(d=>d.timestamp))
             .range([0, vis.width]);
@@ -67,7 +66,6 @@ class AreaChart {
 
         vis.area = d3.area();
         vis.chart = vis.svg.append("path");
-
 
         this.wrangleDataStatic();
 
@@ -81,14 +79,17 @@ class AreaChart {
     updateVis(){
         let vis = this;
 
+        // update the domain based on the selection from buttons
         vis.y.domain([0, d3.max(vis.displayData, function(d) { return d[button_chart_value]; })])
 
+        // create the area chart
         vis.area
             .x(function(d) { return vis.x(d.timestamp); })
             .y0(vis.height)
             .y1(function(d) { return vis.y(d[button_chart_value]); })
             .curve(d3.curveStep);
 
+        // adding tooltips
         vis.chart.datum(vis.displayData)
             .attr("class", "area")
             .attr("d", vis.area)

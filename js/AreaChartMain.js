@@ -3,27 +3,30 @@
 * * * * * * * * * * * * * */
 
 // init global variables & switches
+// area charts about daily information
 let myAreaChart0, myAreaChart1, myAreaChart2, myAreaChart3, myAreaChart4, myAreaChart5, myAreaChart6, myAreaChart7;
 let myAreaChart8, myAreaChart9, myAreaChart10, myAreaChart11, myAreaChart12, myAreaChart13, myAreaChart14;
 
+// name of the area charts
 let charts = ['areaChart-0','areaChart-1', 'areaChart-2','areaChart-3', 'areaChart-4',
             'areaChart-5','areaChart-6', 'areaChart-7','areaChart-8', 'areaChart-9',
             'areaChart-10','areaChart-11', 'areaChart-12','areaChart-13', 'areaChart-14']
 
+// area charts about monthly information
 let myAreaChartMonth0, myAreaChartMonth1, myAreaChartMonth2, myAreaChartMonth3, myAreaChartMonth4, myAreaChartMonth5;
 let myAreaChartMonth6, myAreaChartMonth7, myAreaChartMonth8, myAreaChartMonth9, myAreaChartMonth10, myAreaChartMonth11;
 let myAreaChartMonth12, myAreaChartMonth13, myAreaChartMonth14;
 
 
-
+// legend, tooltips, and buttons
 let myAreaChartLegend;
-let myUserBubbleOne;
-
 let timeStamp_tooltip;
 let climateZone_tooltip;
 let button_chart_value = 'energy_total';
 
+// title of each area chart describing the climate zone
 const dataList = ['1A','2A','2B','3A','3B', '3C', '4A','4B','4C','5A', '5B','6A','6B', '7A','7B']
+// displaying the number with one decimal place
 const f = d3.format(".1f")
 
 let selectedTimeRange = [];
@@ -70,6 +73,7 @@ let promises = [
 
 ];
 
+// after loading the data, passing the datasets to the cleanData function
 Promise.all(promises)
     .then(function (data) {
         cleanData(data)
@@ -79,7 +83,9 @@ Promise.all(promises)
         console.log(err)
     });
 
-
+// clean up the datasets
+// converting values to numbers
+// parsing out the date and time information
 function cleanData(dataArray){
     for (let j=0; j<15; j++) {
         for (let i = 0; i < dataArray[j].length; i++) {
@@ -116,17 +122,14 @@ function cleanData(dataArray){
 // console.log("new dataset: ", datasets)
 // initMainPage(datasets);
 
-
 // initMainPage
 function initMainPage(dataArray) {
     // console.log(dataArray)
-
-
-    // myUserBubbleOne = new UserBubble('userBubble')
-
+    // initialize the tooltips and legends
     myAreaChartTooltip = new AreaChartTooltip('areaChart-tooltip','areaChart-0',dataArray);
     myAreaChartLegend = new AreaChartLegend('areaChart-legend');
 
+    // initialize the daily area charts
     myAreaChart0 = new AreaChart('areaChart-0', dataArray[0], dataList[0]);
     myAreaChart1 = new AreaChart('areaChart-1', dataArray[1], dataList[1]);
     myAreaChart2 = new AreaChart('areaChart-2', dataArray[2], dataList[2]);
@@ -143,6 +146,7 @@ function initMainPage(dataArray) {
     myAreaChart13 = new AreaChart('areaChart-13', dataArray[13], dataList[13]);
     myAreaChart14 = new AreaChart('areaChart-14', dataArray[14], dataList[14]);
 
+    // initialize the monthly area charts
     myAreaChartMonth0 = new AreaChartMonth('areaChartMonth-0', dataArray[15], dataList[0], 15);
     myAreaChartMonth1 = new AreaChartMonth('areaChartMonth-1', dataArray[16], dataList[1], 16);
     myAreaChartMonth2 = new AreaChartMonth('areaChartMonth-2', dataArray[17], dataList[2], 17);
@@ -162,6 +166,7 @@ function initMainPage(dataArray) {
 }
 
 
+// getting the button value and update all the charts
 function displayRadioValue() {
     let button_chart = document.getElementsByName('energy_type');
 
@@ -170,6 +175,9 @@ function displayRadioValue() {
             button_chart_value = button_chart[i].value;
     }
 
+
+
+    // update the daily area chart
     myAreaChart0.updateVis();
     myAreaChart1.updateVis();
     myAreaChart2.updateVis();
@@ -186,6 +194,7 @@ function displayRadioValue() {
     myAreaChart13.updateVis();
     myAreaChart14.updateVis();
 
+    // update the monthly area chart
     myAreaChartMonth0.updateVis();
     myAreaChartMonth1.updateVis();
     myAreaChartMonth2.updateVis();
@@ -203,42 +212,4 @@ function displayRadioValue() {
     myAreaChartMonth14.updateVis();
 
     console.log(button_chart_value)
-}
-
-loadData()
-let climateData;
-
-function loadData() {
-    d3.csv('data/other/climate_zones.csv', row => {
-
-        //State,State FIPS,County FIPS,IECC Climate Zone,IECC Moisture Regime,BA Climate Zone,County Name
-        // AK,2,13,7,N/A,Very Cold,Aleutians East
-
-        row['State FIPS'] = +row['State FIPS'];
-        row['County FIPS'] = +row['County FIPS'];
-        row['IECC Climate Zone'] = +row['IECC Climate Zone'];
-
-        return row
-    }).then(csv => {
-
-        // Store csv data in global variable
-        climateData = csv;
-    });
-}
-
-
-
-function displayUserValue(){
-    let content = d3.select("#your-input").property('value');
-    console.log("user selected: ", content)
-    console.log("climateData: ", climateData)
-
-    var answer = d3.select("#your-answer")
-
-    for (let i=0; i<climateData.length; i++){
-        if (content === climateData[i]['County Name']){
-            answer.text(climateData[i]['County Name'] + ": Climate Zone" + " " + climateData[i]['IECC Climate Zone'] +
-                climateData[i]['IECC Moisture Regime'] + " / " + climateData[i]['BA Climate Zone']);
-        }
-    }
 }
