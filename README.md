@@ -7,14 +7,24 @@ Authors: Aditi Memani([@aditimemani-harvard](https://github.com/aditimemani-harv
 
 Energy Crisis is a project that aims to help viewers understand the residential energy consumption patterns in the US, based on the different climate zones, building types and internal building attributes (appliance type, lighting type, window type etc.). The goal of this project is to aid homeowners, developers, architects and policymakers make sustainable building decisions.
 
-created by [Vladimir Agafonkin](http://agafonkin.com/en) ([@mourner](https://github.com/mourner))
-as a part of the [SunCalc.net project](http://suncalc.net).
+---------------
 
-Most calculations are based on the formulas given in the excellent Astronomy Answers articles
-about [position of the sun](http://aa.quae.nl/en/reken/zonpositie.html)
-and [the planets](http://aa.quae.nl/en/reken/hemelpositie.html).
-You can read about different twilight phases calculated by SunCalc
-in the [Twilight article on Wikipedia](http://en.wikipedia.org/wiki/Twilight).
+Libraries:
+1. Bootstrap:
+  1. https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css
+  2. https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
+
+2. Fonts:
+  1. https://fonts.googleapis.com/css?family=Lato
+
+3. D3:
+   1. https://d3js.org/d3.v7.min.js
+   2. https://d3js.org/d3-array.v2.min.js
+   3. https://d3js.org/d3-geo.v2.min.js
+   4. https://d3js.org/d3-scale-chromatic.v1.min.js
+   5. https://d3js.org/topojson.v2.min.js
+   6. https://d3js.org/d3-geo.v1.min.js
+
 
 
 
