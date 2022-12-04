@@ -42,7 +42,7 @@ let drawMap = () => {
         .attr('class', 'state')
         .attr('stroke', 'black')
         .attr('stroke-width', 0.5)
-        .style("opacity", 0.5)
+        // .style("opacity", 0.5)
         .attr("transform", "scale(0.7), translate(0,0)")
 
         //stateDataItem refers to the state level array object from the topojson file
@@ -57,9 +57,11 @@ let drawMap = () => {
 
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
         .on('mouseover', function(event,stateDataItem){
+            d3.selectAll(".state").style("opacity", .2)
+
             d3.select(this)
-                .attr('stroke-width', 2)
-                .style("opacity", 1.0)
+                .style("stroke", "black")
+                .style("opacity", 1)
 
             //since default is hidden we're switching it to visible
             stateTooltip.transition()
@@ -77,9 +79,12 @@ let drawMap = () => {
         })
         //now adding what happens once mouse is no longer there by hiding the tooltip
         .on('mouseout', function(event,stateDataItem) {
+            d3.selectAll(".state").style("opacity", 1)
+                .style("stroke", "none")
             d3.select(this)
-                .attr('stroke-width', 0.5)
-                .style("opacity", 0.5)
+                // style("opacity", 0.5)
+                .style("stroke", "none")
+                .style("opacity", "1.0");
 
             stateTooltip.transition()
                 .style('visibility', 'hidden')
