@@ -1,4 +1,4 @@
-# cs171_Final_Project
+# Energy Crisis: CS171 Final Project
 
 This repository holds the final project for CS171 Visualization course (Fall 2022), Harvard University.  
 
