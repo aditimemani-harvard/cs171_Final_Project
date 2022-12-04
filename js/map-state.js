@@ -27,6 +27,7 @@ let drawMap = () => {
         dataArray.push(parseFloat(energyData[d].avg_energy))
     }
 
+
     var minVal = d3.min(dataArray)
     console.log(minVal)
     var maxVal = d3.max(dataArray)
@@ -89,6 +90,62 @@ let drawMap = () => {
             stateTooltip.transition()
                 .style('visibility', 'hidden')
         })
+
+
+
+    // append legend group
+    legendGroup = canvas.append("g")
+
+
+    var legendColorScale = d3.scaleSequential()
+        .interpolator(d3.interpolate("#CED4DA", "#641220"))
+        .domain([0,50]);
+
+    var gradientRange = d3.range(50);
+    legend = legendGroup.selectAll("rects")
+        .data(gradientRange)
+        .enter()
+        .append("rect")
+        .attr("y", 0)
+        .attr("x", (d,i) => i*3)
+        .attr("height", 15)
+        .attr("width", 3)
+        .attr("fill", d=> legendColorScale(d));
+    legend.attr('transform','translate(20,400)');
+
+    var legendText = canvas.append("text")
+        .attr("x", 20)
+        .attr("y", 420+10)
+        .text(f(minVal))
+        .style('fill', 'rgba(255, 255, 255, 0.75)')
+        .style('font-size', 8)
+        .style('font-family', 'Roboto')
+        .attr('text-anchor', 'middle')
+
+    var legendText2 = canvas.append("text")
+        .attr("x", 50*3+20)
+        .attr("y", 420+10)
+        .text(f(maxVal))
+        .style('fill', 'rgba(255, 255, 255, 0.75)')
+        .style('font-size', 8)
+        .style('font-family', 'Roboto')
+        .attr('text-anchor', 'middle')
+
+    var legendText3 = canvas.append("text")
+        .attr("x", 5)
+        .attr("y", 390)
+        .text("Average Energy Consumed (kWh)")
+        .style('fill', 'rgba(255, 255, 255, 0.75)')
+        .style('font-size', 10)
+        .style('font-family', 'Roboto')
+        // .attr('text-anchor', 'middle')
+
+
+
+
+
+
+
 }
 
 // promises to load the data as a javascript object
