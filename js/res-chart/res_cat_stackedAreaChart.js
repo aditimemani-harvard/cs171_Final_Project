@@ -61,6 +61,8 @@ d3.csv("data/res_all.csv").then( function(data) {
     var xAxis = svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x).ticks(5))
+        .style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8)
+        .call(g => g.select(".domain").remove())
 
     // Add X axis label:
     svg.append("text")
@@ -89,6 +91,8 @@ d3.csv("data/res_all.csv").then( function(data) {
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y).ticks(5))
+        .style('color', 'rgba(255, 255, 255, 0.75)').style('font-size', 8)
+        .call(g => g.select(".domain").remove())
 
 
 
@@ -116,7 +120,7 @@ d3.csv("data/res_all.csv").then( function(data) {
     var highlight = function (event, d, i) {
         console.log(d)
         // reduce opacity of all groups
-        d3.selectAll(".myArea").style("opacity", .6)
+        d3.selectAll(".myArea").style("opacity", .2)
         // expect the one that is hovered
         d3.select(this)
             .style("stroke", "black")
@@ -146,6 +150,7 @@ d3.csv("data/res_all.csv").then( function(data) {
         .data(stackedData)
         .enter()
         .append("path")
+        .attr("stroke-width", 0)
         .attr("class", function (d) {
             return "myArea " + d.key
         })
