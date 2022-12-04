@@ -224,7 +224,7 @@ Energy Crisis is a project that aims to help viewers understand the residential 
     2. https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js
  
  
-## Data Sources
+## References
 
 1. Wilson, EJ. H. et. al. 2022. End-Use Load Profiles for the U.S. Building Stock: Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5500-80889.[LINK](https://www.osti.gov/biblio/1854582/)
 2. Find Policies & Incentives by State. DSIRE USA. [LINK](https://www.dsireusa.org/)
@@ -234,7 +234,7 @@ Kadric´ D. et. al. October 2021. Cost-related analysis of implementing energy-e
 5. Aksoezen M. et. al. October 2014. Building age as an indicator for energy consumption. Energy and Buildings 87 (2015) 74–86
 6. Hyedari A. et. al. 2021. Effects of different window configurations on energy consumption in building : Optimization and economic analysis. Journal of Building Engineering 35 (2021) 102099
 7. Residential vs. Commercial Energy Use, Solar Feeds.
-8. States Investing the Most in New Housing, Construction Coverage.https://constructioncoverage.com/research/states-investing-the-most-in-new-housing
+8. States Investing the Most in New Housing, Construction Coverage.[LINK](https://constructioncoverage.com/research/states-investing-the-most-in-new-housing)
 9. ASHRAE Climate Zones, Open EI. [LINK](https://openei.org/wiki/ASHRAE_Climate_Zones)
 
 
