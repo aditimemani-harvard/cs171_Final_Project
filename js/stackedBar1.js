@@ -92,6 +92,12 @@ function UpdateChart(dom, dataURL, max_val) {
 
         // Three function that change the tooltipBar when user hover / move / leave a cell
         var mouseover = function (event, d) {
+
+            d3.selectAll(".myArea").style("opacity", .2)
+            // d3.select(this)
+            //     .style("stroke", "black")
+            //     .style("opacity", 1)
+
             var subgroupName = d3.select(this.parentNode).datum().key;
             var subgroupValue = d.data[subgroupName];
             tooltipBar
@@ -112,10 +118,14 @@ function UpdateChart(dom, dataURL, max_val) {
         var mouseleave = function (event, d) {
             tooltipBar
                 .style("opacity", 0)
+
+            d3.selectAll(".myArea").style("opacity", 1)
+                .style("stroke", "none")
         }
 
         // Show the bars
         svgBar.append("g")
+            .attr("class", "myArea")
             .selectAll("g")
             // Enter in the stack data = loop key per key = group per group
             .data(stackedData)

@@ -121,7 +121,7 @@ class COMMStackedAreaChart {
             vis.Tooltip.style("opacity", 1)
             d3.selectAll(".myArea").style("opacity", .2)
             d3.select(this)
-                .style("stroke", "white")
+                .style("stroke", "black")
                 .style("opacity", 1)
 
             commTooltip

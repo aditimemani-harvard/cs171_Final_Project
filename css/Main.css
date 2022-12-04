@@ -216,16 +216,12 @@ h7{
     color: white;
     text-decoration: underline;
     font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    font-size: 18px;
-}
-
-.link-text-small{
-    /*color: lightgrey;*/
-    text-decoration: underline;
-    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 16px;
+}
+.link-text:hover{
+    color: #85182A;
+    font-size: 16px;
 }
 
 
@@ -325,7 +321,7 @@ h7{
 }
 
 .img-about{
-    width: 30%;!important;
+    width: 20%;!important;
 }
 
 
@@ -838,7 +834,7 @@ img{object-fit: scale-down;}
     cursor: pointer;
 }
 .up:hover {
-    background-color: black;
+    background-color: grey;
     color: white;
 }
 

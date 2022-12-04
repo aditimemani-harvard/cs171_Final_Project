@@ -35,7 +35,7 @@ let drawCountyMap = () => {
         .attr('d', d3.geoPath().projection(projection))
         .attr('class', 'county')
         .attr('stroke-width', 0)
-        .style("opacity", 0.7)
+        // .style("opacity", 0.7)
         .attr("transform", "scale(0.7), translate(0,0)")
         //countyDataItem refers to the county level array object from the topojson file
         .attr('fill', (countyDataItem) => {
@@ -49,6 +49,8 @@ let drawCountyMap = () => {
         // ADDING TOOLTIP BASED ON  TOPOJSON FILE ARRAYS
         .on('mouseover', function(event,countyDataItem){
             //since default is hidden we're switching it to visible
+
+            d3.selectAll(".county").style("opacity", .2)
 
             d3.select(this)
                 .style("stroke", "white")
@@ -112,12 +114,16 @@ let drawCountyMap = () => {
         })
         //now adding what happens once mouse is no longer there by hiding the countyTooltip
         .on('mouseout', function(event,countyDataItem){
+
+            d3.selectAll(".county").style("opacity", 1)
+                .style("stroke", "none")
+
             countyTooltip.transition()
                 .style('visibility', 'hidden')
             d3.select(this)
                 // style("opacity", 0.5)
                 .style("stroke", "none")
-                .style("opacity", "0.7");
+                .style("opacity", "1.0");
         })
 }
 
