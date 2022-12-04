@@ -173,7 +173,7 @@ Energy Crisis is a project that aims to help viewers understand the residential 
 
 ## Usage
 1. Clone the repository to your local system
-2. Open ```bash index.html ``` in a browser or run through a local server (ideally through WebStorm or ```python3 -m http.server```)
+2. Open ``` index.html ``` in a browser or run through a local server (ideally through WebStorm or ```python3 -m http.server```)
 
 
 ## Navigating the Website
@@ -226,8 +226,8 @@ Energy Crisis is a project that aims to help viewers understand the residential 
  
 ## Data Sources
 
-1. Wilson, EJ. H. et. al. 2022. End-Use Load Profiles for the U.S. Building Stock: Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5500-80889.https://www.osti.gov/biblio/1854582/
-2. Find Policies & Incentives by State. DSIRE USA. https://www.dsireusa.org/
+1. Wilson, EJ. H. et. al. 2022. End-Use Load Profiles for the U.S. Building Stock: Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5500-80889.[LINK](https://www.osti.gov/biblio/1854582/)
+2. Find Policies & Incentives by State. DSIRE USA. [LINK](https://www.dsireusa.org/)
 3. Building America Best Practices Series, Volume 7.3, Guide to Determining Climate Regions by County, Pacific Northwest National Laboratory, August 2015.
 Kadric´ D. et. al. October 2021. Cost-related analysis of implementing energy-efficient retrofit measures in the residential building sector of a middle-income country – A case study of Bosnia and Herzegovina. Energy & Buildings 257 (2022) 111765.
 4. Latini, A. et. al.2015. IEE/12/758/SI2.644752 D.6.7. Best practices for improving energy efficiency in Fruit and Vegetable processing plants.
@@ -235,7 +235,7 @@ Kadric´ D. et. al. October 2021. Cost-related analysis of implementing energy-e
 6. Hyedari A. et. al. 2021. Effects of different window configurations on energy consumption in building : Optimization and economic analysis. Journal of Building Engineering 35 (2021) 102099
 7. Residential vs. Commercial Energy Use, Solar Feeds.
 8. States Investing the Most in New Housing, Construction Coverage.https://constructioncoverage.com/research/states-investing-the-most-in-new-housing
-9. ASHRAE Climate Zones, Open EI. https://openei.org/wiki/ASHRAE_Climate_Zones
+9. ASHRAE Climate Zones, Open EI. [LINK](https://openei.org/wiki/ASHRAE_Climate_Zones)
 
 
 
