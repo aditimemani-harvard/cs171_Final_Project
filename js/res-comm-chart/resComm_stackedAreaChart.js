@@ -108,6 +108,15 @@ class TotalStackedAreaChart {
             .style("font-size", 20)
             .attr("text-anchor", "middle")
 
+
+        let imageScalePath = ['img/stacked_chart/total_res.jpg',
+            'img/stacked_chart/total_comm.jpg']
+
+        let imageScaleSrc = ['  Residential',' Commercial']
+        var imageScale = d3.scaleOrdinal().domain(imageScaleSrc).range(imageScalePath)
+
+        let commResTooltip = d3.select('#comm-res-tooltip')
+
         // Three function that change the tooltip when user hover / move / leave a cell
         var mouseover = function(d) {
             vis.Tooltip.style("opacity", 1)
@@ -115,14 +124,40 @@ class TotalStackedAreaChart {
             d3.select(this)
                 .style("stroke", "black")
                 .style("opacity", 1)
+            commResTooltip
+                .html(`    
+                      <span style="font-family: 'Times New Roman';
+                       font-size:20px">&ensp;Category: ${d.key}</span>
+                       <br>
+                       <div class='center'>
+                       <img src=${imageScale(d.key)} width="50%" height="auto">
+                       </div>
+                  `)
+                .style("left", (event.pageX - 10) + "px")
+                .style("top", (event.pageY + 20) + "px");
+
         }
+
         var mousemove = function(d,i) {
             vis.Tooltip.text('  Category '+i.key)
                 .style('fill', 'white')
                 .style('font-family', 'Roboto')
                 .style('font-size', '12px')
                 .style('fill', 'white');
+
+            commResTooltip
+                .html(`    
+                      <span style="font-family: 'Times New Roman';
+                       font-size:20px">&ensp;Category: ${d.key}</span>
+                       <br>
+                       <div class='center'>
+                       <img src=${imageScale(d.key)} width="50%" height="auto">
+                       </div>
+                  `)
+                .style("left", (event.pageX - 10) + "px")
+                .style("top", (event.pageY + 20) + "px");
         }
+
         var mouseleave = function(d) {
             vis.Tooltip.style("opacity", 0)
             d3.selectAll(".myArea").style("opacity", 1)
@@ -185,7 +220,6 @@ class TotalStackedAreaChart {
             .style('font-family', 'Roboto')
             .style('font-size', '10px')
             .style('fill', 'white');
-
 
 
     }

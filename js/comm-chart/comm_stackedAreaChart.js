@@ -4,15 +4,15 @@ d3.csv("data/comm_all.csv").then( function(data) {
     var margin = {top: 60, right: 230, bottom: 50, left: 50},
         width = 660 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
-    let imageScalePath = ['img/stacked_chart/commercial/DeliveredEnergy.png',
+    let imageScalePath = ['img/stacked_chart/commercial/DeliveredEnergy.jpg',
         'img/stacked_chart/commercial/DistillateFuelOil.jpg',
-        'img/stacked_chart/commercial/EnergyRelatedLosses.jpg',
+        'img/stacked_chart/commercial/ElectricityRelatedLosses.jpg',
         'img/stacked_chart/commercial/NaturalGas.jpg',
         'img/stacked_chart/commercial/Petroleum.jpg',
         'img/stacked_chart/commercial/PurchasedElectricity.jpg']
 
 
-    let imageScaleSrc = ['  Delivered Energy',' Distillate Fuel Oil', ' Energy Related Losses',
+    let imageScaleSrc = ['  Delivered Energy',' Distillate Fuel Oil', ' Electricity Related Losses',
         '   Natural Gas', ' Petroleum and Other Liquids Subtotal', '    Purchased Electricity']
     var imageScale = d3.scaleOrdinal().domain(imageScaleSrc).range(imageScalePath)
 
@@ -131,7 +131,7 @@ d3.csv("data/comm_all.csv").then( function(data) {
       
                        <br>
                        <div class='center'>
-                       <img src=${imageScale(d.key)} width="50%" height="auto">
+                       <img src=${imageScale(d.key)} width="100%" height="auto">
                        </div>
                   `)
             .style("left", (event.pageX - 10) + "px")

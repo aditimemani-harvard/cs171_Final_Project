@@ -120,7 +120,7 @@
             <h5 class="scrollFade intro-text"> From the visualization above, we see that the Earth’s temperature has risen by 0.14°F per decade since 1880,
                 but the rate of warming since 1981 is more than twice that: 0.32°F per decade. 2021 was the sixth-warmest year on record based on NOAA’s temperature data.
                 The latest climate data tells us that reducing carbon emissions is not enough. To make the biggest impact,
-                we must all commit to net-zero emissions by 2030 — a path that requires strong, immediate action.
+                we must all commit to net-zero emissions by 2030 — a path that requires strong, immediate action. <br><br>
                 <span class = "highlight-text">The built environment contributes to a staggering 40% of these emissions.</span> Therefore, this project aims to make the audience aware
                 of where these emissions come from.</h5>
         </div>
@@ -163,51 +163,66 @@
     </div>
 
 
-    <div class="col">
-        <div class="scene-bar scene-bar--card-bar">
-            <div class="col no-gutters section-col margin-left">
-                <div class="scene-bar scene-bar--card-bar">
-                    <div class="card-bar ">
-                        <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
-                        <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
-                             style="height:100%; width: 100%;"></div>
+    <div class = 'row'>
+        <div class="col-4">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="col no-gutters section-col margin-left">
+                    <div class="scene-bar scene-bar--card-bar">
+                        <div class="card-bar ">
+                            <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                            <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
+                                 style="height:100%; width: 100%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="res-tooltip"></div>
+        <div class="col-4 center">
+            <div id="res-tooltip"></div>
+        </div>
     </div>
-        <p>&nbsp;&nbsp;&nbsp;</p>
-    <div class="col">
-        <div class="scene-bar scene-bar--card-bar">
-            <div class="col no-gutters section-col margin-left">
-                <div class="scene-bar scene-bar--card-bar">
-                    <div class="card-bar">
-                        <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
-                        <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
-                             style="height:100%; width: 100%;"></div>
+
+    <div class = 'row'>
+        <div class="col-4">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="col no-gutters section-col margin-left">
+                    <div class="scene-bar scene-bar--card-bar">
+                        <div class="card-bar">
+                            <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
+                            <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
+                                 style="height:100%; width: 100%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="comm-tooltip"></div>
+        <div class="col-4 center">
+            <div id="comm-tooltip"></div>
+        </div>
     </div>
-        <p>&nbsp;&nbsp;&nbsp;</p>
-    <div class="col">
-        <div class="scene-bar scene-bar--card-bar">
-            <div class="col no-gutters section-col margin-left">
-                <div class="scene-bar scene-bar--card-bar">
-                    <div class="card-bar">
-                        <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
-                        <div class="card-bar__face card-bar__face--back" id="res-comm-stacked-chart"
-                             style="height:100%; width: 100%;"></div>
+
+
+    <div class = 'row'>
+        <div class="col-4">
+            <div class="scene-bar scene-bar--card-bar">
+                <div class="col no-gutters section-col margin-left">
+                    <div class="scene-bar scene-bar--card-bar">
+                        <div class="card-bar">
+                            <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
+                            <div class="card-bar__face card-bar__face--back" id="res-comm-stacked-chart"
+                                 style="height:100%; width: 100%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-4 center">
+            <div id="comm-res-tooltip"></div>
         </div>
     </div>
 </div>
-    <br>
+
+<br>
 
 
 <!--    <img src="img/stacked_chart/commercial/Delivered Energy.jpg" width="50%" height="auto">-->
