@@ -17,6 +17,29 @@ var i = 0,
     duration = 750,
     root;
 
+
+function displayRadioValue2() {
+    let button_chart = document.getElementsByName('zone_type');
+
+    for (i = 0; i < button_chart.length; i++) {
+        if (button_chart[i].checked)
+            button_chart_value = button_chart[i].value;
+    }
+
+    if (button_chart_value == 4){
+        updateButton(dendoFourURL)
+    }
+    if (button_chart_value == 5){
+        updateButton(dendoFiveURL)
+    }
+    else{
+        updateButton(dendoSixURL)
+    }
+    // updateButton(button_chart_value);
+    console.log("dendo", button_chart_value)
+}
+
+
 // declares a tree layout and assigns the size
 var treemap = d3.tree().size([height/2, width/2]);
 function updateButton (dataURL) {
@@ -116,7 +139,7 @@ function updateButton (dataURL) {
             nodeUpdate.select('circle.node')
                 .attr('r', function(d){
                     // console.log("radius", d)
-                    console.log("length: ", d.data.name, d.data.name.length);
+                    // console.log("length: ", d.data.name, d.data.name.length);
                     // if (d.data.name.length = 1){ return 50; }
                     // if (d.data.name.length = 2){ return 20; }
                     if (d.data.name.length > 2){ return 5; }
@@ -162,7 +185,6 @@ function updateButton (dataURL) {
             // Enter any new links at the parent's previous position.
             var linkEnter = link.enter().insert('path', "g")
                 .attr("class", "link")
-                // .style("stroke-dasharray", ("2,2"))
                 .style("stroke-width", function(d){
                     if (d.data.name.length > 2){ return 1; }
                     else { return 2; }
@@ -204,7 +226,7 @@ function updateButton (dataURL) {
                     C ${(s.y + d.y) / 2} ${s.x},
                       ${(s.y + d.y) / 2} ${d.x},
                       ${d.y} ${d.x},
-                      ${d.y+10} ${d.x+50}`
+                      ${d.y+10} ${d.x+60}`
 
                 return path
             }

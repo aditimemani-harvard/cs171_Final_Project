@@ -614,11 +614,21 @@
     <div class="center">
         <div class="center">
             <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-                <div id="buttonDendoDiv">
-                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>
-                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>
-                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>
+
+<!--                <div id="buttonDendoDiv">-->
+<!--                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>-->
+<!--                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>-->
+<!--                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>-->
+<!--                </div>-->
+
+
+                <div class="container" data-toggle="buttons" onclick="displayRadioValue2()">
+                    <label><input class="option-input radio" type="radio" name="zone_type" value="4" checked>Zone 4</label>
+                    <label><input class="option-input radio" type="radio" name="zone_type" value="5">Zone 5</label>
+                    <label><input class="option-input radio" type="radio" name="zone_type" value="6">Zone 6</label>
                 </div>
+
+
                 <script>
                     // Add active class to the current button (highlight it)
                     var header = document.getElementById("buttonDendoDiv");

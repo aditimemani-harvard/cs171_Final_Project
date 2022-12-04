@@ -205,6 +205,8 @@ function displayRadioValue() {
     console.log(button_chart_value)
 }
 
+
+
 loadData()
 let climateData;
 
