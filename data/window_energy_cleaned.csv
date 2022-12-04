@@ -4,8 +4,8 @@ group,Single-pane tempered glass (4 mm thickness),"Double-pane tempered glass (4
 (8 mm Gap)+Krypt","Double-pane clear glass (4 mm thickness)
 (8 mm Gap)+Krypt","Double-pane clear  glass + Krypt (6 mm thickness)
 (8 mm Gap)"
-coolingLoad (per 1000),8.70024,7.65224,7.74425,7.66173,7.7674,7.84574
-heatingLoad (per 1000),8.02717,4.98161,4.99689,4.82333,4.83433,4.89927
-totalCostWindow (per $1000),0.09971,0.273,0.161,2.81225,2.70025,2.7265
-totalSaveMoney (per $100),0.0632,0.6983,0.6456,0.6948,0.6345,0.589
-paybackPeriod (per 100),0.157,0.0391,0.0249,0.4047,4.256,4.629
+EnergyLoad (per 10 mWh),1.672741,1.263385,1.274114,1.248506,1.260173,1.274501
+"totalCost
+(per $1000)",0.09971,0.273,0.161,2.81225,2.70025,2.7265
+"paybackPeriod
+(per decade)",0.157,0.0391,0.0249,0.4047,4.256,4.629

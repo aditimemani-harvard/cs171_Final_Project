@@ -5,7 +5,7 @@
 // append the svg object to the body of the page
 
 let dataURLOne = "data/window_energy_cleaned.csv";
-let max_valOne = 1*8.8;
+let max_valOne =  4.5*2;
 let domOne = 'stacked-barOne';
 let dataURLTwo = "data/lighting_energy.csv";
 let max_valTwo = 7*2;
@@ -25,6 +25,7 @@ function UpdateChart(dom, dataURL, max_val) {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform",`translate(${margin.left},${margin.top})`);
+
     d3.csv(dataURL).then(function (data) {
 
         // List of subgroups = header of the csv files = soil condition here
@@ -43,6 +44,8 @@ function UpdateChart(dom, dataURL, max_val) {
             .call(d3.axisBottom(x).tickSizeOuter(0))
             .style('color', 'rgba(255, 255, 255, 0.75)')
             .style('font-size', 8).style('font-family', 'Roboto')
+            // .style('padding-right', '10px')
+            // .style('padding-left', '10px')
             .call(g => g.select(".domain").remove())
 
         // Add Y axis
