@@ -59,10 +59,7 @@ let drawCountyMap = () => {
             countyTooltip.transition()
                 .style('visibility', 'visible')
             //same thing as before we're pulling the id from the arrays and the matching fips code from the eudcation data
-            let id = countyDataItem['id']
-            let county = climateData.find((county) => {
-                return +county['fips'] === id
-            })
+
 
 
             countyTooltip

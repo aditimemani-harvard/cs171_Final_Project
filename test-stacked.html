@@ -9,7 +9,8 @@
           crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="css/AreaChartStyles.css">
+<!--    <link rel="stylesheet" href="css/AreaChartStyles.css">-->
+    <link rel="stylesheet" href="css/Main.css">
 <!--    <link href="css/style.css" rel="stylesheet">-->
 
 
@@ -23,27 +24,23 @@
     <br><br><br>
 </p>
 
-<div class="scene scene--card-bar">
-    <div class="card-bar">
-        <div class="card-bar__face card-bar__face--front">Windows</div>
-<div class="card-bar__face card-bar__face--back" id="stacked-barOne" style="height:100%; width: 100%;"></div>
-                </div>
+
+
+<!--    <div  id="comm-stacked-chart"></div>-->
+
+
+<div class="scene-bar scene-bar--card-bar">
+    <div class="col no-gutters section-col margin-left">
+        <div class="scene-bar scene-bar--card-bar">
+            <div class="card-bar">
+                <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
+                <div class="card-bar__face card-bar__face--back" id="comm-stacked-chart"
+                     style="height:100%; width: 100%;"></div>
+            </div>
         </div>
-
-<div class="scene scene--card-bar">
-    <div class="card-bar">
-        <div class="card-bar__face card-bar__face--front">Lighting</div>
-        <div class="card-bar__face card-bar__face--back" id="stacked-barTwo" style="height:100%; width: 100%;"></div>
     </div>
 </div>
-
-<div class="scene scene--card-bar">
-    <div class="card-bar">
-        <div class="card-bar__face card-bar__face--front">Appliances</div>
-        <div class="card-bar__face card-bar__face--back" id="stacked-barThree" style="height:100%; width: 100%;"></div>
-    </div>
-</div>
-
+<div id="comm-tooltip"></div>
 
 <p>
     <br><br><br>
@@ -61,38 +58,38 @@
 
 <!-- TIME CHART -->
 
-<script src="js/AreaChartMain.js"></script>
-<script src="js/AreaChart.js"></script>
-<script src="js/AreaChartMonth.js"></script>
-<script src="js/AreaChartTooltip.js"></script>
-<script src="js/AreaChartLegend.js"></script>
+<!--<script src="js/AreaChartMain.js"></script>-->
+<!--<script src="js/AreaChart.js"></script>-->
+<!--<script src="js/AreaChartMonth.js"></script>-->
+<!--<script src="js/AreaChartTooltip.js"></script>-->
+<!--<script src="js/AreaChartLegend.js"></script>-->
 
 <!-- MAP CHARTS -->
-<script src="js/map-county.js"></script>
-<script src="js/map-state.js"></script>
+<!--<script src="js/map-county.js"></script>-->
+<!--<script src="js/map-state.js"></script>-->
 
 <!-- RES COMM STACKED CHARTS -->
 
-<script src="js/res-chart/res-main.js"></script>
-<script src="js/res-chart/res_cat_stackedAreaChart.js"></script>
+<!--<script src="js/res-chart/res-main.js"></script>-->
+<!--<script src="js/res-chart/res_cat_stackedAreaChart.js"></script>-->
 
-<script src="js/comm-chart/comm-main.js"></script>
+
 <script src="js/comm-chart/comm_stackedAreaChart.js"></script>
 
-<script src="js/res-comm-chart/resComm-main.js"></script>
-<script src="js/res-comm-chart/resComm_stackedAreaChart.js"></script>
+<!--<script src="js/res-comm-chart/resComm-main.js"></script>-->
+<!--<script src="js/res-comm-chart/resComm_stackedAreaChart.js"></script>-->
 <!--&lt;!&ndash; RADAR CHARTS &ndash;&gt;-->
 <!--<script src="other_js/radar-chart.js"></script>-->
 <!-- stacked Bar CHARTS -->
-<script src="js/stackedBar1.js"></script>
+<!--<script src="js/stackedBar1.js"></script>-->
 <script src="js/flipStackedBarChartv1.js"></script>
-<!-- DENDO CHARTS -->
-<script src="js/dendo.js"></script>
-<!-- TREEMAP CHARTS -->
-<script src="js/treemap.js"></script>
-<!-- NAV BAR COMPONENTS -->
-<script src="js/toTheTop.js"></script>
-<script src="js/fadein-scroll.js"></script>
+<!--&lt;!&ndash; DENDO CHARTS &ndash;&gt;-->
+<!--<script src="js/dendo.js"></script>-->
+<!--&lt;!&ndash; TREEMAP CHARTS &ndash;&gt;-->
+<!--<script src="js/treemap.js"></script>-->
+<!--&lt;!&ndash; NAV BAR COMPONENTS &ndash;&gt;-->
+<!--<script src="js/toTheTop.js"></script>-->
+<!--<script src="js/fadein-scroll.js"></script>-->
 
 <!-- d3 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>

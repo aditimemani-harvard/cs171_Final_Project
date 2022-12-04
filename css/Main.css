@@ -225,7 +225,7 @@ hr.style-one {
 .link-text{
     color: white;
     text-decoration: underline;
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     font-size: 16px;
 }
@@ -582,11 +582,8 @@ img{object-fit: scale-down;}
 }
 
 .node text {
-    font-size: 10px;
-    line-height: 20px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-family: 'Roboto Light', sans-serif;;
+    font: 14px sans-serif;
+    font-weight: bold;
 }
 
 .link {
@@ -758,12 +755,18 @@ img{object-fit: scale-down;}
 #comm-stacked-area-chart{
     background-size: contain
 }
-#comm-stacked-tooltip{
-    visibility: hidden;
-    position: absolute;
+#comm-tooltip{
+
     font-family: 'Roboto', sans-serif;
-    background: white;
-    border: 2px solid black;
+    color: white;
+    left: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#res-tooltip{
+
+    font-family: 'Roboto', sans-serif;
+    color: white;
     left: 100px;
     padding: 5px;
     border-radius: 5px;

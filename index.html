@@ -163,7 +163,7 @@
     </div>
 
 
-    <div class="center ">
+    <div class="col">
         <div class="scene-bar scene-bar--card-bar">
             <div class="col no-gutters section-col margin-left">
                 <div class="scene-bar scene-bar--card-bar">
@@ -175,7 +175,10 @@
                 </div>
             </div>
         </div>
+        <div id="res-tooltip"></div>
+    </div>
         <p>&nbsp;&nbsp;&nbsp;</p>
+    <div class="col">
         <div class="scene-bar scene-bar--card-bar">
             <div class="col no-gutters section-col margin-left">
                 <div class="scene-bar scene-bar--card-bar">
@@ -187,7 +190,10 @@
                 </div>
             </div>
         </div>
+        <div id="comm-tooltip"></div>
+    </div>
         <p>&nbsp;&nbsp;&nbsp;</p>
+    <div class="col">
         <div class="scene-bar scene-bar--card-bar">
             <div class="col no-gutters section-col margin-left">
                 <div class="scene-bar scene-bar--card-bar">
@@ -200,13 +206,14 @@
             </div>
         </div>
     </div>
+</div>
     <br>
-    <div id="image-tooltip" style="height: 100%; width: 100%"></div>
+
 
 <!--    <img src="img/stacked_chart/commercial/Delivered Energy.jpg" width="50%" height="auto">-->
 
     <br><br><br><br><br>
-</div>
+
 
 <!--    #################### CLIMATE ZONE Section ####################-->
 <div id="climate_zone__section">
@@ -614,21 +621,11 @@
     <div class="center">
         <div class="center">
             <div class="row" style="height: 70vh; width:170vh; background: black; padding: 0;">
-
-<!--                <div id="buttonDendoDiv">-->
-<!--                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>-->
-<!--                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>-->
-<!--                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>-->
-<!--                </div>-->
-
-
-                <div class="container" data-toggle="buttons" onchange="displayRadioValue2()">
-                    <label><input class="option-input radio" type="radio" name="zone_type" value="4" checked>Zone 4</label>
-                    <label><input class="option-input radio" type="radio" name="zone_type" value="5">Zone 5</label>
-                    <label><input class="option-input radio" type="radio" name="zone_type" value="6">Zone 6</label>
+                <div id="buttonDendoDiv">
+                    <button class="button-dendo active-dendo" onclick="updateButton(dendoFourURL)">Zone 4</button>
+                    <button class="button-dendo" onclick="updateButton(dendoFiveURL)">Zone 5</button>
+                    <button class="button-dendo" onclick="updateButton(dendoSixURL)">Zone 6</button>
                 </div>
-
-
                 <script>
                     // Add active class to the current button (highlight it)
                     var header = document.getElementById("buttonDendoDiv");
