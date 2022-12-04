@@ -157,9 +157,10 @@ h7{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
-    padding-top: 12px;
-    font-size: 12px;
-    border-top: 0.1px solid white;
+    padding-top: 8px;
+    font-size: 10px;
+    line-height: 10px;
+    /*border-top: 0.1px solid white;*/
 }
 
 .row{
@@ -193,7 +194,14 @@ h7{
 
 .main-heading-text{ line-height: 70px;font-size: 100px;}
 .sub-heading-text{ font-size: 32px; }
-.medium-caption{ font-size: 20px}
+.medium-caption{ font-size: 20px;}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
 
 .highlight-text{ font-family: 'Roboto Medium', sans-serif; }
 .section-heading-text{ line-height:22px;text-align: left;!important; font-size: 40px; font-weight: normal;}
@@ -556,6 +564,11 @@ img{object-fit: scale-down;}
     width: 90%;
     /*height: 5vw;*/
 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
     border-color: black;
 }
 .card h-100{
@@ -578,15 +591,15 @@ img{object-fit: scale-down;}
     stroke-width: 2px;
 }
 .button-dendo {
-    background-color: #e7e7e7;
-    color: black;
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    /*color: black;*/
 
 
     text-align: center;
     position: relative;
 
     color: rgb(0, 0, 0, 0.8);
-    background-color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(255, 255, 255, 0.2);
     stroke: none;
     height: 60px;
     width: 60px;
@@ -607,7 +620,7 @@ img{object-fit: scale-down;}
 
 
 .active-dendo, .button-dendo:hover{
-    background-color: #85182A;
+    background-color: rgba(255, 255, 255, 0.3);
     color: white;
 
 

@@ -49,8 +49,14 @@ function UpdateChart(dom, dataURL, max_val) {
         var y = d3.scaleLinear()
             .domain([0, max_val])
             .range([height, 0]);
+
+        var yAxis = d3.axisLeft()
+            .scale(y)
+            .ticks(5);
+
         svgBar.append("g")
-            .call(d3.axisLeft(y))
+            // .call(d3.axisLeft(y))
+            .call(yAxis)
             .style('color', 'rgba(255, 255, 255, 0.75)')
             .style('font-size', 8).style('font-family', 'Roboto')
             .call(g => g.select(".domain").remove());
@@ -93,9 +99,9 @@ function UpdateChart(dom, dataURL, max_val) {
         // Three function that change the tooltipBar when user hover / move / leave a cell
         var mouseover = function (event, d) {
 
-            d3.selectAll(".myArea").style("opacity", .2)
+            // d3.selectAll(".myArea").style("opacity", .2)
+            // console.log("stackedBar", this.parentNode)
             // d3.select(this)
-            //     .style("stroke", "black")
             //     .style("opacity", 1)
 
             var subgroupName = d3.select(this.parentNode).datum().key;
@@ -119,8 +125,8 @@ function UpdateChart(dom, dataURL, max_val) {
             tooltipBar
                 .style("opacity", 0)
 
-            d3.selectAll(".myArea").style("opacity", 1)
-                .style("stroke", "none")
+            // d3.selectAll(".myArea").style("opacity", 1)
+            //     .style("stroke", "none")
         }
 
         // Show the bars
