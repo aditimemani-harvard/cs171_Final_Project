@@ -19,13 +19,29 @@
 
 </head>
 
-
-<body>
-
-<!-- #################### Loader ####################-->
-<div class="loader" id="loader">
-Load Content
+<!-- #################### Page Loader ####################-->
+<div id="preloader">
+    <div class="center-wave">
+        <p style="">    </p>
+    </div>
+    <div class="center-wave">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="center-wave">
+        <p style="color:#DA1E37; font-size: 30px; font-weight: lighter;">it's getting hotter...</p>
+    </div>
 </div>
+
+<body onload="document.body.style.opacity='1'">
 
 <div id="Main_Title"></div>
 
@@ -923,6 +939,7 @@ Load Content
 <script src="js/toTheTop.js"></script>
 <script src="js/fadein-scroll.js"></script>
 <script src="js/verticalNavBar.js"></script>
+    <script src="js/loader.js"></script>
 
 <!-- d3 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
