@@ -69,7 +69,7 @@ d3.csv("data/res_com_total.csv").then( function(data) {
         .attr("text-anchor", "end")
         .attr("x", 0)
         .attr("y", -40)
-        .text("Percentage")
+        .text("kWh")
         .attr("text-anchor", "start")
         .style('font-family', 'Roboto')
         .style('font-size', '10px')
@@ -116,9 +116,10 @@ d3.csv("data/res_com_total.csv").then( function(data) {
             .style("stroke", "black")
             .style("opacity", 1)
         resTooltip
+            .style("opacity", 1)
             .html(`    
                       <span style="font-family: 'Times New Roman';
-                       font-size:20px">&ensp;Category: ${d.key}</span>
+                       font-size:15px">&ensp;Category: ${d.key}</span>
       
                        <br>
                        <div class='center'>
@@ -132,8 +133,9 @@ d3.csv("data/res_com_total.csv").then( function(data) {
     // And when it is not hovered anymore
     var noHighlight = function (event, d, i) {
         d3.selectAll(".myArea").style("opacity", 1)
-
+        resTooltip.style("opacity", 0)
     }
+
     // Show the areas
     areaChart
         .selectAll("mylayers")

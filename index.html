@@ -21,52 +21,19 @@
 
 
 <body>
-<!-- NAVIGATION BAR AREA-->
-<!--<div class="loader" id="loader">-->
+
+<!-- #################### Loader ####################-->
 <div class="loader" id="loader">
 Load Content
 </div>
-<div id="Main_Title"></div>
-<!--<nav class="navbar navbar-expand-sm" style="background-color: white;">-->
-<!--    <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">-->
-<!--    <ul class="navbar-nav me-auto">-->
-<!--        <li class="nav-item active">-->
-<!--            <a class="nav-link" href="#home_section" style="font-weight: bolder;">Home</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#intro_section">Introduction</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#res_vs_comm_section">Built Environment</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#climate_zone__section">Energy by Climate Zones</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#building_type_section">Energy by Residential Type</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#building_attributes_sections">Energy by Building Attributes</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#state_incentives_section">State Incentives</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#team_section">Team</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" class="nav-link" href="#appendix_section">References</a>-->
-<!--        </li>-->
-<!--    </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-    <br><br><br>
 
+<div id="Main_Title"></div>
+
+<br><br><br>
+
+<!--    #################### Vertical Navbar ####################-->
 <nav id="verticalNav" class="navbar-vertical">
     <ul class="dot-nav--list list-unstyled">
-<!--        <li class="navbar__item"><a href="#home_section" >-->
-<!--            <span class=navbar__circle></span>-->
-<!--            <span class="navbar__title">Home</span></a></li>-->
         <li class="navbar__item"><a href="#intro_section" >
             <span class=navbar__circle><i class="bi bi-app"></i></span>
             <span class="navbar__title">Intro</span></a></li>
@@ -100,16 +67,13 @@ Load Content
     <div id="introduction" style="height:100vh"></div>
 
 
-<!--<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>-->
-<!--<button type="button" class="btn btn-danger btn-floating btn-sm" id="btn-back-to-top" style="&#45;&#45;bs-btn-padding-y: .25rem; &#45;&#45;bs-btn-padding-x: .5rem; &#45;&#45;bs-btn-font-size: .75rem;">>Top-->
-<!--&lt;!&ndash;    <i class="fas fa-arrow-up"></i>&ndash;&gt;-->
-<!--</button>-->
-
 <!--    #################### HOME Section ####################-->
 
-<br><br><br>
+
+
 </div>
-    <div class="container-fluid no-gutters">
+    <div class="container-fluid no-gutters" id="intro_section">
+        <p><br><br><br><br><br></p>
         <h1 class="scrollFade main-heading-text"> energy </h1>
         <h1 class="scrollFade main-heading-text">crisis.</h1>
         <h4 class="scrollFade sub-heading-text">Understanding the residential energy consumption patterns in the US</h4>
@@ -117,7 +81,7 @@ Load Content
     </div>
 </div>
 <!--    #################### INTRODUCTION Section ####################-->
-<div id="intro_section">
+<div >
     <div class="container-fluid no-gutters">
         <div class="row no-gutters" >
             <br>
@@ -130,10 +94,14 @@ Load Content
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br>
-<!--    #################### RES COMM Section ####################-->
-<div id="res_vs_comm_section">
 
+<p>
+<br><br><br><br><br>
+</p>
+<hr class="solid">
+<!--    #################### RES vs COMM Section ####################-->
+<div id="res_vs_comm_section">
+    <p><br><br><br><br><br></p>
     <div class="container-fluid no-gutters">
         <p>
         <div>
@@ -168,12 +136,12 @@ Load Content
 
 
     <div class = 'row'>
-        <div class="col-4">
+        <div class="col-5">
             <div class="scene-bar scene-bar--card-bar">
-                <div class="col no-gutters section-col margin-left">
+                <div class="no-gutters section-col">
                     <div class="scene-bar scene-bar--card-bar">
-                        <div class="card-bar ">
-                            <div class="card-bar__face card-bar__face--front">Residential Buildings</div>
+                        <div class="card-bar">
+                            <div class="card-bar__face card-bar__face--front card-text">Residential Buildings</div>
                             <div class="card-bar__face card-bar__face--back" id="res-stacked-chart"
                                  style="height:100%; width: 100%;"></div>
                         </div>
@@ -181,15 +149,15 @@ Load Content
                 </div>
             </div>
         </div>
-        <div class="col-4 center">
+        <div class="col-5 center">
             <div id="res-tooltip"></div>
         </div>
     </div>
 
     <div class = 'row'>
-        <div class="col-4">
+        <div class="col-5">
             <div class="scene-bar scene-bar--card-bar">
-                <div class="col no-gutters section-col margin-left">
+                <div class="no-gutters section-col">
                     <div class="scene-bar scene-bar--card-bar">
                         <div class="card-bar">
                             <div class="card-bar__face card-bar__face--front">Commercial Buildings</div>
@@ -200,16 +168,16 @@ Load Content
                 </div>
             </div>
         </div>
-        <div class="col-4 center">
+        <div class="col-5 center">
             <div id="comm-tooltip"></div>
         </div>
     </div>
 
 
     <div class = 'row'>
-        <div class="col-4">
+        <div class="col-5">
             <div class="scene-bar scene-bar--card-bar">
-                <div class="col no-gutters section-col margin-left">
+                <div class="no-gutters section-col">
                     <div class="scene-bar scene-bar--card-bar">
                         <div class="card-bar">
                             <div class="card-bar__face card-bar__face--front">Residential vs. Commercial</div>
@@ -220,7 +188,7 @@ Load Content
                 </div>
             </div>
         </div>
-        <div class="col-4 center">
+        <div class="col-5 center">
             <div id="res-comm-tooltip"></div>
         </div>
     </div>
@@ -229,13 +197,16 @@ Load Content
 <br>
 
 
-<!--    <img src="img/stacked_chart/commercial/Delivered Energy.jpg" width="50%" height="auto">-->
-
+<!--Divider between section-->
+<p>
     <br><br><br><br><br>
+</p>
+<hr class="solid">
 
 
 <!--    #################### CLIMATE ZONE Section ####################-->
 <div id="climate_zone__section">
+    <p><br></p>
     <div class="container-fluid no-gutters">
         <div class="scrollFade">
             <h3 class="scrollFade section-heading-text"> Energy Consumption by Climate Zone <br></h3>
@@ -357,14 +328,6 @@ Load Content
     <br><br><br>
     </p>
 
-<!--    <div class="row">-->
-<!--        <div class="col-7">-->
-<!--            <svg class="center" id='county-map'></svg>-->
-<!--        </div>-->
-<!--        <div class="col-sm-3">-->
-<!--            <div id="county-tooltip" style="height: 100%; width: 90%"></div>-->
-<!--        </div>-->
-<!--    </div>-->
 
     <div class="row">
         <div class="center">
@@ -466,9 +429,17 @@ Load Content
 <!--</div>-->
 </div>
 
-<br><br>
+
+<!--Divider between section-->
+<p>
+    <br><br><br><br><br>
+</p>
+<hr class="solid">
+
+
 <!--    #################### BUILDING TYPE Section ####################-->
 <div id="building_type_section">
+    <p><br><br><br></p>
     <div class="container-fluid no-gutters">
         <p>
         <div  class="scrollFade">
@@ -666,10 +637,16 @@ Load Content
     </div>
 </div>
 
-<br><br>
+
+    <!--Divider between section-->
+    <p>
+        <br><br><br><br><br>
+    </p>
+    <hr class="solid">
 
 <!--    #################### BUILDING ATTRIBUTES Section ####################-->
 <div id="building_attributes_sections">
+    <p><br><br><br></p>
     <div class="container-fluid no-gutters">
         <p>
         <div class="scrollFade">
@@ -713,15 +690,9 @@ Load Content
         <p><br><br><br></p>
         <div class="center ">
         <h5 class="scrollFade user-text center"> <em>(Click on the card below to study the energy consumption of both residential and commercial buildings)</em></h5>
+        <br>
         </div>
             <div class="center ">
-<!--        <div class="scene-bar scene-bar&#45;&#45;card-bar">-->
-<!--            <div class="card-bar">-->
-<!--                <div class="card-bar__face card-bar__face&#45;&#45;front">Windows</div>-->
-<!--                <div class="card-bar__face card-bar__face&#45;&#45;back" id="stacked-barOne"-->
-<!--                     style="height:80%; width: 80%;"></div>-->
-<!--            </div>-->
-<!--        </div>-->
         <div class="scene-bar scene-bar--card-bar">
             <div class="card-bar">
                 <div class="card-bar__face card-bar__face--front">Windows</div>
@@ -738,7 +709,7 @@ Load Content
             </div>
         </div>
         <p>&nbsp;&nbsp;&nbsp;</p>
-        <div class="scene-bar scene-bar--card-bar">
+        <div class="scene-bar scene-bar--card-bar added-margin">
             <div class="card-bar">
                 <div class="card-bar__face card-bar__face--front">Appliances</div>
                 <div class="card-bar__face card-bar__face--back" id="stacked-barThree"
@@ -747,8 +718,17 @@ Load Content
         </div>
     </div>
 </div>
-    <br><br><br><br><br><br>
+
+
+    <!--Divider between section-->
+    <p>
+        <br><br><br><br><br>
+    </p>
+    <hr class="solid">
+
+    <!--     ````````````````````````` ENERGY INCENTIVE SECTION  `````````````````````````-->
 <div id="state_incentives_section">
+    <p><br><br><br></p>
     <div class="container-fluid no-gutters">
         <div >
             <h3 class="scrollFade section-heading-text"> Energy Incentives in the US<br></h3>
@@ -760,7 +740,8 @@ Load Content
             <div>
                 <h5 class="scrollFade intro-text"> It is also important to understand the incentives that a homeowner can avail to get aid for renovations. These incentives include
                     Regulatory Policies and Financial Incentives. You can learn more about this
-                    <a class = "scrollFade link-text" href= "https://www.dsireusa.org/" target="_blank"> HERE.</a>
+                    <a class = "scrollFade link-text" href= "https://www.dsireusa.org/" target="_blank"> HERE.</a> The available policy maps include extensive details on
+                    net metering, solar power policies, renewable standards, and energy efficiency resource standards.
                 </h5>
             </div>
             <br><br><br>
@@ -780,21 +761,28 @@ Load Content
             <div id="state-tooltip"></div>
         </div>
     </div>
- <br><br><br><br><br><br>
 </div>
+
+
+    <!--Divider between section-->
+    <p>
+        <br><br><br><br><br>
+    </p>
+    <hr class="solid">
+
+
 <!--    #################### ABOUT US Section ####################-->
 <div id="team_section">
+    <p><br><br><br></p>
     <div class="container-fluid no-gutters">
-        <p>
+
         <div>
-        <br><br><br><br><br><br><h3 class="scrollFade section-heading-text center"> Our Team<br></h3>
+       <h3 class="scrollFade section-heading-text"> Our Team<br></h3>
         </div>
-        <br>
+        <br> <br> <br>
         <div>
             <h5 class="scrollFade section-subheading-text"><em></em></h5>
         </div>
-        <br><br><br>
-        </p>
     </div>
     <div class="container">
         <div class="row gy-3">
@@ -824,18 +812,23 @@ Load Content
             </div>
         </div>
     </div>
-    <p>
-        <br><br><br><br><br>
-    </p>
 </div>
+
+    <!--Divider between section-->
+    <p>
+        <br><br><br><br><br><br><br>
+    </p>
+
+
 <!--    #################### APPENDIX Section ####################-->
 <div id="appendix_section">
+    <p><br><br></p>
     <div class="container-fluid no-gutters">
         <p>
         <div>
-            <h3 class="scrollFade section-heading-text center"> References <br></h3>
+            <h3 class="scrollFade section-heading-text "> References <br></h3>
         </div>
-        <br>
+        <br><br>
         <ol class="scrollFade intro-text">
             <li class="list-text" > Wilson, EJ. H. et. al. 2022. End-Use Load Profiles for the U.S. Building Stock:
                 Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification.

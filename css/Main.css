@@ -1,21 +1,12 @@
 
-/*#################Loader PAge#####################*/
+/*#################Loader Page#####################*/
 #loader {
     width: 100%;
     height: 100%;
     background-color: white;
     margin: 0;
 }
-/*.loader {*/
-/*    position: fixed;*/
-/*    background-color: #FFF;*/
-/*    opacity: 1;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    z-index: 10;*/
-/*}*/
+
 /*#################Navigation Bar#####################*/
 .active{}
 
@@ -137,17 +128,7 @@ a:hover {
     height: 0;
     transform: translateY(-50%);
 }
-/* .navbar__title::before{
-  border-width: 7px 0 7px 9px;
-  border-color: transparent transparent transparent green;
-  border-style: solid;
-}
 
-.navbar__title::after{
-   border-width: 6px 0 6px 8px;
-  border-color: transparent transparent transparent #fff;
-  border-style: solid;
-} */
 .navbar-vertical a:hover .navbar__title {
     visibility: visible;
     opacity: 1;
@@ -158,9 +139,6 @@ a:hover {
 /*#################TYPICAL CHANGES#####################*/
 body{
     background-color: #000000;
-    /*padding-top: 5px;*/
-    /*padding-left: 5px;*/
-    /*padding-right: 5px;*/
     scroll-behavior: smooth;
 }
 
@@ -205,8 +183,8 @@ h7{
 
 /* #######ADDED STYLING WITH TEXT #######*/
 
-.main-heading-text, .sub-heading-text, .intro-text{padding-left: 120px; padding-right: 120px}
-.section-heading-text, .section-subheading-text,.user-text{padding-left: 120px; padding-right: 120px;color: white;}
+.main-heading-text, .sub-heading-text, .intro-text{padding-left: 150px; padding-right: 150px}
+.section-heading-text, .section-subheading-text,.user-text{padding-left: 150px; padding-right: 150px;color: white;}
 
 .main-heading-text, .sub-heading-text, .section-heading-text,.section-subheading-text, .medium-caption{font-family: "Times New Roman";color: white; }
 .intro-text, .placeholder-text, .link-text, .link-text-small{font-family: 'Roboto Light', sans-serif; color: white;}
@@ -225,7 +203,7 @@ hr.style-one {
 
 .highlight-text{ font-family: 'Roboto Medium', sans-serif; }
 .section-heading-text{ line-height:22px;text-align: left;!important; font-size: 40px; font-weight: normal;}
-.section-subheading-text{ text-align: left;!important; font-size: 20px; font-weight: lighter;}
+.section-subheading-text{ text-align: left;!important; font-size: 20px; font-weight: lighter; padding-top: 8px;}
 .intro-text{ font-size: 15px; text-align: left;!important; color: rgba(255, 255, 255,1.0); }
 
 
@@ -243,10 +221,9 @@ hr.style-one {
 .link-text{
     color: white;
     text-decoration: underline;
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    font-size: 16px;
+    font-size: 14px;
 }
+
 .link-text:hover{
     color: #85182A;
     font-size: 16px;
@@ -261,9 +238,6 @@ hr.style-one {
     margin-right: 90px;
 }
 
-.margin-left{
-    margin-left: 0px;
-}
 
 .card-title{
     text-align: center;
@@ -274,6 +248,14 @@ hr.style-one {
     font-family: 'Roboto Light', sans-serif;
     text-align: center;
     font-weight: lighter;
+}
+
+hr.solid {
+    border-top: 0.05px solid rgba(255, 255, 255, 0.5);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 
@@ -348,10 +330,22 @@ hr.style-one {
     text-align: center;
     font-size: 15px;
     font-weight: lighter;
+    font-family: 'Roboto Light', sans-serif;
 }
+
+.list-text{
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: 'Roboto Light', sans-serif;
+}
+
 
 .img-about{
     width: 20%;!important;
+}
+
+.added-margin{
+    margin-right: 40px;
 }
 
 
@@ -572,6 +566,7 @@ button{
 .intro_tooltip_circle_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 40px; fill: white;}
 .intro_tooltip_circle_chart_text{font-family: "Times New Roman"; font-weight: lighter; color: white; font-size: 20px; fill: white;}
 .intro_legend_country_text{ font-family: "Times New Roman"; font-weight:normal ; color: white; fill: white; font-size: 15px; }
+
 /*###################CARD IMG #####################*/
 .card-title{ font-size: 18px; font-weight: 900; }
 .card-text{font-size: 10px; font-weight: 1; color: rgba(255, 255, 255, 1.0)}
@@ -856,12 +851,13 @@ img{object-fit: scale-down;}
     font-size: 20px;
     color: white;
     opacity: 1;
-    vertical-align: middle;
     text-align: center;
-    line-height: 360px;
+    vertical-align: middle;
+    line-height: 250px;
     font-weight: lighter;
     border-color: black;
 }
+
 
 .card-bar__face--back {
     background: black;

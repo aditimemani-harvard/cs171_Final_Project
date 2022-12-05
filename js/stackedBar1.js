@@ -16,7 +16,7 @@ let domThree = 'stacked-barThree'
 
 // Parse the Data
 function UpdateChart(dom, dataURL, max_val) {
-    var margin = {top: 20, right: 30, bottom: 20, left: 30},
+    var margin = {top: 20, right: 0, bottom: 20, left: 0},
         width = document.getElementById(dom).getBoundingClientRect().width - margin.left - margin.right,
         height = document.getElementById(dom).getBoundingClientRect().height - margin.top - margin.bottom;
     var svgBar = d3.select("#"+dom)

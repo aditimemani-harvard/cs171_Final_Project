@@ -69,7 +69,7 @@ class AreaChartMonth {
         // creating the scale for y-axis / values
         vis.y = d3.scaleLinear()
             // .domain([0, 28269715.24063562])
-            .range([vis.height, 0]);
+            .range([vis.height-3, 0]);
 
         // creat the area chart
         vis.area = d3.area();
