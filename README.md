@@ -155,13 +155,13 @@ cs171_Final_Project
     │   dendo.js
     │   fadein-scroll.js
     │   flipcardv2.js
-    │   flipStackedBarChartv1.js
+    │   flipStackedCharts.js
     │   introduction.js
     │   jquery.counterup.min.js
     │   jquery.vide.js
     │   map-county.js
     │   map-state.js
-    │   stackedBar1.js
+    │   stackedBar.js
     │   toTheTop.js
     │   treemap.js
     │   verticalNavBar.js
