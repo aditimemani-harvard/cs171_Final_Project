@@ -159,7 +159,7 @@ cs171_Final_Project
     │   introduction.js
     │   jquery.counterup.min.js
     │   jquery.vide.js
-    │   map-county2.js
+    │   map-county.js
     │   map-state.js
     │   stackedBar1.js
     │   toTheTop.js
